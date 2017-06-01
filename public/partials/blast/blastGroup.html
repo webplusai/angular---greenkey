@@ -1,0 +1,16 @@
+<div class="blast-box-wrapper">
+	<div class="blast-group"  ng-click="selectGroup()" ng-class="{
+			'active': isGroupSelected()
+		}"
+		ng-mouseover="onMouseHover(true)"
+		ng-mouseleave="onMouseHover(false)">
+
+		<div class="blast-group-inner">
+			<div class="blast-group-name col-xs-12">{{ blast.name }}</div>
+			<div class="blast-group-remove" ng-click="removeGroup(); $event.stopPropagation();">&nbsp;</div>
+			<div class="blast-group-members col-xs-12">
+				{{ blast.getMembersQty() }} shout{{ blast.getMembersQty() !== 1 ? 's' : '' }}
+			</div>
+		</div>
+	</div>
+</div>

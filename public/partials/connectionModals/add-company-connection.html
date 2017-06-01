@@ -1,0 +1,81 @@
+
+<div class="modal-window add-connection-panel">
+    <!-- modal-header -->
+    <div class="modal-window-header">
+        <h1 class="modal-window-title">Green Key</h1>
+        <span class="modal-window-close-button"
+              uib-tooltip="Close window"
+              tooltip-placement="left"
+              ng-click="closeThisDialog()"
+        ></span>
+    </div><!-- / modal-header -->
+
+    <form role="form" class="default-modal-dialog add-company-connection">
+    <!-- modal-body -->
+    <div class="modal-window-content">
+        <div class="form-group text-center">
+          <p>Request Connection to "{{company.name}}"</p>
+        </div>
+          <div class="form-group">
+            <div class="col-sm-5">
+              <label for="direct_connection_type" class="p-r-none">Direct Connection Type</label>
+            </div>
+            <div class="col-sm-7 selection-types form-group">
+              <select name="direct_connection_type"
+                class="form-control"
+                ng-options="option.name for option in companyConnectionTypes.options track by option.id"
+                ng-model="companyConnectionTypes.selected">
+              </select>
+            </div>
+          </div>
+
+          <div class="form-group">
+            <div class="col-sm-5">
+              <label class="control-label">
+                Message to Connection Manager*
+              </label>
+              <small class="color-green">
+                Please enter the names of the people you wish to connect to, one name per line
+              </small>
+            </div>
+
+            <div class="col-sm-7 form-group">
+              <textarea ng-model="message"
+                class="form-control"
+                ng-class="{ 'with-error': showError }">
+              </textarea>
+            </div>
+          </div>
+
+          <div class="form-group">
+            <div class="col-sm-5">
+              <label class="control-label">
+                Products
+              </label>
+              <small class="color-green">Please select your counterparty's primary products</small>
+            </div>
+
+            <div class="col-sm-7 form-group">
+              <ui-select multiple
+                  ng-model="prods.selected"
+                  theme="select2" >
+                <ui-select-match placeholder="Add products...">{{$item.text}}</ui-select-match>
+                <ui-select-choices repeat="product in products | filter:$select.search">
+                  <div ng-bind-html="product.text | highlight: $select.search"></div>
+                </ui-select-choices>
+              </ui-select>
+            </div>
+          </div>
+
+        <!-- modal-footer -->
+        <div class="modal-window-footer">
+            <div class="col-cancel pull-left text-center">
+              <button type="button" class="btn btn-default control-button" data-dismiss="modal" ng-click="closeThisDialog()">Cancel</button>
+            </div>
+            <div class="col-ok pull-right text-center">
+              <button type="button" class="btn control-button" ng-click="saveCompanyConnection(company)">OK</button>
+            </div>
+        </div><!-- / modal-footer -->
+    </div><!-- modal-body -->
+    </form>
+</div>

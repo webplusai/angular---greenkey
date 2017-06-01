@@ -1,0 +1,161 @@
+.page-dark-theme body.symphony-mode {
+  background-color: #f9f9fa;
+}
+
+.symphony-mode .navbar {
+  background: none #262626;
+  box-shadow: none;
+}
+
+.symphony-mode .navbar-height,
+.symphony-mode .menu-item,
+.symphony-mode .menu-item .menu-item-icon {
+  height: 48px;
+}
+
+.symphony-mode .tvb-icon {
+  width: 18px;
+  height: 18px;
+}
+
+.compact.symphony-mode .tvb-icon {
+  width: 50px;
+  height: 44px;
+}
+
+.symphony-mode .menu-item {
+  width: 120px;
+  border-color: #323232;
+}
+
+.symphony-mode .navbar-left .menu-item:first-child {
+  width: 48px;
+}
+
+.symphony-mode .menu-item .menu-item-icon {
+  flex-wrap: nowrap;
+  transition: none;
+  opacity: 1;
+}
+
+.symphony-mode .helper-text {
+  margin-left: 10px;
+  font-weight: normal;
+  text-transform: none;
+}
+
+.symphony-mode .menu-item-switcher-wrap {
+  height: 30px;
+  line-height: 30px;
+  width: 83px;
+}
+
+.symphony-mode .menu-item-switcher-wrap .user-status-switcher .user-status-indicator {
+  left: 53px;
+  top: 0;
+  height: 26px;
+  width: 26px;
+}
+
+.symphony-mode .menu-item-switcher-wrap .is-user-idle:checked + .user-status-switcher {
+  left: -53px;
+}
+
+.symphony-mode .menu-item .badge {
+  top: 5px;
+  left: 19%;
+}
+
+.symphony-mode .badge-sm {
+  padding: 4px 5px !important;
+  font-size: 48%;
+  height: 15px;
+}
+
+.symphony-mode .menu-item.menu-item-search {
+  padding-left: 5px;
+}
+
+.symphony-mode .menu-item-search .search-connection input {
+  color: #747474;
+  background-color: #3c3c3c;
+  border-radius: 0;
+  transition: none;
+}
+
+.symphony-mode .menu-item-search .search-connection .form-group {
+  padding-right: 105px;
+}
+
+.symphony-mode .menu-item-search .search-connection .form-group .invite-btn {
+  background: none #555;
+  box-shadow: none;
+  padding: 0 3px;
+  line-height: 40px;
+}
+
+.symphony-mode .tvb-invite-icon {
+  padding-left: 0;
+  width: auto;
+  background-position-y: 50%;
+  background-size: 18px;
+  font-weight: normal;
+  font-size: .9em;
+  line-height: 34px;
+  color: #d4d4d4;
+}
+
+.symphony-mode .app-header-fixed {
+  padding-top: 49px;
+}
+
+.compact.symphony-mode .app-header-fixed {
+  padding-top: 98px;
+}
+
+.symphony-mode .tvb-settings-icon {
+  background: transparent url("/img/svg/symphony/ic-settings.svg") 0 0 no-repeat !important;
+}
+
+.symphony-mode .menu-item.menu-item-settings .helper-text {
+  margin-top: 0;
+}
+
+.symphony-mode .menu-item.menu-item-help {
+  width: 70px;
+}
+
+.symphony-mode .tvb-icon.tvb-help-icon {
+  background-size: 20px !important;
+  height: 30px;
+  width: 30px;
+}
+
+
+/* Responsive */
+@media screen and (max-width: 1400px) {
+  .symphony-mode .menu-item .badge {
+    left: 53%;
+  }
+}
+
+
+/* Dark theme */
+
+.page-dark-theme body.symphony-mode.dark {
+  background-color: #505050;
+}
+
+.symphony-mode.dark .tvb-icon,
+.symphony-mode.dark .helper-text {
+  color: #d4d4d4;
+}
+
+.symphony-mode.dark .menu-item-switcher-wrap,
+.symphony-mode.dark .menu-item-switcher-wrap .user-status-switcher {
+  background: #797979;
+}
+
+.symphony-mode.dark .menu-item-switcher-wrap .user-status-switcher .user-status-text {
+  color: #f3f3f3;
+}

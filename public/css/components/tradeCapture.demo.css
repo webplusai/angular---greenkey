@@ -1,0 +1,29 @@
+#trade-capture-panel {
+    width: 500px;
+    height: 840px;
+}
+
+#trade-capture-panel label {
+    font-weight: bold;
+    font-size: .9em;
+}
+
+#trade-capture-panel .col-md-8 label {
+    font-weight: normal;
+}
+
+#trade-capture-panel input {
+    color: #484848;
+}
+
+#trade-capture-panel .preview {
+    margin-bottom: 20px;
+}
+
+#trade-capture-panel .row {
+    padding: 2px;
+}
+
+#trade-capture-panel .divider {
+    padding: 4px;
+}

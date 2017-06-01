@@ -1,0 +1,116 @@
+.compact .hoots-wrapper {
+	overflow-y: auto;
+	padding-right: 5px;
+}
+.compact .hoots-wrapper::-webkit-scrollbar {
+	width: 5px;
+	background: #424242;
+}
+.compact .hoots-wrapper::-webkit-scrollbar-thumb {
+	border-radius: 5px;
+	background-color: #000000;
+}
+
+.compact .hoots-wrapper .connection-wrapper {
+	min-height: 85px;
+}
+
+/* Decrease font size inside hoot boxes when 2 columns are displayed */
+.compact .connection-wrapper.col-1-2 .hoot .contact-name {
+	background-position-y: 7px;
+	padding: 6px 0 0 32px;
+	font-size: 13px;
+}
+/* Blast buttons don't have status indicator */
+.compact .connection-wrapper.col-1-2 .hoot.blast-button .contact-name {
+	padding-left: 10px;
+}
+
+.compact .hoots-wrapper .connection-wrapper.col-1-2 .settings-button-wrapper {
+	padding: 0 2px 0 0;
+}
+.compact .hoots-wrapper .connection-wrapper.col-1-2 .settings-button-wrapper:first-child {
+	padding-left: 5px;
+}
+.compact .hoots-wrapper .connection-wrapper.col-1-2 .settings-button-wrapper:last-child {
+	padding-right: 5px;
+}
+
+/* Decrease font size and unused space of settings buttons  */
+.compact .hoot .settings-wrapper .settings-buttons {
+	margin-top: 10px;
+}
+
+.compact .hoot .settings-wrapper .settings-button {
+	padding: 3px 2px;
+	height: 34px;
+}
+
+.compact .hoot .settings-wrapper .settings-title-status {
+	margin-top: 4px;
+}
+
+.compact .hoot .settings-wrapper .settings-title {
+	margin-top: 2px;
+}
+
+.compact .hoot .settings-wrapper .settings-delete {
+	width: 21px;
+	height: 20px;
+	font-size: 14px;
+	padding: 0 0 0 5px;
+}
+
+.compact .hoots-wrapper .hoot .settings-wrapper .silence-button .settings-button-icon {
+	background-position: 0px 5px;
+}
+.compact .hoots-wrapper .hoot .settings-wrapper .silence-button.pressed .settings-button-icon {
+	background-position: -9px -5px;
+}
+
+.compact .active-calls-panel .connection-wrapper.hoot-box-wrapper {
+	width: 95%;
+	height: 85px;
+}
+
+.compact .active-calls-panel .hoot .settings-wrapper .settings-buttons {
+	margin: 13px 5px;
+}
+
+.compact .ringdown-box-wrapper .hoot .settings-wrapper .settings-buttons {
+	margin: 1px -2px 0px;
+}
+
+.compact .ringdown-box-wrapper .hoot .settings-wrapper .settings-button {
+	height: 28px;
+	padding: 0px;
+}
+
+.compact .ringdown-box-wrapper .hoot .settings-wrapper .settings-button-icon {
+	background-position: center;
+	vertical-align: top;
+	height: 28px;
+	line-height: 28px;
+}
+
+
+.compact .ringdown-box-wrapper .hoot .settings-wrapper .silence-button.pressed .settings-button-icon {
+	background-position: -2px -5px;
+}
+
+.compact .ringdown-box-wrapper .hoot .settings-wrapper .ptt-button.pressed .settings-button-icon {
+	background-position: -1px -6px;
+}
+
+.compact .ringdown-box-wrapper .hoot .contact-name {
+	font-size: 15px;
+	height: 44%;
+	top: 3%;
+	background-size: 15px;
+	padding-left: 34px;
+	background-position-y: 3px;
+}
+
+.compact .ringdown-box-wrapper .micro-phone {
+	font-size: 17px;
+}

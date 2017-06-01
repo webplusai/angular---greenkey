@@ -1,0 +1,1 @@
+"C:\Program Files\Git\bin\sh.exe" --login -i -c "curl -X GET -H \"Content-Type: application/json\" -H \"X-Auth-Token: 1a78e697a8705f16c5348bffd6124f1f\" http://ams-kztest-00.tradervoicebox.com:8000/v1/accounts/c4fa38f16369b4d72b8632d6071992bd/devices/f71e3bd1272bc7386d77315792874417/quickcall/+16105055308"

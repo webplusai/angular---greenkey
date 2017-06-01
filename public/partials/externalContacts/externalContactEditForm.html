@@ -1,0 +1,67 @@
+<div class="modal-window external-contact-edit-form">
+    <div class="modal-window-header external-contacts-panel-header">
+        <button class="external-contacts-edit-cancel" ng-click="closeExternalContactEditForm()">Cancel</button>
+        <h1 class="modal-window-title external-contacts-panel-title">Edit contact</h1>
+        <span class="modal-window-close-button external-contacts-panel-close-button"
+              uib-tooltip="Close window"
+              tooltip-placement="left"
+              ng-click="closeExternalContactsPanel()"
+        ></span>
+    </div>
+
+    <div class="modal-window-content edit-form-body">
+        <div class="row">
+            <!-- name and company -->
+            <div class="col-sm-6">
+                <div class="form-group">
+                    <label for="external-contact-company" class="external-contact-property-label">Company</label>
+                    <input type="text" class="form-control external-contact-property" id="external-contact-company" ng-model="company">
+                </div>
+                <div class="form-group" ng-class="{ 'has-error': updateErrors.last_name }">
+                    <label for="external-contact-last-name" class="external-contact-property-label necessary">Last Name</label>
+                    <input type="text" class="form-control external-contact-property" id="external-contact-last-name" ng-model="lastName" ng-change="resetUpdateError('last_name')">
+                    <span class="error-text">{{ updateErrors.last_name }}</span>
+                </div>
+                <div class="form-group" ng-class="{ 'has-error': updateErrors.first_name }">
+                    <label for="external-contact-first-name" class="external-contact-property-label necessary">First Name</label>
+                    <input type="text" class="form-control external-contact-property" id="external-contact-first-name" ng-model="firstName" ng-change="resetUpdateError('first_name')">
+                    <span class="error-text">{{ updateErrors.first_name }}</span>
+                </div>
+                <div class="form-group" ng-class="{ 'has-error': updateErrors.display_name }">
+                    <label for="external-contact-display-name" class="external-contact-property-label necessary">Display Name</label>
+                    <input type="text" class="form-control external-contact-property" id="external-contact-display-name" ng-model="displayName" ng-change="resetUpdateError('display_name')">
+                    <span class="error-text">{{ updateErrors.display_name }}</span>
+                </div>
+            </div>
+            <!-- contacts: phone and email -->
+            <div class="col-sm-6">
+                <div class="form-group" ng-class="{ 'has-error': updateErrors.email }">
+                    <label for="external-contact-email" class="external-contact-property-label">Email</label>
+                    <input type="text" class="form-control external-contact-property" id="external-contact-email" ng-model="email" ng-change="resetUpdateError('email')">
+                    <span class="error-text">{{ updateErrors.email }}</span>
+                </div>
+                <div class="form-group" ng-class="{ 'has-error': updateErrors.phone }">
+                    <label for="external-contact-phone" class="external-contact-property-label necessary">Phone</label>
+                    <input type="text" class="form-control external-contact-property" id="external-contact-phone" ng-model="phone" ng-change="resetUpdateError('phone')">
+                    <span class="error-text">{{ updateErrors.phone }}</span>
+                </div>
+            </div>
+        </div>
+
+        <div class="modal-window-footer edit-form-footer">
+            <div class="speed-dial-option-wrapper pull-left">
+                <div class="pretty-checkbox-wrapper">
+                    <input type="checkbox" class="service-checkbox" id="speed-dial-option" ng-model="speedDial">
+                    <label for="speed-dial-option" class="pretty-checkbox">
+                        <i class="fa fa-check tick"></i>
+                    </label>
+                </div>
+                <label for="speed-dial-option" class="speed-dial-option-label">Add Contact to Speed Dial</label>
+            </div>
+            <div class="edit-form-control-buttons pull-right">
+                <button class="control-button edit-form-button edit-form-discard" ng-click="closeExternalContactEditForm()">Discard</button>
+                <button class="control-button edit-form-button edit-form-save" ng-click="updateContact()">Save</button>
+            </div>
+        </div>
+    </div>
+</div>

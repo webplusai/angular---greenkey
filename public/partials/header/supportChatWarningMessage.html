@@ -1,0 +1,25 @@
+<div class="modal-window support-chat-warning">
+    <div class="modal-window-header">
+        <h1 class="modal-window-title">Support chat</h1>
+        <span class="modal-window-close-button"
+              uib-tooltip="Close window"
+              tooltip-placement="left"
+              ng-click="closeWarningMessage()"
+        ></span>
+    </div>
+    <div class="modal-window-content">
+        <div class="warning-message">
+            <p>Sorry, we are not around.</p>
+            <p>Please contact Green Key support desk if you require assistance:</p>
+            <div class="green-key-support-contacts">
+                <p>Email: <a href="mailto:support@greenkeytech.com" target="contact-support-by-email" class="support-contact-option">support@greenkeytech.com</a></p>
+                <p>North America Support: <span class="support-contact-option">+1 (646) 883 8830</span></p>
+                <p>EMEA Support: <span class="support-contact-option">+44 (0) 203 026 3150</span></p>
+                <p>APAC Support: <span class="support-contact-option">+65 9005 8530</span></p>
+            </div>
+            <!-- Changing of window.location.href triggers "beforeunload" event -->
+            <!-- It's unacceptable so iframe was created for opening email link -->
+            <iframe id="contact-support-by-email" name="contact-support-by-email"></iframe>
+        </div>
+    </div>
+</div>

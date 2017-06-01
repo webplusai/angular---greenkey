@@ -1,0 +1,93 @@
+.vb-fullscreen-dialog * {
+    box-sizing: border-box;
+}
+
+.vb-fullscreen-dialog {
+    display: none;
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 2;
+    background: #F7F9FA;
+    overflow: hidden;
+}
+
+.vb-fullscreen-dialog.active {
+    display: block;
+}
+
+.vb-fullscreen-dialog .dialog-header {
+    height: 50px;
+    background: -webkit-linear-gradient(left, #3fa6c0 0%, #5c34de 100%);
+    background: linear-gradient(to right, #3fa6c0 0%, #5c34de 100%);
+}
+
+.vb-fullscreen-dialog .dialog-header .dialog-cancel-button {
+    cursor: pointer;
+    color: #fff;
+    height: 50px;
+    padding: 16px 0 0 20px;
+    width: 200px;
+}
+
+.vb-fullscreen-dialog .dialog-body {
+    height: calc(100% - 100px);
+    overflow-y: auto;
+    background: #ffffff;
+}
+
+.vb-fullscreen-dialog .dialog-message-wrapper {
+    height: 50px;
+    border-top: 1px solid #d8d8d8;
+    position: relative;
+}
+
+.vb-fullscreen-dialog .dialog-message-text {
+    border: 0;
+    width: 100%;
+    height: 50px;
+    resize: none;
+    font-size: 1.1em;
+    padding: 5px 100px 5px 5px;
+}
+
+.vb-fullscreen-dialog .message-control-buttons {
+    position: absolute;
+    z-index: 10;
+    top: 0;
+    right: 0;
+}
+
+.vb-fullscreen-dialog .message-control-buttons .control-button {
+    height: 50px;
+}
+
+.processing.vb-fullscreen-dialog .message-control-buttons .control-button {
+    display: none;
+}
+
+.vb-fullscreen-dialog .dialog-white-button {
+    font-size: 1.1em;
+    background: #fff;
+    border: 0;
+    color: #848484;
+}
+
+.vb-fullscreen-dialog .dialog-white-button:hover,
+.vb-fullscreen-dialog .dialog-white-button:active {
+    background: #fff;
+}
+
+.vb-fullscreen-dialog .dialog-process-status {
+    display: none;
+    text-align: right;
+    padding-top: 10px;
+    font-style: italic;
+    color: #539DBD;
+}
+
+.processing.vb-fullscreen-dialog .dialog-process-status {
+    display: block;
+}

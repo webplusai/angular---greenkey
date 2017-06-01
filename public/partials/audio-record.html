@@ -1,0 +1,19 @@
+<div class="audio-record"
+    uib-tooltip="{{isPlaying ? 'AUDIO.PAUSE_RECORDING' : 'AUDIO.PLAY_RECORDING' | translate}}"
+    tooltip-append-to-body="true"
+    tooltip-placement="left" >
+
+  <div ng-show="isRecordingAvailable">
+
+    <span class="btn-play"
+        ng-show="!isPlaying"
+        ng-click="onPlay()" >
+    </span>
+
+    <span class="btn-pause"
+        ng-show="isPlaying"
+        ng-click="onPause()" >
+      <i class="fa fa-pause"></i>
+    </span>
+  </div>
+</div>

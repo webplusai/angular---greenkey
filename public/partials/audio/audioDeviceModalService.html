@@ -1,0 +1,126 @@
+
+<div class="modal-window audio-device-panel">
+    <!-- modal-header -->
+    <div class="modal-window-header">
+        <h1 class="modal-window-title">Audio Device Configuration</h1>
+        <span class="modal-window-close-button"
+              uib-tooltip="Close window"
+              tooltip-placement="left"
+              ng-click="closeThisDialog()"
+        ></span>
+    </div><!-- / modal-header -->
+
+  <form role="form" class="default-modal-dialog audio-device-modal">
+    <!-- modal-body -->
+    <div class="modal-window-content my-info-panel-body">
+          <div ng-show="!experimentalFeaturesDisabled">
+            <div class="alert alert-warning text-center" role="alert">
+              <strong>Supported configuration:</strong>
+              Shouts should be configured for USB Mic/External Speakers
+              and Ringdowns should be configured for Headset or Handset.
+            </div>
+
+            <div class="form-group clearfix">
+              <h3>Ringdowns</h3>
+              <label class="col-sm-3 control-label">Speakers</label>
+              <div class="col-sm-9">
+                <select
+                    class="text-muted form-control"
+                    ng-options="option.label for option in ringdowns.outputs track by option.deviceId"
+                    ng-model="ringdowns.outputChosen">
+                  <option value="" class="text-muted">Choose an Option</option>
+                </select>
+              </div>
+            </div>
+
+            <div class="form-group clearfix">
+              <label class="col-sm-3 control-label">Microphone</label>
+              <div class="col-sm-9">
+                <select
+                    class="text-muted form-control"
+                    ng-options="option.label for option in ringdowns.inputs track by option.deviceId"
+                    ng-model="ringdowns.inputChosen">
+                  <option value="" class="text-muted">Choose an Option</option>
+                </select>
+              </div>
+            </div>
+
+             <div class="form-group clearfix">
+              <h3>Shouts</h3>
+              <label class="col-sm-3 control-label">Speakers</label>
+              <div class="col-sm-9">
+                <select
+                    class="text-muted form-control"
+                    ng-options="option.label for option in hoots.outputs track by option.deviceId"
+                    ng-model="hoots.outputChosen">
+                  <option value="" class="text-muted">Choose an Option</option>
+                </select>
+              </div>
+            </div>
+
+            <div class="form-group clearfix">
+              <label class="col-sm-3 control-label">Microphone</label>
+              <div class="col-sm-9">
+                <select
+                    class="text-muted form-control"
+                    ng-options="option.label for option in hoots.inputs track by option.deviceId"
+                    ng-model="hoots.inputChosen">
+                  <option value="" class="text-muted">Choose an Option</option>
+                </select>
+              </div>
+            </div>
+
+            <div class="form-group clearfix">
+                <h3>Notifications</h3>
+                <label class="col-sm-3 control-label">Speakers</label>
+                <div class="col-sm-9">
+                    <select
+                            class="text-muted form-control"
+                            ng-options="option.label for option in notifications.outputs track by option.deviceId"
+                            ng-model="notifications.outputChosen">
+                        <option value="" class="text-muted">Choose an Option</option>
+                    </select>
+                </div>
+            </div>
+
+            <div class="form-group clearfix">
+                <br>
+                <label class="col-sm-3 control-label">Enable echo cancellation for</label>
+
+                <div class="col-sm-9">
+                    <select
+                            class="text-muted form-control"
+                            ng-options="option.label for option in aec.outputs track by option.deviceId"
+                            ng-model="aec.outputChosen">
+                        <option value="" class="text-muted">Choose an Option</option>
+                    </select>
+                </div>
+            </div>
+
+
+          </div>
+
+          <div ng-show="experimentalFeaturesDisabled">
+            <div class="form-group clearfix text-center">
+              <p class="text-left col-md-12">
+                To have acces to this functionality please enable the experimental Web Platform features in Chrome by the clicking the following link:
+              </p>
+              <p class="col-md-12 text-muted"
+                title="Enable the experimental Web Platform features">
+                chrome://flags/#enable-experimental-web-platform-features
+              </p>
+              <p class="text-left col-md-12">Then, relaunch you browser.</p>
+            </div>
+          </div>
+        <!-- modal-footer -->
+        <div class="modal-window-footer">
+            <div class="col-cancel pull-left text-center">
+              <button type="button" class="btn control-button" data-dismiss="modal" ng-click="closeThisDialog()">Cancel</button>
+            </div>
+            <div class="col-ok pull-right text-center">
+              <button type="button" class="btn control-button" ng-click="saveChanges()">Save</button>
+            </div>
+        </div><!-- / modal-footer -->
+    </div><!-- modal-body -->
+   </form>
+</div>

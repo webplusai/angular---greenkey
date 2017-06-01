@@ -1,0 +1,55 @@
+<div class="popout window-wrapper">
+  <div class="window-header">
+    <div class="window-header-title">
+      {{title}}
+    </div>
+
+    <div class="buttons pull-right">
+
+      <div class="pull-right hoots-tabbar-wrapper">
+        <tabs-panel
+                class="tab-panel-compact"
+                init-event-name="connections_fetched"
+                change-event-name="page_changed"
+                tab-name="tornPanel"
+                fixed-count="{{::uiConstants.hootPagesQty}}">
+        </tabs-panel>
+      </div>
+
+      <div class="dragging-plate">
+        <i class="fa fa-ellipsis-v"></i>
+        <i class="fa fa-ellipsis-v"></i>
+      </div>
+
+      <button class="close-button" ng-click="close()">
+        <i class="fa fa-close"></i>
+      </button>
+    </div>
+  </div>
+
+  <div class="window-content">
+
+    <!-- For Hoots Panel -->
+    <div class="hoots-wrapper popout" ng-if="isHoots">
+      <hoot-on-panel ng-repeat="(index, hoot) in connections track by index"
+                     ng-show="hoot.pageIndex == activePageIndex"
+                     hoot="hoot">
+      </hoot-on-panel>
+      <hoot-on-panel ng-repeat="(index, hoot) in emptyCells track by index"
+                     hoot="hoot">
+      </hoot-on-panel>
+    </div>
+
+    <!-- For Ringdowns Panel -->
+    <div class="ringdowns-wrapper popout" ng-if="!isHoots">
+      <ringdown-on-panel ng-repeat="(index, ringdown) in connections track by index"
+                         ng-show="ringdown.pageIndex == activePageIndex"
+                         ringdown="ringdown">
+      </ringdown-on-panel>
+      <ringdown-on-panel ng-repeat="(index, ringdown) in emptyCells track by index"
+                         ringdown="ringdown">
+      </ringdown-on-panel>
+    </div>
+
+  </div>
+</div>

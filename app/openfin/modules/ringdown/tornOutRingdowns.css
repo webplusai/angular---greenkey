@@ -1,0 +1,18 @@
+.pop-out-wrapper .ringdown .ringdown-panel {
+    padding-right: 57px;
+}
+
+.pop-out-wrapper.ringdown-box-wrapper .close-button {
+    bottom: 0;
+    top: 19px;
+}
+
+.pop-out-wrapper .ringdown .dragging-plate {
+    right: 34px;
+    top: 22px;
+}
+
+.pop-out-wrapper .offline.ringdown .dragging-plate,
+.pop-out-wrapper .ringdown.on-call .dragging-plate {
+    top: 25px;
+}

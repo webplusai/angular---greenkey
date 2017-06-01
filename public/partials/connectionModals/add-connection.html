@@ -1,0 +1,47 @@
+<div class="modal-window add-connection">
+    <!-- modal-header -->
+    <div class="modal-window-header">
+        <h1 class="modal-window-title">Add connection</h1>
+        <span class="modal-window-close-button"
+              uib-tooltip="Close window"
+              tooltip-placement="left"
+              ng-click="closeThisDialog()"
+        ></span>
+    </div><!-- / modal-header -->
+
+    <!-- modal-body -->
+    <form role="form" class="default-modal-dialog">
+    <div class="modal-window-content">
+        <div class="form-group m-n text-center">
+            <p>Contact will be added to your Direct Connections</p>
+          </div>
+          <div class="form-group m-n name">
+            <label class="col-sm-6">Display Name</label>
+            <h5 class="col-sm-5 m-t-xs">{{ fullName }}</h5>
+          </div>
+          <div class="form-group m-n">
+            <label for="direct_connection_type" class="col-sm-5 p-r-none">Direct Connection Type</label>
+            <select name="direct_connection_type"
+              id="direct_connection_type"
+              class="col-sm-6 form-control"
+              ng-options="option.name for option in connectionType.availableOptions track by option.id"
+              ng-model="connectionType.selectedOption">
+            </select>
+        </div>
+        <!-- modal-footer -->
+        <div class="modal-window-footer">
+            <div class="col-cancel pull-left text-center">
+              <button type="button" class="btn control-button" data-dismiss="modal" ng-click="closeThisDialog()">Cancel</button>
+            </div>
+            <div class="col-ok pull-right text-center">
+              <button type="button"
+                  class="btn control-button"
+                  ng-click="saveConnection()"
+                  ng-disabled="saveInProgress" >
+                OK
+              </button>
+            </div>
+        </div><!-- / modal-footer -->
+    </div><!-- modal-body -->
+    </form>
+</div>

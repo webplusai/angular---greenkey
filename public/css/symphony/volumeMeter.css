@@ -1,0 +1,52 @@
+/* Default light (day) theme */
+
+.symphony-mode .volume-meter {
+  background: linear-gradient(to right, #229317 0%, #eaa300 33%, #e95100 66%,#e90000 100%);
+}
+
+.symphony-mode .hoot .volume-meter .inactive-part-overlay {
+  background-image: url(/img/volumeMeter/symphony/hootFilledBar.png);
+}
+.symphony-mode .hoot.online .volume-meter .inactive-part-overlay {
+  background-image: url(/img/volumeMeter/symphony/hootOnlineFilledBar.png);
+}
+.symphony-mode .hoot.online.shouting .volume-meter .inactive-part-overlay {
+  background-image: url(/img/volumeMeter/symphony/hootShoutingFilledBar.png);
+}
+
+.symphony-mode .hoot.online.shouting .volume-meter .active-part-overlay {
+  background-image: url(/img/volumeMeter/symphony/hootShoutingTransparentBar.png);
+}
+
+.symphony-mode .active-call-box .volume-meter .inactive-part-overlay {
+  background-image: url(/img/volumeMeter/symphony/callFilledBar.png);
+}
+
+.symphony-mode .active-call-box .volume-meter .active-part-overlay {
+  background-image: url(/img/volumeMeter/symphony/callTransparentBar.png);
+}
+
+
+/* Dark (night) theme */
+
+.symphony-mode.dark .hoot .volume-meter .inactive-part-overlay {
+  background-image: url(/img/volumeMeter/symphony/hootFilledBarDark.png);
+}
+.symphony-mode.dark .hoot.online .volume-meter .inactive-part-overlay {
+  background-image: url(/img/volumeMeter/symphony/hootOnlineFilledBarDark.png);
+}
+.symphony-mode.dark .hoot.online.shouting .volume-meter .inactive-part-overlay {
+  background-image: url(/img/volumeMeter/symphony/hootShoutingFilledBar.png);
+}
+
+.symphony-mode.dark .hoot.online.shouting .volume-meter .active-part-overlay {
+  background-image: url(/img/volumeMeter/symphony/hootShoutingTransparentBar.png);
+}
+
+.symphony-mode.dark .active-call-box .volume-meter .inactive-part-overlay {
+  background-image: url(/img/volumeMeter/symphony/callFilledBarDark.png);
+}
+
+.symphony-mode.dark .active-call-box .volume-meter .active-part-overlay {
+  background-image: url(/img/volumeMeter/symphony/callTransparentBarDark.png);
+}

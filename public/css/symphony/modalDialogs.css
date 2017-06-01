@@ -1,0 +1,60 @@
+.symphony-mode .modal-dialog {
+    background: #eaeaea;
+    color: #7e7e7e;
+    padding: 20px;
+}
+.symphony-mode .modal-dialog .modal-header {
+    display: none;
+}
+
+.symphony-mode .modal-dialog .error-text {
+    padding-top: 120px;
+    background: transparent url('/img/symphony/logout-dialog.png') center 25px no-repeat;
+}
+
+.symphony-mode .modal-dialog.query-dialog .modal-header{
+    display: block;
+    height: 55px;
+    margin: -20px;
+    background: #44B3DD;
+}
+
+.symphony-mode .modal-dialog.query-dialog .error-text {
+    padding-top: 40px;
+    background: none;
+}
+
+.symphony-mode .modal-dialog.query-dialog .modal-header .modal-title{
+    margin-top: 0;
+    height: 100%;
+    line-height: 2;
+    font-size: 16px;
+    font-weight: bold;
+}
+
+.symphony-mode .modal-dialog .modal-header button{
+    margin-top: 0 !important;
+    font-size: 27px;
+    color: #fff;
+    opacity: 0.5;
+}
+
+.symphony-mode .modal-dialog .close-dialog-button-wrapper {
+    margin-top: 50px;
+}
+
+.symphony-mode .modal-dialog .close-dialog-button {
+    background: #44b3dd;
+    border: 0;
+    border-radius: 3px;
+    width: 100%;
+    font-weight: bold;
+    color: #fff;
+    padding: 12px;
+}
+
+/*dark mode*/
+.symphony-mode.dark .modal-dialog{
+    background: #5c5c5c;
+    color: #d4d4d4;
+}

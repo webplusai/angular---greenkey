@@ -1,0 +1,100 @@
+/* Contact list */
+.modal-window .contact-list-panel {
+    background-color: #424242;
+    border-radius: 0 3px 3px 0;
+    border: 0;
+    position: relative;
+}
+
+.modal-window .contacts-filter {
+    padding: 25px 25px 0;
+}
+
+.modal-window .contacts-filter input {
+    height: 50px;
+    border-radius: 100px;
+    box-shadow: inset 0 1px 3px 0 rgba(0,0,0,0.16);
+    background: url(/img/svg/new/ic-search.svg) no-repeat 98% center;
+    background-size: 19px 21px;
+    width: 100%;
+    padding: 0 20px;
+    font-size: 16px;
+    font-weight: bold;
+    border: none;
+    color: #A9A9A9;
+}
+
+.modal-window .contact-list {
+    height: calc(100% - 75px);
+    padding-top: 20px;
+    overflow: auto;
+}
+
+.modal-window .hotkeys-panel .contact-list {
+    height: 100%;
+    padding-top: 20px;
+}
+
+.modal-window .contact-list .contact-list-header,
+.modal-window .contact-list .contact-item {
+    padding: 10px 0;
+    font-size: 17px;
+    font-weight: bold;
+    color: #ffffff;
+    border-bottom: 1px solid #383838;
+    margin: 0 25px 0 20px;
+    background: no-repeat 0 17px;
+}
+
+.modal-window .contact-list .company {
+    font-size: 15px;
+    padding-left: 30px;
+    color: #b3b3b3;
+}
+
+.modal-window .contact-list .contact-list-header {
+    height: 45px;
+    border-bottom: none;
+}
+
+.modal-window .contact-list .contact-item:hover {
+    background-color: #525252;
+}
+
+.modal-window .contact-list .contact-item.offline {
+    background-image: url(/img/red-led.png);
+}
+
+.modal-window .contact-list .contact-item.online {
+    background-image: url(/img/green-led.png);
+}
+
+.modal-window .contact-item .contact-name {
+    line-height: 2.1em;
+    padding-left: 30px;
+}
+
+.contact-list .contact-item button span {
+    display: block;
+    width: 32px;
+    height: 32px;
+    background: url(/img/svg/new/ic-check.svg) no-repeat center;
+}
+
+.modal-window .modal-window-content.body.scrollable {
+    overflow: auto;
+}
+
+.modal-window.select-connection-dialog-content {
+    width: 100%;
+}
+
+@media (min-width: 761px) {
+    .modal-window.select-connection-dialog-content {
+        width: 600px;
+    }
+}
+
+.modal-window.select-connection-dialog-content .contact-list {
+    height: 440px;
+}

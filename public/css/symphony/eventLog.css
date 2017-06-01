@@ -1,0 +1,110 @@
+.symphony-mode #events-log-panel .records-container {
+  background-color: #f9f9fa;
+  border-radius: 0;
+}
+
+.symphony-mode #events-log-sorting {
+  display: flex;
+}
+
+.symphony-mode #events-log-sorting .title {
+  padding: 0 10px 0 0;
+  height: 30px;
+  line-height: 30px;
+  color: #7e7e7e;
+}
+
+.symphony-mode #events-log-sorting .title label {
+  font-weight: bold;
+  min-width: 55px;
+}
+
+.symphony-mode #events-log-sorting .value {
+  width: 75%;
+}
+
+.symphony-mode #events-log-sorting select {
+  height: 32px;
+  border-radius: 0;
+}
+
+.symphony-mode #events-log-panel .header-row {
+  display: none;
+}
+
+.symphony-mode .event-log-record .type-icon,
+.symphony-mode .event-log-record .record-icon {
+  margin-top: 7px;
+}
+
+.symphony-mode #events-log-panel .event-log-record .date {
+  display: none;
+}
+
+.symphony-mode .event-log-record .contact .event-date {
+  display: block;
+}
+
+/*dark mode*/
+.symphony-mode.dark #events-log-panel .records-container{
+  background-color: #5c5c5c;
+  border: 1px solid #4e4e4e;
+}
+
+.symphony-mode.dark #events-log-sorting .title{
+  color: #aaaaaa;
+}
+
+.symphony-mode.dark .event-log-record .note-text, .symphony-mode.dark .event-log-record .note-text-view p{
+  color: #a3a3a3;
+}
+
+.symphony-mode.dark .event-log-record .hoot-call-event{
+  background-image: url("../img/eventsLog/symphony/shouted-dark.png");
+}
+
+.symphony-mode.dark .event-log-record .ringdown-call-event.outbound, .symphony-mode.dark .event-log-record .ringdown-call-event.inbound{
+  background-image: url("../img/eventsLog/symphony/ringdown-inbound-outbound-dark.png");
+}
+
+.symphony-mode.dark .event-log-record .external-call-event.outbound {
+  background-image: url("../img/eventsLog/symphony/phone-outbound-dark.png");
+}
+
+.symphony-mode.dark .event-log-record .external-call-event.inbound {
+    background-image: url("../img/eventsLog/symphony/phone-inbound-dark.png");
+}
+
+.symphony-mode.dark .event-log-record:hover .external-call-event.inbound{
+    background-image: url("../img/eventsLog/phone-inbound-hover.png");
+}
+
+.symphony-mode.dark .event-log-record:hover .external-call-event.outbound{
+    background-image: url("../img/eventsLog/phone-outbound-hover.png");
+}
+
+.symphony-mode.dark .event-log-record:hover .ringdown-call-event.inbound {
+    background-image: url("../img/eventsLog/ringdown-inbound-hover.png");
+}
+
+.symphony-mode.dark .event-log-record:hover .ringdown-call-event.outbound{
+    background-image: url("../img/eventsLog/ringdown-outbound-hover.png");
+}
+
+.symphony-mode.dark .event-log-record:hover .hoot-call-event{
+    background-image: url("../img/eventsLog/shouted-hover.png");
+}
+
+.symphony-mode.dark #events-log-sorting select{
+  background-color: #3c3c3c;
+  border: 1px solid #3b3b3b;
+  color: #747474;
+}
+
+.symphony-mode.dark .event-log-record, .symphony-mode.dark #events-log-sorting{
+  border-bottom: 1px solid #505050;
+}
+
+.symphony-mode.dark .event-log-record .contact .text-ellipsis{
+  color: #ffffff
+}

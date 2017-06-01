@@ -1,0 +1,207 @@
+<html>
+<head>
+  <script src="https://www.symphony.com/resources/api/v1.0/symphony-api.js"></script>
+  <script src="https://code.jquery.com/jquery-2.2.3.min.js"   integrity="sha256-a23g1Nt4dtEYOj7bR+vTu7+T8VP13humZFBJNIYoEJo="   crossorigin="anonymous"></script>
+  <script type="text/javascript">
+
+    var tvbURL = "$TVB_WEB_URL";
+    var isAppOpened;
+    var icon32 = tvbURL + "/img/voicebox_32x32.png";
+    var icon16 = tvbURL + "/img/voicebox_16x16.png";
+    var pushToTalkIcon16 = tvbURL + "/img/push-to-talk.png";
+
+    var appName = "3096440930e447be8ff4aeccbbe8b84c";
+    var appTitle = "Green Key";
+    var appLinkControllerName = appName + ":controller";
+
+    var uiService;
+    var navService;
+    var modulesService;
+    var moduleService;
+    var theme;
+    var userReferenceId;
+    var appService;
+
+    var _buttonHandlers = {
+      callRingdown: function(data) {
+        console.warn("Try to ringdowns someone with id ", data.userId, " and email ", data.email);
+
+        // For demo:
+        if(typeof(fin) !== 'undefined') {
+          // Temporarily disable: fin.desktop.System.launchExternalProcess({path: "C:\\Users\\jheen\\voicebox-webrtc\\makeQuickCall.bat"});
+
+          var apiKey = localStorage.getItem("RINGDOWN_API_KEY");
+          var dataToSend = "{ \"data\" : { \"api_key\" : \"{0}\" }}".replace("{0}",apiKey);
+
+          var settings = {
+            "async": true,
+            "crossDomain": true,
+            "url": "https://ams-kztest-00.tradervoicebox.com:8443/v1/api_auth",
+            "method": "PUT",
+            "headers": {
+              "content-type": "application/json",
+              "cache-control": "no-cache"
+            },
+            "processData": false,
+            "data": dataToSend
+          };
+
+          $.ajax(settings).done(function (response) {
+            console.log(response);
+
+            var authToken = response.auth_token;
+            var dataToSend = "{ \"data\" : { \"api_key\" : \"{0}\" }}".replace("{0}",apiKey);
+
+
+            var settings = {
+              "async": true,
+              "crossDomain": true,
+              "url": "https://ams-kztest-00.tradervoicebox.com:8443/v1/accounts/c4fa38f16369b4d72b8632d6071992bd/devices/f71e3bd1272bc7386d77315792874417/quickcall/+16105055308",
+              "method": "GET",
+              "headers": {
+                "content-type": "application/json",
+                "x-auth-token": authToken,
+                "cache-control": "no-cache"
+              },
+              "processData": false,
+              "data": dataToSend
+            };
+
+            $.ajax(settings).done(function (response) {
+              console.log(response);
+            });
+
+          });
+
+        }
+
+        // we can use postMessage here
+      }
+    };
+
+
+    window.addEventListener("message", function listener(event) {
+      if (event.data.command !== "fire")
+        return;
+
+      var payload = event.data.payload;
+      if (payload.method === 'trigger') {
+        var source = payload.args[1].split(':');
+        var app = source[0];
+
+        if (app !== appName)
+          return;
+
+        source = source[1];
+        var scope = payload.args[0];
+        var userId = payload.args[2]['user']['id'];
+        var userEmail = payload.args[2]['user']['username'];
+
+        if(_buttonHandlers[source])
+          _buttonHandlers[source].call(null, {
+          userId: userId,
+          email: userEmail
+        });
+      }
+    });
+
+    var processHelloAnswer = function(helloAnswer) {
+      theme = helloAnswer.theme;
+      localStorage.setItem('symphony:changeUiTheme', theme.name);
+    };
+
+    var registerServices = function() {
+      appService = SYMPHONY.services.register(appLinkControllerName);
+    };
+
+    var registerApp = function() {
+      return SYMPHONY.application.register(appName,
+          ["ui", "modules", "applications-nav"],
+          [appLinkControllerName]).then(function(data) {
+        userReferenceId = data.userReferenceId;
+      });
+
+    };
+
+    var subscribeToServices = function() {
+      uiService = SYMPHONY.services.subscribe("ui");
+      navService = SYMPHONY.services.subscribe("applications-nav");
+      modulesService = SYMPHONY.services.subscribe("modules");
+
+      uiService.listen('themeChange', function(name, size){
+        theme.name = name;
+        theme.size = size;
+
+        localStorage.setItem('symphony:changeUiTheme', name);
+      });
+    };
+
+    var activateMyServices = function() {
+      appService.implement({
+        select: function(id) {
+          if (!moduleService) {
+            modulesService.show(
+                    appName,
+                    {title: appTitle, icon: icon16},
+                    appLinkControllerName,
+                    tvbURL);
+          } else {
+            moduleService.invoke('update', ticker);
+          }
+        },
+        trigger: function(type, id, data, arg) {
+          console.warn('TRIGGERED');
+          console.warn(type);
+          console.warn(id);
+          console.warn(data);
+          console.warn(arg);
+          console.warn(userReferenceId);
+        },
+        /**
+         * This method found in S&P app and it seems not executed at all.
+         * Should it work? How to make module's iframe not being closed
+         * and recreated each time user switches to another app and back?
+         * @param serviceName
+         * @returns {*}
+           */
+        connect : function(serviceName)
+        {
+          console.warn("CONNECT: ", serviceName);
+          return SYMPHONY.remote.subscribe(serviceName)
+                  .then(function(service)
+                  {
+                    moduleService = service;
+                    moduleService.listen('disconnected', function() {
+                      moduleService = undefined;
+                    });
+                  })
+        }
+      });
+
+      navService.add(
+          appName, {title: appTitle, icon: icon16}, appLinkControllerName);
+    };
+
+    var registerExtensions = function() {
+      uiService.registerExtension('single-user-im', 'callRingdown', appLinkControllerName,
+          {label: 'Call via Ringdown', icon: pushToTalkIcon16, data: {test: '567'}});
+      uiService.registerExtension('profile', 'callRingdown', appLinkControllerName,
+          {label: 'Call via Ringdown', icon: pushToTalkIcon16, data: {test: '123'}});
+    };
+
+    SYMPHONY.remote.hello()
+        .then(processHelloAnswer)
+        .then(registerServices)
+        .then(registerApp) //should be called after registerServices or an error appears
+        .then(subscribeToServices)
+        .then(activateMyServices)
+        .then(registerExtensions)
+        .catch(function(error) {
+          console.error(error);
+        });
+
+
+  </script>
+</head>
+
+</html>

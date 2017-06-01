@@ -1,0 +1,53 @@
+Files mus follow a special name convention so gulp can detect them:
+- module definition file: NAME.module.js
+- directive file NAME.directive.js
+- factory, provider, service file: NAME.service.js
+Dependencies injection array do not need to be added but a comment "/*@ngInject*/"
+need to be added then gul can add this automatically (see https://github.com/olov/ng-annotate
+for details)
+
+Test files should be named as the tested file + .spec.js and it will be taken automatically
+by gulp. Example: mydirective.directive.spec.js
+
+Gulp tasks:
+- gulp test: runt tests and coverage and generate report inside build folder
+- gulp jshint: generate linter report and save it on build folder
+- gulp: create bundle start nodejs server
+- gulp folder contains a config.js, there you can find configuration values for gulp tasks
+
+Templates:
+-We are using TemplateCache service. this means that all the html templates are concatenated
+and minified by gulp and bundled to a templatecache.module file. This file is available to
+application and Allows to the application access to html files without the need of making
+an HTTP request.
+- Templates must be under public/partials folder and also must follow the convention:
+NAME.html to be taken by gulp.
+
+Folder structure:
+ complete app is inside app folder. Inside tmodules you have different modules.
+ If you add a new module you need to add it to config.js (in gulp folder) and gulp with
+ add it to the bundle.
+ HTML files are un partials folder /public/partials
+
+SDK
+- SDK repository has been added as submodule in voicebox-javascript-sdk folder
+- Without sdk folder gulp tasks are going to fail cause gulp takes sdk files into the bundle.
+- After you clone the main app you need to get the submodule code executin the next comands:
+    - cd voicebox-javascript-sdk
+    - git submodule init
+    -git submodule update
+- You need to take into account that both repositories have different workspaces,
+ this means that to commit something into SDK repo you need to be inside voicebox-javascript-sdk
+ folder.
+
+Last comment: please take into account that this documentation will be moved to Confluence
+
+
+
+
+
+
+- Best practices:
+Create just one control for file.
+Use inmediate functions to avoid variables colision.
+Name branches : feature/JIRA-ID-TaskDescription

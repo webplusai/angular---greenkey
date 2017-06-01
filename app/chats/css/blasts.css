@@ -1,0 +1,190 @@
+.blast-button {
+  cursor: pointer;
+}
+
+.blast-dialog .dialog-header .blast-save-as-group-button {
+  cursor: pointer;
+  float: right;
+  height: 50px;
+  padding: 16px 20px 0 0;
+  color: #fff;
+  font-size: 1.15em;
+}
+
+.blast-contact {
+  padding: 7px 10px;
+  height: 56px;
+  overflow: hidden;
+  cursor: pointer;
+  border-bottom: 1px solid #fff;
+}
+
+.blast-contact:hover {
+  background: #F8F6FF;
+}
+
+.active.blast-contact {
+  background: #F7F5FE;
+}
+
+.blast-contact * {
+  cursor: pointer;
+}
+
+/* Hidden checkboxes */
+.blast-contact input {
+  display: none;
+}
+
+.blast-circle-icon {
+  width: 41px;
+  height: 41px;
+  border-radius: 41px;
+  text-align: center;
+}
+
+.blast-contact .blast-contact-pseudo-avatar {
+  float: left;
+  background: #fff;
+  color: #fff;
+  text-align: center;
+  font-size: 1.3em;
+  padding-top: 11px;
+}
+
+.blast-dialog-contacts .blast-contact:nth-child(2n+1) .blast-contact-pseudo-avatar {
+  background: #f19b2c;
+}
+
+.blast-dialog-contacts .blast-contact:nth-child(3n+0) .blast-contact-pseudo-avatar {
+  background: #673fb4;
+}
+
+.blast-dialog-contacts .blast-contact:nth-child(2n+0) .blast-contact-pseudo-avatar {
+  background: #2b98f0;
+}
+
+.blast-dialog-contacts .blast-contact:nth-child(4n+0) .blast-contact-pseudo-avatar {
+  background: #e16463;
+}
+
+.blast-dialog-contacts .blast-contact:nth-child(5n+0) .blast-contact-pseudo-avatar {
+  background: #30ad63;
+}
+
+.blast-contact .blast-contact-name {
+  font-size: 1.15em;
+  color: #767676;
+  display: block;
+  float: left;
+  margin-left: 15px;
+  padding-top: 10px;
+}
+
+.blast-contact .blast-contact-pseudo-checkbox {
+  float: right;
+  border: 1px solid #afadad;
+  text-align: center;
+  padding-top: 10px;
+}
+
+.blast-contact .blast-contact-pseudo-checkbox .checkmark {
+  display: none;
+}
+
+.active.blast-contact .blast-contact-pseudo-checkbox {
+  border-color: #409fc1;
+}
+
+.active.blast-contact .blast-contact-pseudo-checkbox .checkmark {
+  display: inline-block;
+}
+.active.blast-contact .blast-contact-pseudo-checkbox .checkmark:after {
+  border-color: #409fc1;
+}
+
+.blast-dialog .blast-dialog-group {
+  cursor: pointer;
+}
+
+.blast-dialog .active.blast-dialog-group {
+  font-weight: bold;
+  background-color: #fcfcfc;
+}
+
+.blast-dialog .blast-dialog-group:hover {
+  background-color: #fafafa;
+}
+
+.blast-dialog-group .blast-contact-pseudo-avatar {
+  background: -webkit-linear-gradient(left, #3fa6c0 0%,#5c34de 100%);
+  background: linear-gradient(to right, #3fa6c0 0%,#5c34de 100%);
+}
+
+.blast-dialog .blast-form-error {
+  border: 1px solid red !important;
+}
+
+.blast-dialog .blast-save-group-button,
+.blast-dialog #blast-new-group-submit {
+  margin-right: 10px;
+}
+
+.blast-dialog .blast-new-group-wrapper {
+  overflow: hidden;
+  display: none;
+}
+
+.show-save-as.blast-dialog .blast-new-group-wrapper {
+  display: block;
+}
+
+.blast-dialog #blast-new-group-name {
+  float: left;
+  width: calc(100% - 150px);
+  padding: 7px 5px;
+  border: 0;
+  height: 40px;
+}
+
+.blast-dialog .blast-new-group-wrapper .blast-save-control-button {
+  float: right;
+  height: 40px;
+  padding: 10px;
+}
+
+.blast-dialog .blast-dialog-delete-group,
+.blast-dialog .blast-dialog-save-group {
+  float: right;
+  cursor: pointer;
+}
+
+.blast-dialog .blast-dialog-save-group {
+  border: 1px solid #afadad;
+  padding-top: 11px;
+  margin-right: 10px;
+  display: none;
+  cursor: default;
+}
+
+.blast-dialog .blast-dialog-save-group .checkmark:after {
+  border-color: #afadad;
+}
+
+.blast-dialog .dirty.blast-dialog-group .blast-dialog-save-group,
+.blast-dialog .dirty.blast-dialog-group .blast-dialog-save-group .checkmark:after {
+  border-color: green;
+  cursor: pointer;
+}
+
+.blast-dialog .active.blast-dialog-group .blast-dialog-save-group {
+  display: block;
+}
+
+.blast-dialog .blast-dialog-delete-group {
+  border: 1px solid red;
+  color: red;
+  padding-top: 5px;
+  font-size: 2em;
+  font-weight: normal !important;
+}

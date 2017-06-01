@@ -1,0 +1,26 @@
+<div class="adaptive modal-window" id="hotkey-select-panel">
+  <div class="modal-window-header">
+    <h1 class="modal-window-title">Hotkey Configuration</h1>
+        <span class="modal-window-close-button"
+              uib-tooltip="Close window"
+              tooltip-placement="left"
+              ng-click="closeThisDialog()"></span>
+  </div>
+
+  <div class="modal-window-content body">
+    <div class="hotkeys-buttons-wraper">
+      <button type="button"
+              class="btn btn-lg"
+              ng-click="goToMidiConfig()">
+        Midi Pad Config
+      </button>
+
+      <button type="button"
+              class="btn btn-lg"
+              ng-click="goToKeyboardConfig()">
+        Keyboard Config
+      </button>
+    </div>
+
+  </div>
+</div>

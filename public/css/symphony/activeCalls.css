@@ -1,0 +1,78 @@
+/* Active calls panel */
+.symphony-mode .bottom-panel {
+    background-color: #e3e3e3;
+}
+
+.symphony-mode .active-calls-panel .calls-wrapper .no-calls {
+    color: #777;
+}
+
+/* Release buttons */
+.symphony-mode .release-calls-wrapper {
+    box-shadow: none;
+}
+
+.symphony-mode .release-calls-btn {
+    height: 100%;
+    background: #44b3dd none;
+}
+.symphony-mode .release-calls-btn .release-calls-btn-txt {
+    color: #fff;
+    text-shadow: none;
+}
+
+.symphony-mode .release-calls-btn.active {
+    background: -webkit-linear-gradient(#ef1b1b 0%, #e12929 49%, #fb2d2d 50%, #f64d4d 100%);
+}
+
+/* Active call box */
+.symphony-mode .active-call-box,
+.symphony-mode .active-call-box .box-header {
+    background: #fff;
+}
+
+.symphony-mode .active-call-box .box-header {
+    color: #7e7e7e;
+    border-bottom: 1px solid #d8d8d8;
+}
+
+.symphony-mode .active-call-box .controls .button {
+    background: #555 none;
+    border: none;
+}
+
+.symphony-mode .active-call-box .controls .reject.button,
+.symphony-mode .active-call-box .controls .selected.button {
+    background: -webkit-linear-gradient(top, #ec3300 0%, #860000 100%);
+}
+
+.symphony-mode .active-call-box .controls .accept.button {
+    background: -webkit-linear-gradient(top, #00b917 0%, #00720e 100%);
+}
+
+/*dark mode*/
+.symphony-mode.dark .bottom-panel{
+    background-color: #424141;
+    border: 1px solid #5c5c5c;
+}
+
+.symphony-mode.dark .active-call-box, .symphony-mode.dark .active-call-box .box-header{
+    background-color: #313131;
+}
+
+.symphony-mode.dark .active-call-box .box-header{
+    border-bottom: 1px solid #383838;
+    color: #dddddd;
+}
+
+.symphony-mode.dark .active-call-box .box-body .micro-progress .micro-phone{
+    color: #6a6a6a;
+}
+
+.symphony-mode.dark .active-call-box .controls .button{
+    background-color: #767676;
+}
+
+.symphony-mode.dark .active-call-box .volume-meter .inactive-part-overlay{
+    background-image: url('/img/volumeMeter/symphony/callFilledBarDark.gif');
+}

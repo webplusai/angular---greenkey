@@ -1,0 +1,376 @@
+<header id="header" class="app-header" role="menu">
+
+  <div class="compact-navbar-header compact-only">
+    <a id="compact-navbar-header-menu"
+        data-toggle="dropdown"
+        class="dropdown-toggle compact-navbar-header-menu"
+        aria-expanded="false"
+        ng-click="onMenuClick($event)" >
+      <i class="ic-menu-icon"></i>
+    </a>
+    <ul class="dropdown-menu main-menu" role="menu">
+      <!-- Setup -->
+      <li class="item-heading">Setup</li>
+      <li class="subitem">
+        <a href ng-click="openMyInfoModal()">{{'FILE.MYINFO' | translate }}</a>
+      </li>
+      <li class="subitem">
+        <a href ng-click="openExternalContactsList()">{{'FILE.EXTERNAL_CONTACTS' | translate}}</a>
+      </li>
+      <li class="subitem">
+        <a href ng-click="openCompanyDirectoryList()">{{'FILE.COMPANY_DIRECTORY' | translate }}</a>
+      </li>
+      <li class="subitem" ng-if="isVideoConferenceEnabled()">
+        <a href ng-click="selectParticipantsAndStartVideoConference()">{{'FILE.VIDEO_CONFERENCE' | translate}}</a>
+      </li>
+
+      <!-- Configs -->
+      <li class="item-heading">Configs</li>
+      <li class="subitem">
+        <a href ng-click="openBlastConfigDialog()">{{'FILE.BLAST_CONFIG' | translate}}</a>
+      </li>
+      <li class="subitem">
+        <a href ng-click="openMidiConfigDialog()">{{'FILE.HOTKEY_CONFIG' | translate}}</a>
+      </li>
+      <li class="subitem">
+        <a href ng-click="onSetRingdownOutputDevice()" ng-show="displayAudioConfig">{{'FILE.AUDIO_CONFIG' | translate}}</a>
+      </li>
+      <li  class="subitem" ng-show="isOpenFin && proxyConfigEnabledInOpenFin">
+        <a href ng-click="openProxyConfigDialog()">{{'FILE.PROXY_CONFIG' | translate}}</a>
+      </li>
+
+      <!-- chats -->
+      <li class="item-heading" ng-show="isOpenFin">Chats</li>
+      <li class="subitem" ng-show="isOpenFin">
+        <a href ng-click="openWhatsAppWindow()">{{'FILE.WHATSAPP' | translate}}</a>
+      </li>
+      <li class="subitem" ng-show="isOpenFin">
+        <a href ng-click="openWeChatAppWindow()">{{'FILE.WECHAT' | translate}}</a>
+      </li>
+      <li class="subitem" ng-show="isOpenFin">
+        <a href ng-click="openAimChatAppWindow()">Aim Chat</a>
+      </li>
+      <li class="subitem" ng-show="isOpenFin">
+        <a href ng-click="openYahooChatWindow()">Yahoo Chat</a>
+      </li>
+
+      <!-- Transcription -->
+      <li class="item-heading" ng-show="showTranscriptionsLink && isTestEnv">Transcription</li>
+      <li class="subitem">
+        <a href ng-click="openTranscriptionTrainingPanel()">Training</a>
+      </li>
+      <li class="subitem">
+        <a href ng-click="openErrorCorrectionPanel()">Error Correction</a>
+      </li>
+
+      <li ng-show="isOpenFin && isTradeCaptureMenuEnabled">
+        <a href ng-click="openTradeCapture()">Trade Capture</a>
+      </li>
+      <li ng-show="isOpenFin && isTestEnv">
+        <a href ng-click="openGKTWhiteboard()">GKT Whiteboard</a>
+      </li>
+
+      <li ng-show="isOpenFin">
+        <a href ng-click="goToFullscreenMode()">Fullscreen mode</a>
+      </li>
+      <li ng-show="isOpenFin">
+        <a href ng-click="reloadPage()">{{'FILE.REFRESH' | translate}}</a>
+      </li>
+      <li ng-show="isChatLogEnabled && isOpenFin">
+        <a href ng-click="showChatLog()">Show Chat Log</a>
+      </li>
+
+      <hr />
+
+      <li>
+        <a href ng-click="onMissedEventsClick($event)">
+          Missed Events
+          <span class="arrow-right pull-right"></span>
+          <span class="badge pull-right">{{ missedCons }}</span>
+        </a>
+      </li>
+
+      <li>
+        <a href ng-click="onPendingConnectionsClick($event)">
+          Pending Connections
+          <span class="arrow-right pull-right"></span>
+          <span class="badge pull-right">{{ pendingCons }}</span>
+        </a>
+      </li>
+
+      <hr />
+
+      <!-- Help -->
+      <li class="item-heading">{{'FILE.HELP' | translate}}</li>
+      <!-- <li class="divide subitem">
+        <div>{{'FILE.HELP' | translate}}</div>
+      </li> -->
+      <li class="subitem" ng-show="supportURL">
+        <a href ng-click="openSupportURL()">{{'FILE.SUPPORT' | translate}} </a>
+      </li>
+
+      <li>
+        <a class="compat-logout-btn" ng-click="doLogoutWithConfirmation()">
+          {{'FILE.LOGOUT' | translate }}
+        </a>
+      </li>
+    </ul>
+
+    <h4 class="compact-navbar-header-title">Green Key</h4>
+
+    <status-switcher></status-switcher>
+
+    <div class="dropdown">
+      <a data-toggle="dropdown" class="dropdown-toggle pull-right toggle-search-menu-btn" aria-expanded="false">
+        <i class="fa fa-search"></i>
+      </a>
+      <ul class="dropdown-menu search-menu pull-right" role="menu">
+        <li>
+           <search-connection></search-connection>
+           <invite></invite>
+        </li>
+      </ul>
+    </div>
+  </div>
+
+
+
+  <nav class="navbar navbar-default navbar-static-top navbar-height">
+    <div class="navbar-header">
+      <!-- left top menu -->
+      <div class="top-left-menu-wrapper">
+        <ul class="nav navbar-nav navbar-left top-left-menu">
+          <!-- file -->
+          <li class="dropdown menu-item" title="Open menu" ng-click="onMenuClick($event)">
+            <a data-toggle="dropdown" class="dropdown-toggle menu-item-icon">
+              <i class="tvb-icon tvb-menu-icon bg-size-contain"></i>
+            </a>
+            <ul class="dropdown-menu main-menu" role="menu">
+            <!-- Setup -->
+              <li class="item-heading">Setup</li>
+              <li class="subitem">
+                <a href ng-click="openMyInfoModal()">{{'FILE.MYINFO' | translate }}</a>
+              </li>
+              <li class="subitem">
+                <a href ng-click="openExternalContactsList()">{{'FILE.EXTERNAL_CONTACTS' | translate}}</a>
+              </li>
+              <li class="subitem">
+                <a href ng-click="openCompanyDirectoryList()">{{'FILE.COMPANY_DIRECTORY' | translate }}</a>
+              </li>
+              <li class="subitem" ng-if="isVideoConferenceEnabled()">
+                <a href ng-click="selectParticipantsAndStartVideoConference()">{{'FILE.VIDEO_CONFERENCE' | translate}}</a>
+              </li>
+
+              <!-- Configs -->
+              <li class="item-heading">Configs</li>
+              <li class="subitem">
+                <a href ng-click="openBlastConfigDialog()">{{'FILE.BLAST_CONFIG' | translate}}</a>
+              </li>
+              <li class="subitem">
+                <a href ng-click="openMidiConfigDialog()">{{'FILE.HOTKEY_CONFIG' | translate}}</a>
+              </li>
+              <li class="subitem">
+                <a href ng-click="onSetRingdownOutputDevice()" ng-show="displayAudioConfig">{{'FILE.AUDIO_CONFIG' | translate}}</a>
+              </li>
+              <li  class="subitem" ng-show="isOpenFin && proxyConfigEnabledInOpenFin">
+                <a href ng-click="openProxyConfigDialog()">{{'FILE.PROXY_CONFIG' | translate}}</a>
+              </li>
+
+              <!-- Chats -->
+              <li class="item-heading" ng-show="isOpenFin">Chats</li>
+              <li class="subitem" ng-show="isOpenFin">
+                <a href ng-click="openWhatsAppWindow()">{{'FILE.WHATSAPP' | translate}}</a>
+              </li>
+              <li class="subitem" ng-show="isOpenFin">
+                <a href ng-click="openWeChatAppWindow()">{{'FILE.WECHAT' | translate}}</a>
+              </li>
+              <li class="subitem" ng-show="isOpenFin">
+                <a href ng-click="openAimChatAppWindow()">Aim Chat</a>
+              </li>
+              <li class="subitem" ng-show="isOpenFin">
+                <a href ng-click="openYahooChatWindow()">Yahoo Chat</a>
+              </li>
+
+              <!-- Transcription -->
+              <li class="item-heading" ng-show="showTranscriptionsLink && isTestEnv">Transcription</li>
+              <li class="subitem">
+                <a href ng-click="openTranscriptionTrainingPanel()">Training</a>
+              </li>
+              <li class="subitem">
+                <a href ng-click="openErrorCorrectionPanel()">Error Correction</a>
+              </li>
+
+              <li ng-show="isOpenFin && isTradeCaptureMenuEnabled">
+                <a href ng-click="openTradeCapture()">Trade Capture</a>
+              </li>
+              <li ng-show="isOpenFin && isTestEnv">
+                <a href ng-click="openGKTWhiteboard()">GKT Whiteboard</a>
+              </li>
+
+              <li ng-show="isOpenFin">
+                <a href ng-click="goToCompactMode()">Compact mode</a>
+              </li>
+              <li ng-show="isOpenFin">
+                <a href ng-click="reloadPage()">{{'FILE.REFRESH' | translate}}</a>
+              </li>
+              <li ng-show="isChatLogEnabled && isOpenFin">
+                <a href ng-click="showChatLog()">Show Chat Log</a>
+              </li>
+
+              <!-- Help -->
+              <li class="item-heading">Help</li>
+              <li class="subitem">
+                <support-chat-button></support-chat-button>
+              </li>
+
+              <li>
+                <a class="logout" ng-click="doLogoutWithConfirmation()">
+                  <img src="./img/ic-logout.png" alt="logout" />
+                  {{'FILE.LOGOUT' | translate}}
+                </a>
+              </li>
+            </ul>
+          </li>
+          <!-- notifications -->
+          <li class="dropdown menu-item missed-calls-item" title="{{'MISSED_HEADER_LABEL' | translate}}">
+            <a data-toggle="dropdown" href="" class="dropdown-toggle menu-item-icon">
+              <i class="tvb-icon tvb-notifications-icon bg-size-contain"></i>
+              <span class="helper-text">{{'MISSED_HEADER_LABEL' | translate}}</span>
+              <span ng-show="missedCons" class="badge badge-sm bg-danger">{{ missedCons }}</span>
+            </a>
+            <missed-events></missed-events>
+          </li>
+          <!-- pending Connections -->
+          <li class="dropdown menu-item" title="{{'CONNECTIONS_HEADER_LABEL' | translate}}">
+            <a data-toggle="dropdown" href="" class="dropdown-toggle menu-item-icon">
+              <i class="tvb-icon tvb-user-icon bg-size-contain"></i>
+              <span class="helper-text">{{'CONNECTIONS_HEADER_LABEL' | translate}}</span>
+              <span ng-show="pendingCons" class="badge badge-sm bg-danger">{{ pendingCons }}</span>
+            </a>
+            <pending-connections on-change-event="onPendingConnectionsChange"></pending-connections>
+          </li>
+          <!-- online/offline switcher -->
+          <li class="dropdown menu-item menu-item-switcher"
+              title="Switch online/offline">
+            <status-switcher></status-switcher>
+          </li>
+
+          <!-- search -->
+          <li class="menu-item menu-item-search">
+            <search-connection></search-connection>
+            <invite></invite>
+          </li>
+        </ul>
+      </div><!-- / end left top menu -->
+      <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
+        <i class="fa fa-navicon"></i>
+      </button>
+    </div><!-- / .navbar-header -->
+
+    <!-- compact-navbar --->
+    <div class="compact-navbar compact-only">
+        <div class="menu-item-wrapper"
+             ng-click="toggleCompactShoutPanel()"
+             ng-class="{'active': uiState.hootsPanelVisible}">
+            <i class="tvb-icon tvb-shout-icon"></i>
+            <span class="menu-item-text">shout</span>
+        </div>
+        <div class="menu-item-wrapper"
+             ng-click="toggleCompactRingdownPanel()"
+             ng-class="{'active': uiState.ringdownsPanelVisible}">
+            <i class="tvb-icon tvb-ringdowns-icon"></i>
+            <span class="menu-item-text">ringdowns</span>
+        </div>
+        <div class="menu-item-wrapper"
+             ng-click="toggleCompactEventPanel()"
+             ng-class="{'active': uiState.leftPanelVisible}">
+            <i class="tvb-icon tvb-event-log-icon"></i>
+            <span class="menu-item-text">event log</span>
+        </div>
+    </div>
+    <!-- / .compact-navbar --->
+
+    <!-- navbar collapse -->
+    <div class="navbar-collapse collapse" id="navbar">
+      <!-- right top menu -->
+      <ul class="nav navbar-nav navbar-right top-right-menu">
+
+        <!-- events -->
+        <li class="menu-item"
+            ng-click="toggleLeftPanel()"
+            ng-class="{'active': uiState.leftPanelVisible}"
+            title="Show/hide event log">
+          <a class="menu-item-icon">
+            <i class="tvb-icon tvb-event-log-icon"></i>
+            <span class="helper-text">Event Log</span>
+          </a>
+        </li>
+
+        <li class="menu-item"
+            ng-click="toggleRightPanel()"
+            ng-class="{'active': uiState.rightPanelVisible}"
+            title="Show/hide ringdowns and phone">
+          <a class="menu-item-icon">
+            <i class="tvb-icon tvb-ringdowns-icon"></i>
+            <span class="helper-text">Ringdowns</span>
+          </a>
+        </li>
+
+        <!-- settings -->
+        <li class="menu-item menu-item-settings"
+            ng-click="toggleSettings();"
+            ng-class="{'active': uiState.settingsVisible, 'ng-hide' : uiState.symphonyMode && uiState.compactMode}"
+            title="Enable/disable settings mode for hoots and ringdowns">
+          <a class="menu-item-icon">
+            <i class="tvb-icon tvb-settings-icon"></i>
+            <span class="helper-text">{{'SETTINGS_LABEL' | translate}}</span>
+          </a>
+        </li>
+
+        <!-- help -->
+        <li class="dropdown menu-item" title="Help">
+            <a data-toggle="dropdown" class="help-menu-item dropdown-toggle menu-item-icon">
+              <i class="tvb-icon tvb-help-icon bg-size-contain"></i>
+              <span class="helper-text">{{'HELP_LABEL' | translate}}</span>
+            </a>
+            <ul class="dropdown-menu main-menu" role="menu">
+              <li>
+                <a href ng-click="onHelpClicked()">{{'FILE.CALL_SUPPORT' | translate}}</a>
+              </li>
+              <li ng-show="supportURL">
+                <a href ng-click="openSupportURL()">{{'FILE.SUBMIT_TICKET' | translate}}</a>
+              </li>
+              <li ng-show="buildVersion" class="item-non-clickeable" >
+                <div href>Version {{buildVersion}}</div>
+              </li>
+            </ul>
+          </li>
+      </ul><!-- / end right top menu -->
+    </div><!-- / end navbar collapse -->
+  </nav>
+
+  <div class="ngdialog-overlay"
+    ng-click="onBackClick($event)"
+    ng-show="showMissedEvents || showPendingConnections" >
+  </div>
+
+  <div class="sub-menu-panel" ng-show="showMissedEvents">
+    <button ng-click="onBackClick($event)" class="btn btn-dark">
+      <span class="arrow-left"></span>
+      Back
+    </button>
+    <span class="sub-menu-title">Missed Events</span>
+    <missed-events compact-mode="true"></missed-events>
+  </div>
+
+  <div class="sub-menu-panel" ng-show="showPendingConnections">
+    <button ng-click="onBackClick($event)" class="btn btn-dark">
+      <span class="arrow-left"></span>
+      Back
+    </button>
+    <span class="sub-menu-title">Pending Connections</span>
+    <pending-connections on-change-event="onPendingConnectionsChange"
+                         compact-mode="true"></pending-connections>
+  </div>
+
+</header>

@@ -1,0 +1,18 @@
+<div class="contact-item row" ng-click="selectItem(item.id)"
+     ng-class="{
+            'blast': isBlast,
+		 				'online': online,
+						'offline': !online
+          	}">
+  <!-- selectItem() is from parent scope -->
+
+  <div class="contact-name col-xs-6 column">
+    {{ item.name }}
+  </div>
+  <div class="col-xs-6 column">
+    <span ng-hide="isSelected()">{{ item.key ? item.key : 'Not set' }}</span>
+    <span ng-show="isSelected()">Press MIDI key</span>
+    <i ng-show="item.key && !isSelected()" class="fa fa-remove remove-icon"
+       ng-click="unset(item.id); $event.stopPropagation();"></i>
+  </div>
+</div>

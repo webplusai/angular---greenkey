@@ -1,0 +1,28 @@
+.symphony-mode .error-page .warning-widget.unsupported-browser-warning {
+    background: #eaeaea url(/img/svg/symphony/ic-logo.svg) 50% 20px no-repeat;
+    box-shadow: none;
+    color: #868686;
+}
+
+.symphony-mode .unsupported-browser-warning .desktop-app-link {
+    color: #868686;
+}
+.symphony-mode .unsupported-browser-warning .desktop-app-link:hover,
+.symphony-mode .unsupported-browser-page .gkt-links-wrapper a:hover {
+    color: #007bb5;
+}
+
+
+.symphony-mode.dark .error-page .warning-widget.unsupported-browser-warning {
+    background: #5c5c5c url(/img/GKT_Logo_White.png) 50% 20px no-repeat;
+    color: #a5a5a5;
+}
+
+.symphony-mode.dark .unsupported-browser-warning .desktop-app-link,
+.symphony-mode .unsupported-browser-page .gkt-links-wrapper a {
+    color: #a5a5a5;
+}
+.symphony-mode.dark .unsupported-browser-warning .desktop-app-link:hover,
+.symphony-mode.dark .unsupported-browser-page .gkt-links-wrapper a:hover {
+    color: #44b3dd;
+}

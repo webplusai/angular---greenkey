@@ -1,0 +1,30 @@
+.compact .ringdowns-wrapper {
+  height: auto;
+  overflow: visible;
+}
+
+.compact #ringdowns-main-container .window-content {
+  overflow-y: auto;
+  padding-right: 5px;
+  /* to prevent truncated shadows  */
+  padding-left: 2px;
+}
+
+/* stylized scrollbar */
+.compact #ringdowns-main-container .window-content::-webkit-scrollbar {
+  /* width is for vertical scrollbar and height affect horizontal scrollbar. */
+  /* It's not available to define height of vertical scrollbar. That depends on content size only. */
+  width: 5px;
+  background: #232323;
+}
+.compact #ringdowns-main-container .window-content::-webkit-scrollbar-thumb {
+  border-radius: 3px;
+  background-color: #000000;
+}
+.compact #ringdowns-main-container .window-content::-webkit-scrollbar-corner {
+  background: #0e100c;
+}
+
+.compact .ringdown-box-wrapper {
+  box-shadow: 0px 1px 5px 1px rgba(0, 0, 0, 0.58);
+}

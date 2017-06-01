@@ -1,0 +1,69 @@
+<div class="modal-window chatlog-modal-window">
+
+  <div class="modal-window-header">
+    <h1 class="modal-window-title">Chat Log History</h1>
+      <span class="modal-window-close-button"
+        uib-tooltip="Close window"
+        tooltip-placement="left"
+        ng-click="closeThisDialog()">
+      </span>
+  </div>
+
+    <div class="external-contacts-list-wrapper">
+      <div class="external-contacts-list-header">
+        <div class="row">
+          <div class="col-xs-2 external-contact-company">From</div>
+          <div class="col-xs-2 external-contact-name">To</div>
+          <div class="col-xs-2 external-contact-name">Chat Network</div>
+          <div class="col-xs-2 external-contact-name">Time</div>
+          <div class="col-xs-4 external-contact-name">Message</div>
+        </div>
+      </div>
+
+      <div class="external-contacts-list scrollable">
+        <div ng-repeat="chat in chats" class="external-contact-wrapper" >
+          <div class="col-xs-2 text-ellipsis"
+              uib-tooltip="{{chat.from.userName}}"
+              tooltip-placement="bottom" >
+            {{chat.from.userName}}
+          </div>
+          <div class="col-xs-3 text-ellipsis"
+              uib-tooltip="{{chat.participants}}"
+              tooltip-placement="bottom" >
+            {{chat.participants}}
+          </div>
+          <div class="col-xs-2">
+            {{chat.network}}
+            <div class="gkt-id text-ellipsis"
+                title="{{chat.userInfo.chatAccount ? '(' + chat.userInfo.chatAccount + ')' : ''}}">
+              {{chat.userInfo.chatAccount ? '(' + chat.userInfo.chatAccount + ')' : ''}}
+            </div>
+          </div>
+          <div class="col-xs-2">
+            {{chat.timeStampISO | date:'medium'}}
+          </div>
+          <div class="col-xs-4 chat-message"
+              uib-tooltip="{{chat.content}}"
+              tooltip-placement="bottom" >
+            {{chat.content}}
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="modal-window-footer" >
+      <button ng-disabled="isLoading"
+          class="control-button btn-success" ng-click="refresh()">
+        Refresh
+      </button>
+    </div>
+
+    <div class="overlay" ng-show="isLoading">
+      <span us-spinner="{radius: 30, width: 8, length: 16, color: '#fff'}"
+        spinner-start-active="true"
+        spinner-key="user-profile-preloader-spinner">
+      </span>
+    </div>
+
+  </div>
+</div>

@@ -1,0 +1,42 @@
+<div id="connecting-overlay" ng-show="preloading || !connected">
+
+  <div class="preloading-spinner" ng-show="preloading">
+      <span us-spinner="{radius:30, width:8, length: 16, color: '#fff'}"
+            spinner-start-active="true"></span>
+  </div>
+
+  <div class="connecting-message-panel"  ng-hide="preloading">
+
+    <div class="message-block">
+
+      <div class="message-block-content">
+        <div ng-show="connecting">
+          Green Key application is unable to connect to the server.<br/>
+          Please make sure your Internet connection is available.<br/>
+          Green Key will attempt to reconnect to the server now.<br/>
+        </div>
+
+        <div ng-hide="connecting">
+          Sorry, Green Key was not able to automatically reconnect to the server. <br/>
+          Please press "Reconnect" button below to attempt to manually reconnect to the server.<br/>
+
+          <br/>
+          <button class="btn btn-success" type="button" ng-click="reconnect()">Reconnect</button>
+        </div>
+
+        <br/>
+        Please contact Green Key support desk if you require assistance:<br/>
+        North America Support: +1 (646) 883 8830<br/>
+        EMEA Support: +44 (0) 203 026 3150<br/>
+        APAC Support: +65 9005 8530<br/>
+      </div>
+
+    </div>
+
+    <div class="spinner-block" ng-show="connecting">
+      <span us-spinner="{radius:30, width:8, length: 16, color: '#fff'}"
+            spinner-start-active="true"></span>
+    </div>
+
+  </div>
+</div>

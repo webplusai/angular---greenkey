@@ -1,0 +1,339 @@
+.modal-window.external-contacts-panel {
+    height: 750px;
+}
+
+.external-contact-edit-form .external-contacts-edit-cancel {
+    display: none;
+}
+
+.external-contacts-filter {
+    width: 100%;
+    padding: 16px 45px 18px 19px;
+    border: none;
+    font-size: 14px;
+    font-weight: bold;
+    color: #747474;
+    background: #262626 url(/img/svg/new/ic-search.svg) no-repeat 98% center;
+    background-size: 21px;
+    border-radius: 100px;
+    box-shadow: inset 0 1px 3px 0 rgba(0, 0, 0, 0.2);
+}
+.external-contacts-filter::-webkit-input-placeholder {
+    color: #747474;
+}
+
+.external-contacts-panel-body .external-contacts-panel-close-button {
+    display: none;
+}
+
+.external-contacts-list-header {
+    padding: 0 6px 0 11px;
+    font: bold 15px Arial;
+    border-bottom: solid 1px rgba(24, 24, 24, 0.6);
+    margin: 5px 0 10px;
+}
+
+.external-contacts-list-header .external-contact-name,
+.external-contacts-list-header .external-contact-company {
+    line-height: 40px;
+    height: 40px;
+}
+
+.external-contacts-list {
+    height: 465px;
+    padding-bottom: 10px;
+}
+
+.external-contact-wrapper {
+    height: 52px;
+    padding: 0 6px 0 11px;
+    font: bold 15px Arial;
+    background: #424242;
+}
+.external-contact-wrapper:nth-child(even) {
+    background: #4e4e4e;
+}
+
+.external-contact-name,
+.external-contact-company {
+    overflow: hidden;
+    height: 52px;
+    line-height: 52px;
+}
+.external-contact-name {
+    color: #ffffff;
+}
+.external-contact-company {
+    font-size: 14px;
+    color: #b3b3b3;
+}
+
+.external-contact-buttons {
+    padding-top: 8px;
+    text-align: right;
+}
+
+.external-contact-actions-list {
+    display: none;
+}
+
+.external-contact-actions-list .dropdown-button-container {
+    padding: 2px 5px 1px;
+}
+.external-contact-actions-list .dropdown-button-container.close-button-container {
+    /* to hide actions list top border */
+    position: relative;
+    z-index: 10002;
+
+    background: #5b5b5b;
+    border: 1px solid #1d1d1d;
+    border-bottom: none;
+    border-radius: 3px 3px 0 0;
+}
+.external-contact-actions-list .open-button-container,
+.external-contact-actions-list.open .close-button-container {
+    display: block;
+}
+.external-contact-actions-list .close-button-container,
+.external-contact-actions-list.open .open-button-container {
+    display: none;
+}
+
+.external-contact-actions-list .dropdown-button {
+    display: block;
+    width: 20px;
+    height: 20px;
+    padding: 0 4px 0 0;
+    border-radius: 20px;
+    font-size: 18px;
+    color: #b3b3b3;
+    background: #383838;
+}
+.external-contact-actions-list .open-button-container .dropdown-button {
+    padding-top: 1px;
+}
+
+.external-contact-actions-list .dropdown-menu {
+    top: 21px;
+    left: initial;
+    right: 44px;
+    padding: 10px 5px;
+    border: 1px solid #1d1d1d;
+    border-radius: 3px 0 3px 3px;
+    background: linear-gradient(to bottom, #5b5b5b 0%, #414141 100%);
+}
+
+.external-contact-actions-list .dropdown-menu .external-contact-action {
+    font-weight: bold;
+    color: #ffffff;
+    cursor: pointer;
+}
+.external-contact-actions-list .dropdown-menu .external-contact-action:hover,
+.external-contact-actions-list .dropdown-menu .external-contact-action:active {
+    background: transparent;
+}
+
+.external-contact-button {
+    vertical-align: top;
+    width: 75px;
+    height: 37px;
+    border-radius: 3px;
+    box-shadow: 0 2px 0 0 rgba(0, 0, 0, 0.5);
+}
+
+.external-contact-control-button {
+    display: none;
+    border: solid 1px #1d1d1d;
+    background-image: linear-gradient(to bottom, #5b5b5b, #414141);
+}
+.external-contact-wrapper:hover .external-contact-control-button {
+    display: inline-block;
+}
+.external-contact-control-button:active {
+    background-image: linear-gradient(to top, #606060, #363535);
+    box-shadow: inset 0 1px 3px 0 rgba(0, 0, 0, 0.5);
+}
+
+.external-contact-control-button .button-title {
+    vertical-align: top;
+    font-weight: bold;
+}
+.external-contact-control-button.external-contact-control-create-ringdown .button-title {
+    font-size: 1.2em;
+}
+
+.external-contact-control-create-ringdown .ringdown-icon {
+    display: inline-block;
+    width: 16px;
+    height: 16px;
+    background: url(/img/svg/new/ic-ring.svg);
+    background-size: 16px;
+}
+
+.external-contact-call-button {
+    border: solid 1px #2d2d2d;
+    background-image: linear-gradient(to top, #00720e, #00b917);
+}
+.external-contact-call-button:active {
+    background-image: linear-gradient(to top, #00b917, #00720e);
+    box-shadow: inset 0 1px 3px 0 rgba(0, 0, 0, 0.5);
+}
+
+.external-contact-call-button .call-icon {
+    display: inline-block;
+    width: 23px;
+    height: 23px;
+    background: transparent url(/img/svg/new/ic-call.svg) center no-repeat;
+    background-size: 23px;
+}
+
+.external-contacts-panel-footer .external-contacts-import {
+    float: left;
+}
+
+.external-contacts-panel-footer .external-contacts-export {
+    float: right;
+}
+
+.external-contacts-panel-footer .external-contacts-import .external-contacts-file-for-import {
+    display: none;
+}
+
+
+.modal-window.external-contact-edit-form {
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background: #424242;
+    z-index: 1;
+}
+
+.external-contacts-panel-body .external-contact-edit-form .external-contacts-panel-close-button {
+    display: block;
+}
+
+.external-contact-edit-form .modal-window-content.edit-form-body {
+    height: calc(100% - 130px);
+    margin: 70px 20px 0;
+    padding: 0;
+    overflow-y: auto;
+    overflow-x: hidden;
+}
+
+.external-contact-edit-form .edit-form-body .form-group {
+    position: relative;
+    padding: 0 10px 10px;
+}
+
+.external-contact-edit-form .external-contact-property-label {
+    color: #b3b3b3;
+    font: bold 15px Arial;
+    line-height: 30px;
+}
+
+.external-contact-edit-form .external-contact-property-label.necessary:after {
+    content: '*';
+    color: #ff4500;
+    margin-left: 4px;
+}
+
+.external-contact-edit-form .external-contact-property {
+    position: relative;
+    height: auto;
+    padding: 15px 15px 10px;
+    border: none;
+    border-radius: 8px;
+    font: bold 17px Arial;
+    color: #ffffff;
+    background: #212121;
+}
+
+.external-contact-edit-form .error-text {
+    display: none;
+    position: absolute;
+    top: 85px;
+    left: 15px;
+    font: 12px Arial;
+    color: #ff4500;
+}
+.external-contact-edit-form .has-error .error-text {
+    display: block;
+}
+
+.external-contact-edit-form .modal-window-footer.edit-form-footer {
+    overflow: hidden;
+    margin-top: 40px;
+    padding: 0 30px;
+    border-top: none;
+}
+
+.speed-dial-option-wrapper {
+    margin-top: 10px;
+}
+
+.external-contact-edit-form .pretty-checkbox-wrapper {
+    display: inline-block;
+}
+
+.external-contact-edit-form .pretty-checkbox-wrapper .service-checkbox {
+    display: none;
+}
+
+.external-contact-edit-form .pretty-checkbox {
+    display: block;
+    position: relative;
+    height: 30px;
+    width: 30px;
+    background: #212121;
+    border-radius: 3px;
+}
+
+.external-contact-edit-form .pretty-checkbox .tick {
+    display: none;
+    position: absolute;
+    padding: 5px 0 0 5px;
+    font-size: 20px;
+    color: #b3b3b3;
+}
+.external-contact-edit-form .service-checkbox:checked + .pretty-checkbox .tick {
+    display: block;
+}
+
+.external-contact-edit-form .speed-dial-option-label {
+    vertical-align: top;
+    padding: 7px 10px 0;
+    font: bold 15px Arial;
+    color: #b3b3b3;
+}
+
+.external-contact-edit-form .edit-form-button {
+    width: 170px;
+    height: 49px;
+    border-radius: 3px;
+    font: bold 17px Arial;
+}
+.external-contact-edit-form .edit-form-button.disabled {
+    opacity: .3;
+}
+.external-contact-edit-form .edit-form-button:active {
+    box-shadow: inset 0 1px 3px 0 rgba(0, 0, 0, 0.5);
+}
+.external-contact-edit-form .edit-form-button.edit-form-discard {
+    margin-right: 5px;
+    border: solid 1px #1d1d1d;
+    background: linear-gradient(to top, #666666, #909090);
+    box-shadow: 0 2px 0 0 rgba(0, 0, 0, 0.5);
+}
+.external-contact-edit-form .edit-form-button.edit-form-discard:active {
+    background: linear-gradient(to bottom, #666666, #909090);
+}
+.external-contact-edit-form .edit-form-button.edit-form-save {
+    border: solid 1px #2d2d2d;
+    background: linear-gradient(to top, #00720e, #00b917);
+    box-shadow: 0 2px 4px 0 rgba(0, 0, 0, 0.3);
+}
+.external-contact-edit-form .edit-form-button.edit-form-save:active {
+    background: linear-gradient(to bottom, #00720e, #00b917);
+}

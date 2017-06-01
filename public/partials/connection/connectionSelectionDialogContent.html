@@ -1,0 +1,47 @@
+<div class="modal-window select-connection-dialog-content">
+    <div class="modal-window-header">
+        <h1 class="modal-window-title">{{ ngDialogData.title }}</h1>
+        <span class="modal-window-close-button"
+              uib-tooltip="Close window"
+              tooltip-placement="left"
+              ng-click="closeThisDialog()"></span>
+    </div>
+
+    <div class="contacts-filter">
+        <input type="text" placeholder="Search for Contacts"
+               ng-model="searchString"/>
+    </div>
+
+    <div class="contact-list scrollable">
+
+        <div class="contact-list-header">
+            <div class="col-xs-5 name">Name</div>
+            <div class="col-xs-5 company">Company</div>
+        </div>
+
+        <div ng-repeat="connection in connections" class="contact-item row"
+             ng-class="{
+             'active': isSelected(connection),
+             'online': isOnline(connection),
+             'offline': !isOnline(connection)
+             }" ng-show="isVisible(connection)">
+
+            <div class="col-xs-5 contact-name ">
+                {{ connection.contact.display_name }}
+            </div>
+            <div class="col-xs-5 company">
+                {{ connection.contact.company }}
+            </div>
+
+            <div class="col-xs-2 cb-contact-state">
+                <button ng-click="selectConnection(connection)"><span>&nbsp;</span></button>
+            </div>
+
+        </div>
+    </div>
+    <div class="modal-window-footer">
+        <button class="control-button" ng-click="onSelected(); closeThisDialog();">Select</button>
+        <button class="control-button" ng-click="closeThisDialog(); closeThisDialog();">Cancel</button>
+    </div>
+
+</div>

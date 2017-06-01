@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en" ng-app="gkt.voiceBox" class="page-dark-theme" ng-controller="applicationController">
+  <head>
+    <meta charset="utf-8" />
+    <title>Green Key</title>
+    <meta name="description" content="Green Key" />
+    <meta name="keywords" content="Green Key" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1" />
+    <meta name="mobile-web-app-capable" content="yes" />
+    <link rel="shortcut icon" href="img/favicon-gk.ico" />
+
+    <link rel="stylesheet" type="text/css" href="/vendor.css" />
+    <link rel="stylesheet" type="text/css" href="/app.css" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/select2/3.4.5/select2.css" >
+
+
+  </head>
+
+  <body >
+    <div ng-view></div>
+    <script type="text/javascript" src="$VENDORS_JS_URL?rev=@@hash"></script>
+    <script type="text/javascript" src="$SDK_BUNDLE_JS_URL?rev=@@hash"></script>
+    <script type="text/javascript" src="$GREEN_KEY_APP_JS_URL?rev=@@hash"></script>
+    <script type="text/javascript" src="recorder.js?rev=@@hash"></script>
+    <script type="text/javascript" src="recorderWorker.js?rev=@@hash"></script>
+    <script type="text/javascript" src="speex.min.js?rev=@@hash"></script>
+    <script type="text/javascript" src="dictate.js?rev=@@hash"></script>
+    <script type="text/javascript" src="mob.js?rev=@@hash"></script>
+  </body>
+</html>

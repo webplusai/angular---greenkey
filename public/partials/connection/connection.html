@@ -1,0 +1,28 @@
+<div class="connection-wrapper" id="{{::connection.uid}}"
+  ng-class="{
+    'col-1-3': !compact && columns == 3,
+    'col-1-2': columns == 2,
+    'col-1-1': columns == 1,
+    'hoot-box-wrapper': connection.type === contactTypes.hoot,
+    'blast-box-wrapper': connection.type === contactTypes.blastGroup
+  }">
+
+  <hoot-box ng-if="connection.type === contactTypes.hoot"
+    hoot="connection"
+    columns="columns"
+    dragging-data="draggingData">
+  </hoot-box>
+
+  <blast-button ng-if="connection.type === contactTypes.blastGroup"
+    blast="connection"
+    columns="columns"
+    dragging-data="draggingData">
+  </blast-button>
+
+  <active-call-box ng-if="connection.type === contactTypes.ringdown || connection.type === contactTypes.external
+   || connection.type === contactTypes.sipTDMRingdown"
+    release-selected-calls="releaseSelectedCalls"
+    call="connection">
+  </active-call-box>
+
+</div>

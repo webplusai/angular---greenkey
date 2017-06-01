@@ -1,0 +1,14 @@
+{
+  "applications": [
+    {
+      "type": "sandbox",
+      "id": "3096440930e447be8ff4aeccbbe8b84c",
+      "name": "Green Key",
+      "description": "A software turret designed to mimic and exceed the functionality offered by a traditional hardware turrets.",
+      "publisher": "Green Key Technologies",
+      "url": "$TVB_WEB_URL/symphony-app.html",
+      "icon": "$TVB_WEB_URL/img/voicebox_32x32.png",
+      "domain": "$SYMPHONY_CONFIG_DOMAIN"
+    }
+  ]
+}	

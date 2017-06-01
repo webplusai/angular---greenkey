@@ -1,0 +1,138 @@
+<html>
+<head>
+  <script src="https://www.symphony.com/resources/api/v1.0/symphony-api.js"></script>
+  <script type="text/javascript">
+
+    var TVB_URL = "$TVB_WEB_URL";
+    var ICON_32 = TVB_URL + "/img/voicebox_32x32.png";
+    var ICON_16 = TVB_URL + "/img/voicebox_16x16.png";
+    var PTT_ICON_16 = TVB_URL + "/img/push-to-talk.png";
+
+    var APP_NAME = "3096440930e447be8ff4aeccbbe8b84c";
+    var APP_TITLE = "Green Key";
+    var APP_CONTROLLER_NAME = APP_NAME + ":controller";
+
+    var uiService;
+    var navService;
+    var modulesService;
+    var appService;
+
+    var theme;
+    var userReferenceId;
+    var isAppOpened;
+
+    var CALL_RINGDOWN_BTN_NAME = 'callRingdown';
+    var BUTTON_HANDLERS = {};
+    BUTTON_HANDLERS[CALL_RINGDOWN_BTN_NAME] = function(data) {
+      console.info("Try to ringdowns someone with id ", data.userId, " and email ", data.email);
+      // we have TVBWeb running in another tab, so only way we can communicate - via localStorage
+      localStorage.removeItem('symphony:callRingdown');
+      localStorage.setItem('symphony:callRingdown', data.email);
+    };
+
+    window.addEventListener("message", function listener(event) {
+      if (event.origin === TVB_URL) {
+        isAppOpened = event.data.isAppOpened;
+        return;
+      }
+
+      if (event.data.command !== "fire")
+        return;
+
+      var payload = event.data.payload;
+      if (payload.method === 'trigger') {
+        var source = payload.args[1].split(':');
+        var app = source[0];
+
+        if (app !== APP_NAME)
+          return;
+
+        source = source[1];
+        var scope = payload.args[0];
+        var userId = payload.args[2]['user']['id'];
+        var userEmail = payload.args[2]['user']['username'];
+
+        if(BUTTON_HANDLERS[source])
+          BUTTON_HANDLERS[source].call(null, {
+            userId: userId,
+            email: userEmail
+          });
+      }
+    });
+
+    var processHelloAnswer = function(helloAnswer) {
+      theme = helloAnswer.theme;
+      localStorage.setItem('symphony:changeUiTheme', theme.name);
+    };
+
+    var registerServices = function() {
+      appService = SYMPHONY.services.register(APP_CONTROLLER_NAME);
+    };
+
+    var registerApp = function() {
+      return SYMPHONY.application.register(APP_NAME,
+          ["ui", "modules", "applications-nav"],
+          [APP_CONTROLLER_NAME]).then(function(data) {
+        userReferenceId = data.userReferenceId;
+      });
+
+    };
+
+    var subscribeToServices = function() {
+      uiService = SYMPHONY.services.subscribe("ui");
+      navService = SYMPHONY.services.subscribe("applications-nav");
+      modulesService = SYMPHONY.services.subscribe("modules");
+
+      uiService.listen('themeChange', function(name, size){
+        theme.name = name;
+        theme.size = size;
+
+        localStorage.setItem('symphony:changeUiTheme', name);
+      });
+    };
+
+    var activateMyServices = function() {
+      appService.implement({
+        select: function(id) {
+          modulesService.show(
+              APP_NAME,
+              {title: APP_TITLE, icon: ICON_16},
+              APP_CONTROLLER_NAME,
+              TVB_URL + '/symphony-index.html' + (isAppOpened ? '#opened' : ''));
+        },
+        trigger: function(type, id, data, arg) {
+          console.warn('TRIGGERED');
+          console.warn(type);
+          console.warn(id);
+          console.warn(data);
+          console.warn(arg);
+        }
+      });
+
+      navService.add(
+          APP_NAME, {title: APP_TITLE, icon: ICON_16}, APP_CONTROLLER_NAME);
+    };
+
+    var registerExtensions = function() {
+      uiService.registerExtension('single-user-im', CALL_RINGDOWN_BTN_NAME, APP_CONTROLLER_NAME,
+          {label: 'Call via Ringdown', icon: PTT_ICON_16});
+      uiService.registerExtension('profile', CALL_RINGDOWN_BTN_NAME, APP_CONTROLLER_NAME,
+          {label: 'Call via Ringdown', icon: PTT_ICON_16});
+    };
+
+    SYMPHONY.remote.hello()
+        .then(processHelloAnswer)
+        .then(registerServices)
+        .then(registerApp) //should be called after registerServices or an error appears
+        .then(subscribeToServices)
+        .then(activateMyServices)
+        .then(registerExtensions)
+        .catch(function(error) {
+          console.error(error);
+        });
+
+
+  </script>
+</head>
+
+</html>

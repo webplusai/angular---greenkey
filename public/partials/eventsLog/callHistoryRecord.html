@@ -1,0 +1,48 @@
+<div class="row">
+  <div class="text-column">
+    <div class="row"
+        ng-class="{
+          'record-idle': record.idle
+        }" >
+      <div class="date event-date">{{::startTime}}</div>
+      <div  class="type-icon"
+          ng-click="makeCallBack()"
+          ng-class="::{
+            'external-call-event': record.type.source === constants.GKT.CONTACT_TYPE.external,
+            'ringdown-call-event': record.type.source === constants.GKT.CONTACT_TYPE.ringdown || constants.GKT.CONTACT_TYPE.sipTDMRingdown,
+            'hoot-call-event': record.type.source === constants.GKT.CONTACT_TYPE.hoot,
+            'inbound': record.type.inbound,
+            'outbound': !record.type.inbound
+          }">
+      </div>
+      <div class="contact" title="{{::record.contact}}">
+        <div class="event-date">{{::startTime}}</div>
+        <div class="text-ellipsis">{{::record.contact}}</div>
+      </div>
+    </div>
+    <div ng-show="!addMode && record.note" class="row note-text-view">
+      <p>{{ record.note }}</p>
+    </div>
+    <div ng-show="addMode" class="row note-text-edit">
+      <textarea elastic auto-focus
+              class="note-text" 
+              ng-focus="addMode"
+              add-mode="addMode"
+              ng-model="record.note"
+              ng-blur="saveNote()" >
+      </textarea>
+    </div>
+  </div>
+  <div class="icon-column">
+    <!-- Commented until finding a reliable way to record same streams several times.
+    <audio-record
+        ng-if="record.idle && record.type.source === constants.GKT.CONTACT_TYPE.hoot && record.type.inbound"
+        connection-uid="record._connectionUid"
+        connection=""
+        class="pull-left" >
+    </audio-record>
+    -->
+    <div class="record-icon edit" ng-click="recordCtrl.addNote()"></div>
+  </div>
+
+</div>

@@ -1,0 +1,218 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>GKT Launcher</title>
+  <style>
+    html {
+      height: 100%;
+    }
+
+    body {
+      display: flex;
+      height: inherit;
+      align-items: center;
+      margin: 0;
+      background: #F9F9F9;
+      color: #262626;
+      font-family: sans-serif;
+    }
+
+    .container {
+      width: 500px;
+      margin: 0 auto;
+    }
+
+    .logo {
+      width: 200px;
+      height: 90px;
+      margin: 0 auto;
+      background: transparent url(img/gkt-logo-grey.png) 50% 0 no-repeat;
+    }
+
+    .button {
+      display: block;
+      padding: 15px 52px 14px 51px;
+      margin: 31px auto 0;
+      border: none;
+      border-radius: 3px;
+      background: #44b3dd;
+      color: #fff;
+      font-size: 15px;
+      font-weight: bold;
+      line-height: 16px;
+      cursor: pointer;
+    }
+
+    .text {
+      margin-top: 40px;
+      text-align: center;
+      font-size: 13px;
+      line-height: 18px;
+    }
+
+    .text p {
+      margin: 0;
+    }
+
+    .hidden {
+      display: none;
+    }
+
+    body.dark  {
+      border-radius: 2px;
+      background-color: #505050;
+    }
+
+    .dark .logo {
+      background: transparent url(img/gkt-logo-dark.png) 50% 0 no-repeat;
+    }
+
+    .dark .text p {
+      color: #d4d4d4;
+      line-height: 18px;
+    }
+
+    .dark .text {
+      margin-top: 20px;
+      margin-bottom: 45px;
+    }
+
+  </style>
+</head>
+<body>
+<div class="activator container">
+  <div class="logo"></div>
+  <div id="tvb-app-is-opened" class="text hidden">
+    <p>
+      Green Key is already opened.<br>
+      You can just navigate to the corresponding browser's tab or window.
+    </p>
+  </div>
+  <button class="button hidden" id="open-tvb-app">Open Green Key</button>
+</div>
+
+<script>
+  (function() {
+    'use strict';
+
+    var uiTheme = localStorage.getItem('symphony:changeUiTheme');
+    if (uiTheme)
+      document.body.classList.add(uiTheme);
+
+    var TVB_URL = '$TVB_WEB_URL',
+        DETECT_TIMEOUT = 100;
+
+
+    var openButton = document.getElementById('open-tvb-app'),
+        requestText = document.getElementById('tvb-app-is-opened'),
+        showOpenButton = function() {
+          openButton.classList.remove('hidden');
+          requestText.classList.add('hidden');
+        },
+        showRequestText = function() {
+          openButton.classList.add('hidden');
+          requestText.classList.remove('hidden');
+        };
+
+
+    var tvbWindow,
+        isTvbOpened = null,
+        statusUpdateTimeout = 0,
+        /**
+         * Set tvb status. If it is not defined tries to determine it
+         * @param bool status
+         */
+        updateTvbStatus = function(status) {
+          if (typeof status === 'undefined') {
+            // unfortunatelly we couldn't manage named windows from iframe
+            // so the only way to build communication between this page and opened tvb application is local storage
+            window.localStorage.setItem('symphony:detectRunningTvb', Math.random());
+            statusUpdateTimeout = window.setTimeout(updateTvbStatus.bind(this, false), DETECT_TIMEOUT);
+            return;
+          }
+
+          if (isTvbOpened === status) {
+            return;
+          }
+
+          // update local copy of status
+          isTvbOpened = status;
+          // update tvb status in other symphony frames
+          var frames = window.parent.frames,
+              length = frames.length;
+          for (var i = 0; i < length; i++) {
+            // postMessage() will fail if we'll try to send post message to iframe with differect origin
+            // e.g. from test.tvb to widgets.dowjones.com
+            // also uncatchable error will appear
+            try {
+              // try to access iframe's objects to generate catchable error and skip it
+              // or to be sure that we have access to this iframe
+              frames[i].location.href;
+            } catch (error) {
+               continue;
+            }
+
+            frames[i].postMessage({isAppOpened: isTvbOpened}, TVB_URL);
+          }
+        },
+        /**
+         * Watches tvb status and update interface elements visibility
+         */
+        watchTvbStatus = function() {
+          // if tvb was opened from launcher we could directly check its status
+          if (tvbWindow && !tvbWindow.closed) {
+            if (!isTvbOpened) {
+              updateTvbStatus(true);
+              showRequestText();
+            }
+            // update status 2 times per second
+            window.setTimeout(watchTvbStatus, 500);
+            return;
+          }
+
+          // if tvb wasn't opened from launcher, we don't have a reference to its window
+          // so we couldn't be sure if app is running now and it needs to check status again and again
+          updateTvbStatus();
+          window.setTimeout(function() {
+            isTvbOpened ? showRequestText() : showOpenButton();
+            // local storage events are used here so it shouldn't check status too often
+            // 1 time per second is quite enough
+            window.setTimeout(watchTvbStatus, 1000);
+          }, DETECT_TIMEOUT);
+        };
+
+
+    var updateUiTheme = function(oldTheme, newTheme) {
+      document.body.classList.remove(oldTheme);
+      document.body.classList.add(newTheme);
+    };
+
+
+    /**
+     * Handles storage events associated with communication between windows
+     * @param Event event
+     */
+    var handleCommunicationEvents = function(event) {
+      if (event.key === 'symphony:detectRunningTvbCallback') {
+        window.clearTimeout(statusUpdateTimeout);
+        updateTvbStatus(true);
+      } else if (event.key === 'symphony:changeUiTheme') {
+        updateUiTheme(event.oldValue, event.newValue);
+      }
+    };
+
+
+    window.addEventListener('storage', handleCommunicationEvents, false);
+    openButton.addEventListener('click', function() {
+      tvbWindow = window.open(TVB_URL);
+    }, false);
+
+
+    // when everything is ready we could start watching tvb status
+    watchTvbStatus();
+  })();
+</script>
+
+</body>
+</html>

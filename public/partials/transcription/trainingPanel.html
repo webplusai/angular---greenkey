@@ -1,0 +1,62 @@
+<div class="modal-window" id="training-panel">
+  <div class="modal-window-header">
+    <h1 class="modal-window-title">Transcription Training</h1>
+        <span class="modal-window-close-button"
+              uib-tooltip="Close window"
+              tooltip-placement="left"
+              ng-click="closeThisDialog()"></span>
+  </div>
+  <div class="modal-window-content body">
+
+    <div class="alert alert-info">
+      Register your voice pattern by recording a 1-2 minute audio file.
+      This file will be train the speech recognition engine to detect your unique speech pattern.
+    </div>
+
+    <div class="recorder">
+
+      <div class="process">
+        <div class="spinner">
+          <span ng-show="recording">Recording...</span>
+          <span us-spinner="{radius:40, width:8, length: 16}" spinner-key="spinner-1"></span>
+        </div>
+
+        <div class="micro-progress">
+          <div class="pull-left micro-phone">
+            <i class="fa fa-microphone"></i>
+          </div>
+          <volume-meter></volume-meter>
+        </div>
+      </div>
+
+      <div class="controls">
+        <div class="btn btn-success" ng-click="startRecording()" ng-class="{
+          'disabled': recording || playback || recorded
+        }"><i class="fa fa-play-circle-o"></i> Start
+        </div>
+
+        <div class="btn btn-success" ng-click="stop()" ng-class="{
+          'disabled': !(recording || playback || connecting)
+        }"><i class="fa fa-stop"></i> Stop
+        </div>
+
+        <div class="btn btn-success" ng-click="play()" ng-class="{
+          'disabled': recording || playback || !recorded
+        }"><i class="fa fa-play"></i> Play
+        </div>
+
+        <div class="btn btn-success" ng-click="reset()" ng-class="{
+          'disabled': !recorded
+        }"><i class="fa fa-refresh"></i> Reset
+        </div>
+
+        <div class="btn btn-success" ng-click="register()" ng-class="{
+          'disabled': !recorded
+        }"><i class="fa fa-check-circle"></i> Register
+        </div>
+      </div>
+
+    </div>
+
+  </div>
+</div>

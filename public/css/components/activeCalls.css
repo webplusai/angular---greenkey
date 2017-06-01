@@ -1,0 +1,279 @@
+/* Active calls panel */
+.active-calls-panel .body {
+    padding: 0;
+}
+
+.active-calls-panel .calls-wrapper {
+    width: calc(100% - 330px);
+    float: left;
+    padding: 0 5px;
+}
+
+.active-calls-panel .calls-wrapper .no-calls {
+    display: inherit;
+    height: 110px;
+    float: left;
+    text-align: center;
+    line-height: 110px;
+    width: 100%;
+}
+
+/* Release buttons */
+.release-calls-btn {
+    display: flex;
+    align-items: center;
+    width: 160px;
+    height: 98px;
+    position: relative;
+    background: -webkit-linear-gradient(rgba(222, 222, 222, 1) 0%, rgba(222, 222, 222, 1) 48%, rgba(210, 210, 210, 1) 49%, rgba(250, 250, 250, 1) 100%);
+}
+
+.release-calls-btn .release-calls-btn-txt {
+    display: inline-block;
+    margin: 0 auto;
+    font-weight: bold;
+    color: #282828;
+    font-size: 27px;
+    text-shadow: 0px 1px 1px rgba(255, 255, 255, 1);
+}
+
+.release-calls-btn.active .release-calls-btn-txt {
+    color: #FFFFFF;
+    text-shadow: none;
+}
+
+.release-calls-btn,
+.release-calls-wrapper {
+    border-radius: 4px 4px 4px 4px;
+}
+
+.release-calls-wrapper {
+    background: rgba(177, 177, 177, 1);
+    box-shadow: 0px 1px 5px 2px rgba(0, 0, 0, 0.73);
+    height: 110px;
+    cursor: pointer;
+}
+
+.release-calls-wrapper.pull-left {
+    margin-right: 5px;
+}
+
+.release-calls-wrapper.pull-right {
+    margin-left: 5px;
+}
+
+.release-calls-wrapper.active {
+    background: -webkit-linear-gradient(#c40606 0%, #af0000 100%);
+    background: linear-gradient(#c40606 0%, #af0000 100%);
+}
+
+.release-calls-wrapper.active .release-calls-btn{
+    background: -webkit-linear-gradient(#ef1b1b 0%, #e12929 49%, #fb2d2d 50%, #f64d4d 100%);
+}
+
+/* Active call box*/
+.active-call-box {
+    background-color: #8c8c8c;
+    border-radius: 3px;
+    margin: 0 5px;
+    position: relative;
+}
+
+.active-call-box.col-md-3,
+.active-call-box.col-sm-6 {
+    padding: 0;
+    height: 113px;
+}
+
+.connection-wrapper .active-call-box {
+    height: 100px;
+}
+
+.active-call-box:last-child {
+    margin-right: 0;
+}
+
+.active-call-box .box-header {
+    background: #020702;
+    height: 30px;
+    color: #fff;
+    padding: 4px 8px 0 8px;
+    margin-bottom: 4px;
+    font-size: 14px;
+    border-radius: 3px 3px 0 0;
+}
+
+.active-call-box .call-title {
+    font-weight: bold;
+    font-size: 15px;
+}
+
+.active-call-box .box-body {
+    padding: 5px;
+    border-radius: 0 0 3px 3px;
+}
+
+.active-call-box .micro-phone {
+    margin-left: 5px;
+}
+
+.active-call-box .controls {
+    display: flex;
+    justify-content: space-between;
+}
+
+.active-call-box .controls .button {
+    height: 48px;
+
+    flex: 0 1 49%;
+    justify-content: center;
+    align-items: center;
+    display: flex;
+
+    border: solid 1px #6a6a6a;
+    border-radius: 3px;
+    color: #fff;
+    background: -webkit-linear-gradient(top, #dbdbdb 0, #898989 100%);
+    font-weight: bold;
+    font-size: 15px;
+    cursor: pointer;
+}
+
+.active-call-box .controls .reject.button,
+.active-call-box .controls .selected.button {
+    background: -webkit-linear-gradient(top, #ec3300 0%, #860000 100%);
+}
+
+.active-call-box .controls .accept.button {
+    background: -webkit-linear-gradient(top, #00b917 0%, #00720e 100%);
+}
+
+/* Connecting overlay */
+.active-call-box .connecting-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: 9999;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, .5);
+    align-items: center;
+}
+
+.active-call-box .connecting-overlay .spinner {
+    height: 100%;
+    position: relative;
+}
+/* /Connecting overlay */
+
+.active-calls-panel.audio-over {
+    box-shadow: inset 0 0 12px 1px rgba(255, 255, 255, 0.75);
+}
+
+.active-calls-panel .connection-wrapper {
+    width: 20%;
+    height: 113px;
+    display: inline-block;
+    margin: 0 2px;
+}
+
+.active-calls-panel .box-header {
+    cursor: move;
+}
+
+/* settings mode */
+.active-call-box .settings-wrapper {
+    background: #131313;
+    border-radius: 3px;
+    padding: 10px 10px 10px;
+}
+
+.active-call-box .settings-title-wrapper {
+    margin: 0px;
+    overflow: hidden;
+}
+
+.active-call-box .settings-title {
+    vertical-align: middle;
+    color: #9c9c9c;
+    font-weight: bold;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    float: left;
+    display: inline-block;
+    width: 100%;
+}
+
+.active-call-box .settings-wrapper .settings-buttons {
+    margin-top: 30px;
+    height: 48px;
+}
+
+.connection-wrapper .active-call-box .settings-wrapper .settings-buttons {
+    height: 38px;
+    margin-top: 25px;
+}
+
+.active-call-box .settings-wrapper .settings-button-wrapper {
+    height: 100%;
+}
+
+.active-call-box .settings-wrapper .settings-button-wrapper .settings-button {
+    width: 100%;
+    height: 100%;
+    text-overflow: ellipsis;
+    text-align: center;
+    padding: 0;
+    border-radius: 0 3px 3px 0;
+    border: 1px solid #1d1d1d;
+    border-left: 0;
+    font: 15px Arial;
+    color: #ffffff;
+    background: linear-gradient(to bottom, #5b5b5b 0%, #414141 100%);
+    box-shadow: 0 2px 0 0 rgba(0, 0, 0, .5);
+}
+
+.active-call-box .settings-wrapper .settings-button.pressed,
+.active-call-box .settings-wrapper .settings-button:active {
+    background-image: linear-gradient(to top, #606060, #363535);
+    box-shadow: inset 0 1px 3px 0 rgba(0, 0, 0, 0.5);
+}
+.active-call-box .settings-wrapper.wide .settings-button {
+    padding-left: 3px;
+    text-align: left;
+}
+
+.active-call-box .settings-wrapper .settings-button-caption {
+    display: none;
+}
+.active-call-box .settings-wrapper.wide .settings-button-caption {
+    display: inline-block;
+    vertical-align: middle;
+}
+
+.active-call-box .settings-wrapper .settings-button-tooltip {
+    position: absolute;
+    left: 0;
+    top: 0;
+    display: block;
+    width: 100%;
+    height: 100%;
+}
+.active-call-box .settings-wrapper.wide .settings-button-tooltip {
+    display: none;
+}
+
+.active-call-box .settings-wrapper .settings-button-icon {
+    display: inline-block;
+    vertical-align: middle;
+    width: 30px;
+    height: 30px;
+}
+
+.active-call-box .settings-wrapper .settings-button-icon.audio-device {
+    background-color: white;
+    display: inline-block;
+}
+
+

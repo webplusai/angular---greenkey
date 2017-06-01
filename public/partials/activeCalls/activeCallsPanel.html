@@ -1,0 +1,43 @@
+<div class="active-calls-panel"
+    ng-class="{ 'audio-over': isAudioOver }" >
+  <div class="body">
+    <div class="release-calls-wrapper pull-left"
+        ng-class="{active: selectedCallsCount > 0}" >
+      <div class="release-calls-btn"
+           ng-click="releaseSelectedCalls()" >
+        <span class="release-calls-btn-txt">{{'RELEASE_CALL_BTN_LABEL' | translate}}</span>
+      </div>
+    </div>
+
+    <div class="release-calls-wrapper pull-right"
+        ng-class="{active: selectedCallsCount > 0}" >
+      <div class="release-calls-btn"
+           ng-click="releaseSelectedCalls()" >
+        <span class="release-calls-btn-txt">{{'RELEASE_CALL_BTN_LABEL' | translate}}</span>
+      </div>
+    </div>
+
+    <div class="calls-wrapper">
+      <span class="no-calls" ng-show="!calls.length && !hoots.length">{{'NO_ACTIVE_CALLS' | translate }}</span>
+      <div class="row" ng-show="calls.length  || hoots.length">
+          <div class="compact-scroll-wrapper">
+            <active-call-box
+              ng-repeat="call in calls track by call.uid"
+              release-selected-calls="releaseSelectedCalls"
+              call="call">
+            </active-call-box>
+          </div>
+      </div>
+    </div>
+
+    <div class="release-calls-wrapper compact-only"
+            ng-class="{active: selectedCallsCount > 0}" >
+          <div class="release-calls-btn"
+               ng-click="releaseSelectedCalls()" >
+              <span class="release-calls-btn-txt">{{'RELEASE_CALL_BTN_LABEL' | translate}}</span>
+          </div>
+    </div>
+
+    <div class="clearfix"></div>
+  </div>
+</div>

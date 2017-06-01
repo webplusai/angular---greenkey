@@ -1,0 +1,88 @@
+<div class="modal-window" id="profile-panel">
+
+  <div class="overlay" ng-show="!isReady">
+      <span us-spinner="{radius: 30, width: 8, length: 16, color: '#fff'}"
+            spinner-start-active="true"
+            spinner-key="user-profile-preloader-spinner"></span>
+  </div>
+
+  <div class="modal-window-header">
+    <h1 class="modal-window-title">{{user.fullName || "Loading..."}}</h1>
+        <span class="modal-window-close-button"
+              uib-tooltip="Close window"
+              tooltip-placement="left"
+              ng-click="closeThisDialog()"></span>
+  </div>
+  <div class="modal-window-content body">
+
+    <div class="main-info">
+      <div class="photo">
+        <img ng-if="user.photo" ng-src="{{user.photo}}"
+             alt="{{user.fullName}}"/>
+        <div ng-if="!user.photo" class="placeholder">
+          No Picture
+        </div>
+      </div>
+
+      <div class="names">
+        <div class="full-name info-block">
+          <div class="title">Name</div>
+          <div class="content">{{user.fullName}}</div>
+        </div>
+        <div class="company-name info-block">
+          <div class="title">Company</div>
+          <div class="content">{{user.companyName}}</div>
+        </div>
+
+        <div class="products info-block">
+          <div class="title">Products</div>
+          <div class="content">
+            <span class="product" ng-repeat="product in user.products">
+              {{::product}}
+            </span>
+            <span ng-if="user.products.length === 0">No information</span>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="clearfix"></div>
+
+    <div class="other-connections scrollable" ng-if="user.connections.length > 0">
+      <div class="title">Other connections in {{user.companyName}}</div>
+      <div class="content">
+        <span class="connection-item" ng-repeat="connection in user.connections">
+          <div class="photo">
+            <img ng-if="connection.photo" src="{{connection.photo}}" alt=""
+                 width="36" height="36"/>
+            <div class="placeholder" ng-if="!connection.photo"></div>
+          </div>
+          <div class="name">
+            <a ng-if="connection.isInternal" href=""
+               ng-click="openProfile(connection.uid)">
+              {{::connection.name}}
+            </a>
+          <span ng-if="!connection.isInternal">
+            {{::connection.name}}
+          </span>
+          </div>
+        </span>
+      </div>
+    </div>
+
+
+    <div class="modal-window-footer"
+         ng-show="user.connectionStatus === 'Rejected' || user.connectionStatus === 'Connect'">
+
+      <button ng-if="user.connectionStatus === 'Rejected'" ng-disabled="actionInProgress"
+          class="control-button btn-danger" ng-click="removeConnectionRequest()">
+        Remove connection request
+      </button>
+
+      <button ng-if="user.connectionStatus === 'Connect'"  ng-disabled="actionInProgress"
+          class="control-button btn-success btn-connect" ng-click="addConnection()">
+        Connect
+      </button>
+    </div>
+  </div>
+</div>

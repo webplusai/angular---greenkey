@@ -1,0 +1,94 @@
+.contacts-import-dialog .contacts-for-import-container {
+  min-height: 200px;
+  padding: 10px;
+  overflow: hidden;
+}
+
+.contacts-import-dialog .upload-contacts-button {
+  margin: 20px auto 50px;
+  cursor: pointer;
+  padding: 12px 10px;
+  border: 1px solid #409fc1;
+  border-radius: 3px;
+  color: #564bd8;
+  height: 40px;
+  text-align: center;
+  width: 155px;
+}
+
+.contacts-import-dialog .export-contacts-help {
+  width: 300px;
+  margin: 0 auto;
+}
+
+.contacts-import-dialog .export-contacts-help .title {
+  text-align: center;
+  margin-bottom: 27px;
+  color: #282828;
+}
+
+.contacts-import-dialog .export-contacts-help .export-contacts-steps {
+  color: #282828;
+}
+
+.contacts-import-dialog .export-contacts-help .export-contacts-steps span {
+  color: #494949;
+  font-size: .9em;
+}
+
+.contacts-import-dialog .contact-for-import {
+  padding: 7px 10px;
+  border: 1px solid #d8d8d8;
+  border-radius: 3px;
+  color: #6c6c6c;
+  overflow: hidden;
+  float: left;
+  margin: 5px;
+}
+
+.contacts-import-dialog .contact-for-import .contact-name {
+  font-size: 1.1em;
+  float: left;
+  margin-right: 10px;
+}
+
+.contacts-import-dialog .contact-for-import .remove-contact-button {
+  cursor: pointer;
+  color: #409fc1;
+  float: right;
+}
+
+.processing.contacts-import-dialog .contact-for-import .remove-contact-button {
+  display: none;
+}
+
+.contacts-import-dialog .contact-for-import .checkmark {
+  display: none;
+}
+
+.processing.contacts-import-dialog .done.contact-for-import .checkmark {
+  display: block;
+  float: right;
+}
+
+.contacts-import-dialog .contact-for-import .checkmark:after {
+  border-color: green;
+}
+
+.contacts-import-dialog .paste-contacts-wrapper {
+  overflow: hidden;
+}
+
+.contacts-import-dialog .paste-contacts-wrapper #past-contacts-input {
+  float: left;
+  width: calc(100% - 150px);
+  padding: 7px 5px;
+  border: 0;
+  height: 40px;
+}
+
+.contacts-import-dialog .paste-contacts-wrapper #paste-contacts-submit {
+  float: right;
+  height: 40px;
+  padding: 10px;
+}

@@ -1,0 +1,26 @@
+<div class="search-connection">
+  <form class="form-inline"
+      ng-submit="searchConnection()"
+      role="form"
+      novalidate >
+
+    <div class="form-group">
+      <input type="text"
+          class="form-control search-text-input"
+          placeholder="{{'SEARCH_FOR_CONTACTS_LABEL' | translate}}"
+          ng-model="search_user_name"
+          required />
+
+      <div class="search-btn-compact-wrapper compact-only">
+          <button class="search-btn-compact" ng-submit="searchConnection()">{{'SEARCH' | translate}}</button>
+      </div>
+
+      <span ng-show="isLoading"
+          us-spinner="{radius:12, width:4, length: 10, color: 'gray'}"
+          spinner-start-active="true"
+          spinner-key="spinner-company-list" >
+      </span>
+    </div>
+
+  </form>
+</div>

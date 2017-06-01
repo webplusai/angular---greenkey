@@ -1,0 +1,148 @@
+/* Torn Hoots */
+.pop-out-wrapper.hoot-wrapper {
+    -webkit-app-region: drag;
+}
+
+.pop-out-wrapper.hoot-wrapper .shout-panel {
+    -webkit-app-region: no-drag;
+}
+
+.pop-out-wrapper.hoot-wrapper .shout-panel .text-center{
+    width: 100%;
+    float: left;
+    padding: 0 22px 0 8px;
+}
+
+.blast-contact-name,
+.hoot-contact-name{
+    display: block;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    overflow: hidden;
+}
+
+.pop-out-wrapper.hoot-wrapper .shout-panel .text-center .blast-contact-name{
+    font-size: 18px;
+    font-weight: bold;
+}
+
+.pop-out-wrapper.hoot-wrapper .shout-panel .contact-name .action-text{
+    font-size: 15px;
+    font-weight: normal;
+}
+
+.pop-out-wrapper .hoot .dragging-plate {
+    top: 30px;
+    right: 37px;
+    z-index: 100;
+}
+
+.pop-out-wrapper .connecting.hoot .dragging-plate {
+    color: #333;
+}
+
+.pop-out-wrapper .hoot .action-text .dragging-plate{
+    top: 47px;
+    right: 12px;
+}
+
+.pop-out-wrapper .online.hoot .dragging-plate {
+    top: 24px;
+}
+
+.pop-out-wrapper .hoot .dragging-plate,
+.pop-out-wrapper .online.shouting.hoot .dragging-plate {
+    top: 30px;
+    right: 37px;
+}
+
+.pop-out-wrapper .hoot .close-button,
+.pop-out-wrapper .online.shouting.hoot .close-button {
+    top: 27px;
+    bottom: 0;
+    right: 11px;
+    z-index: 100;
+}
+
+.pop-out-wrapper .hoot.blast-button .contact-name .hoot-contact-name,
+.pop-out-wrapper .hoot.blast-button .text-center .action-text,
+.blast-contact-name,
+.blast-badge-wrapper{
+    display: none;
+}
+
+.pop-out-wrapper .hoot.blast-button .text-center .blast-contact-name,
+.pop-out-wrapper .hoot.blast-button .contact-name .blast-badge-wrapper{
+    display: block;
+}
+
+
+.pop-out-wrapper .online.hoot .close-button {
+    top: 21px;
+}
+
+
+.pop-out-wrapper.hoot-wrapper .blast-button .shout-panel .text-center {
+    text-align: left;
+}
+
+.pop-out-wrapper.hoot-wrapper .blast-button .shout-panel .text-center .blast-contact-name {
+    margin-left: 3px;
+}
+
+.pop-out-wrapper.hoot-wrapper .blast-button .shout-panel .contact-name .action-text{
+    font-size: 13px;
+    position: relative;
+    bottom: 3px;
+}
+
+.pop-out-wrapper.hoot-wrapper .blast-button .blast-badge {
+    margin: 1px 5px 0 0;
+}
+
+.pop-out-wrapper .hoot.blast-button .dragging-plate {
+    top: 13px;
+}
+.pop-out-wrapper .hoot.shouting.blast-button .dragging-plate {
+    top: 16px;
+}
+
+.pop-out-wrapper .hoot.blast-button .close-button,
+.pop-out-wrapper .hoot.shouting.blast-button .close-button {
+    top: 11px;
+    width: 21px;
+    height: 21px;
+    bottom: 0;
+    right: 11px;
+    z-index: 100;
+}
+
+.pop-out-wrapper .hoot.shouting.blast-button .close-button {
+    top: 14px;
+}
+
+.pop-out-wrapper .hoot.blast-button .close-button .close-cross,
+.pop-out-wrapper .hoot.shouting.blast-button .close-button .close-cross {
+    position: relative;
+    right: 1px;
+    bottom: 2px;
+    font-family: cursive;
+    font-size: 12px;
+    color: #ffffff;
+    font-weight: bold;
+}
+
+.hoot-wrapper .hotkey {
+    position: absolute;
+    right: 8px;
+    bottom: 2px;
+    font-size: .8em;
+}
+
+.hoot-wrapper .connection.online .hotkey {
+    bottom: 0;
+}
+
+.hoot-wrapper .connection.online.shouting .hotkey {
+    bottom: 7px;
+}

@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<svg width="58px" height="47px" viewBox="0 0 58 47" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:sketch="http://www.bohemiancoding.com/sketch/ns">
+    <!-- Generator: sketchtool 3.4 (381) - http://www.bohemiancoding.com/sketch -->
+    <title>ic_chat</title>
+    <desc>Created with sketchtool.</desc>
+    <defs>
+        <filter x="-50%" y="-50%" width="200%" height="200%" filterUnits="objectBoundingBox" id="filter-1">
+            <feMorphology radius="3" in="SourceAlpha" operator="dilate" result="shadowSpreadOuter1"></feMorphology>
+            <feOffset dx="0" dy="0" in="shadowSpreadOuter1" result="shadowOffsetOuter1"></feOffset>
+            <feGaussianBlur stdDeviation="3.5" in="shadowOffsetOuter1" result="shadowBlurOuter1"></feGaussianBlur>
+            <feColorMatrix values="0 0 0 0 0.383637313   0 0 0 0 0.965215774   0 0 0 0 0.180178181  0 0 0 0.7 0" in="shadowBlurOuter1" type="matrix" result="shadowMatrixOuter1"></feColorMatrix>
+            <feOffset dx="0" dy="1" in="SourceAlpha" result="shadowOffsetInner1"></feOffset>
+            <feGaussianBlur stdDeviation="0" in="shadowOffsetInner1" result="shadowBlurInner1"></feGaussianBlur>
+            <feComposite in="shadowBlurInner1" in2="SourceAlpha" operator="arithmetic" k2="-1" k3="1" result="shadowInnerInner1"></feComposite>
+            <feColorMatrix values="0 0 0 0 0.14290391   0 0 0 0 0.373883929   0 0 0 0 0.120858747  0 0 0 0.7 0" in="shadowInnerInner1" type="matrix" result="shadowMatrixInner1"></feColorMatrix>
+            <feMerge>
+                <feMergeNode in="shadowMatrixOuter1"></feMergeNode>
+                <feMergeNode in="SourceGraphic"></feMergeNode>
+                <feMergeNode in="shadowMatrixInner1"></feMergeNode>
+            </feMerge>
+        </filter>
+    </defs>
+    <g id="Iteration-5" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd" sketch:type="MSPage">
+        <g id="TVBWEB--1156-mainWindow" sketch:type="MSArtboardGroup" transform="translate(-1338.000000, -1.000000)" filter="url(#filter-1)" fill="#FFFFFF">
+            <g id="Top-Bar" sketch:type="MSLayerGroup">
+                <path d="M1380.70378,26.3944954 C1381.81323,24.8902799 1382.44858,23.1435825 1382.44858,21.2803006 C1382.44858,15.6011196 1376.54675,11 1369.2666,11 C1366.06208,11 1363.12539,11.892492 1360.84217,13.3722179 C1361.91626,13.1673327 1363.0402,13.0559222 1364.19604,13.0559222 C1372.03703,13.0559222 1378.39261,18.1199304 1378.39261,24.3644425 C1378.39261,26.8242712 1377.40837,29.1049117 1375.73273,30.9583632 C1377.39837,32.2413096 1380.04221,33.8857369 1382.62673,33.8857369 C1380.7869,32.1169644 1380.65652,28.199485 1380.70378,26.3944954 M1367.17569,24.6184277 L1359.49663,24.6184277 C1358.68692,24.6184277 1358.0307,23.9620364 1358.0307,23.1524988 C1358.0307,22.3429611 1358.68692,21.6865699 1359.49663,21.6865699 L1367.17569,21.6865699 C1367.98522,21.6865699 1368.64161,22.3429611 1368.64161,23.1524988 C1368.64161,23.9620364 1367.98522,24.6184277 1367.17569,24.6184277 M1364.37093,29.0162143 L1359.49663,29.0162143 C1358.68692,29.0162143 1358.0307,28.3598231 1358.0307,27.5502854 C1358.0307,26.7407478 1358.68692,26.0843565 1359.49663,26.0843565 L1364.37093,26.0843565 C1365.18047,26.0843565 1365.83686,26.7407478 1365.83686,27.5502854 C1365.83686,28.3598231 1365.18047,29.0162143 1364.37093,29.0162143 M1363.18215,15.1121375 C1355.90148,15.1121375 1350,19.7130847 1350,25.3924381 C1350,28.1775305 1351.42178,30.7072064 1353.72915,32.5585884 C1353.59515,34.4460149 1353.14675,36.7549392 1351.84948,37.9980469 C1354.43331,37.9980469 1357.07302,36.3575862 1358.7428,35.0746397 C1360.12991,35.4619899 1361.62223,35.6729112 1363.18215,35.6729112 C1370.46247,35.6729112 1376.36464,31.0728263 1376.36464,25.3924381 C1376.36464,19.7130847 1370.46247,15.1121375 1363.18215,15.1121375" id="ic_chat" sketch:type="MSShapeGroup"></path>
+            </g>
+        </g>
+    </g>
+</svg>

@@ -1,0 +1,67 @@
+<div class="hoots-wrapper"
+  data-as-sortable="board.dragControlListeners"
+  data-drop="true"
+  data-jqyoui-options="{
+    scope: 'callBox'
+  }"
+  jqyoui-droppable="{
+    beforeDrop: 'dragDropOptions.beforeDropOnHootsPanel'
+  }">
+
+  <connection ng-repeat="(key, hoot) in items track by key"
+    connection="hoot"
+    ng-show="hoot.pageIndex == activePageIndex"
+    columns="columns.val"
+    compact="uiState.compactMode"
+    data-drag="true"
+    data-drop="true"
+    ng-model="items"
+    data-dragdrop-index="{{key}}"
+    data-dragdrop-uid="{{hoot.uid}}"
+    jqyoui-draggable="{
+      index: {{key}},
+      insertInline: true,
+      direction: 'jqyouiDirection',
+      animate: true,
+      onStop: 'dragDropOptions.onStop',
+      onStart: 'dragDropOptions.onStart'
+    }"
+    jqyoui-droppable="{
+      index: {{key}},
+      onDrop: 'dragDropOptions.onDrop',
+      beforeDrop: 'dragDropOptions.beforeDrop'
+    }"
+    data-jqyoui-options="{
+      revert: 'invalid',
+      scope: 'callBox',
+      appendTo: 'body',
+      helper: 'clone'
+    }"
+    data-direction="{{ item.jqyouiDirection }}"
+    dragging-data="draggingData">
+  </connection>
+
+
+  <!-- Empty slots per page: -->
+  <connection ng-repeat="(key, slot) in emptySlots track by key"
+    compact="uiState.compactMode"
+    connection="slot"
+    columns="columns.val"
+    dragging-data="{}"
+    data-drop="true"
+    data-dragdrop-index="{{key}}"
+    jqyoui-droppable="{
+      index: {{key}},
+      onDrop: 'dragDropOptions.onOut',
+      onOver: 'dragDropOptions.onOver',
+      onOut: 'dragDropOptions.onOut',
+    }"
+    data-jqyoui-options="{
+      revert: 'invalid',
+      scope: 'callBox',
+      appendTo: 'body',
+      helper: 'clone'
+    }">
+  </connection>
+
+</div>

@@ -1,0 +1,229 @@
+.whats-app.chat-window {
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    background: #eee;
+}
+
+.chat-window .contact-name {
+    flex: 0 1 50px;
+    align-items: center;
+    display: flex;
+    justify-content: center;
+    font-weight: bold;
+    background: #ddd;
+    border-bottom: 1px solid #ccc;
+    font-size: 1.3em;
+    box-shadow: 10px 10px 5px 0px rgba(0,0,0,0.75);
+}
+
+.chat-window .contact-name-text {
+    overflow: hidden;
+    text-overflow: ellipsis;
+    max-width: 130px;
+}
+
+.chat-window .avatar {
+    width: 40px;
+    height: 40px;
+    display: inline-block;
+    border-radius: 20px;
+    overflow: hidden;
+    margin-right: 10px;
+    background-color: #ccc;
+}
+
+.chat-window .empty.avatar {
+    background: #ccc url('/img/chats/userAvatarPlaceholder.png') 0 0 no-repeat;
+    background-size: contain;
+}
+.chat-window .empty-group.avatar {
+    background: #ccc url('/img/chats/groupAvatarPlaceholder.png') center center no-repeat;
+}
+
+.chat-window .messages {
+    flex: 1;
+    overflow-y: scroll;
+    background: #eee;
+}
+
+
+.chat-window .messages a {
+    color: #039BE5;
+}
+
+.chat-window .unread-notification {
+    flex: 0 1 50px;
+    padding: 5px 5px 0;
+    transition: display 2s;
+    -webkit-transition: display 2s;
+}
+
+.chat-window .unread-notification .content {
+    border-radius: 10px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 45px;
+}
+
+.chat-window .unread-notification i.fa {
+    font-size: 20px;
+    padding-right: 15px;
+}
+
+.chat-window .unread-notification .badge {
+    background-color: #31708F;
+    margin: 0 4px;
+}
+
+.chat-window .messages .message {
+    background: #DCF8C6;
+    float: right;
+    max-width: 80%;
+    padding: 3px 10px;
+    margin: 5px 15px;
+    border-radius: 8px;
+    color: #000;
+}
+
+.chat-window .messages .message .name,
+.chat-window .messages .message .date {
+    font-size: 10px;
+    color: #666;
+}
+
+.chat-window .messages .message .name {
+    font-weight: bold;
+}
+
+.chat-window .messages .message .text {
+    white-space: pre-wrap;
+    overflow-wrap: break-word;
+}
+.chat-window .messages .message img {
+    display: block;
+    text-align: center;
+    width: 100%;
+    max-width: 300px;
+    border-radius: 5px;
+}
+
+.chat-window .messages .inbound.message {
+    background: #fff;
+    float: left;
+}
+
+.chat-window .messages .message .date {
+    text-align: right;
+}
+
+.chat-window .answer-area {
+    flex: 0 1 80px;
+    background: #eee;
+    position: relative;
+}
+
+.chat-window .answer-area textarea {
+    height: 70px;
+    width: calc(100% - 10px);
+    display: block;
+    border: 0;
+    margin: 5px;
+    border-radius: 10px;
+    padding: 5px 40px 5px 5px;
+}
+
+.chat-window .answer-area button {
+    position: absolute;
+    margin: 0;
+    right: 25px;
+    top: 25px;
+}
+
+/* For tabbed chats */
+.torn-out-button {
+    border: 0;
+    background: transparent;
+    float: right;
+    display: block;
+    margin-left: 5px;
+}
+
+.pin.torn-out-button {
+    background: url("/img/chats/pin.png") 5px 5px no-repeat;
+    padding-left: 20px;
+}
+
+.unpin.torn-out-button {
+    background: url("/img/chats/reply.png") 5px 5px no-repeat;
+    padding-left: 30px;
+}
+
+.pin-label {
+    font-size: .75em;
+    vertical-align: text-top;
+}
+
+.chat-tabs {
+    padding: 10px;
+    overflow: hidden;
+}
+
+.chat-tab {
+    border: 1px solid #777;
+    border-radius: 5px;
+    float: left;
+    padding: 5px 10px 5px 4px;
+    margin-right: 7px;
+    margin-bottom: 5px;
+    cursor: pointer;
+}
+
+.chat-tab:hover {
+    background-color: #ccc;
+}
+
+.active.chat-tab {
+    border: 2px solid black;
+    padding: 4px 9px 4px 0;
+    font-weight: bold;
+    background-color: #ccc;
+    color: #000;
+}
+
+.chat-tab.unread-alert {
+    box-shadow: inset 0 0 3px 2px rgba(232, 152, 0, 0.92);
+    animation: flickerAnimation 2.5s infinite linear;
+}
+
+.chat-tab .close-button {
+  position: relative;
+  left: 4px;
+  margin-left: 5px;
+  color: #58666e;
+}
+.chat-tab .close-button:hover {
+    color: #000000;
+}
+.chat-tab .chat-icon {
+    display: inline-block;
+    float: left;
+    width: 25px;
+    height: 20px;
+    margin-right: 4px;
+    background-position: center center;
+    background-size: contain;
+    background-repeat: no-repeat;
+}
+.chat-tab .chat-icon.icon-yahoo {
+    background-image: url('../img/chats/yahoo-logo.svg');
+    position: relative;
+    left: 2px;
+}
+.chat-tab .chat-icon.icon-whatsapp {
+    background-image: url('../img/chats/whatsapp-logo.svg');
+}
+.chat-tab .chat-icon.icon-wechat {
+    background-image: url('../img/chats/wechat-logo.svg');
+}

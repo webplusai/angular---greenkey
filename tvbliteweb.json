@@ -1,0 +1,39 @@
+{
+  "devtools_port": 9090,
+  "startup_app": {
+    "name": "Green Key",
+    "description": "Green Key",
+    "url": "https://web.tradervoicebox.com",
+    "applicationIcon": "https://web.tradervoicebox.com/img/favicon-gk.ico",
+    "icon": "https://web.tradervoicebox.com/img/favicon-gk.ico",
+    "uuid": "GreenKey-yeotwn3hvf6wh142",
+    "autoShow": true,
+    "cornerRounding": {
+      "width": 5,
+      "height": 5
+    },
+    "defaultWidth": 1920,
+    "defaultHeight": 1080,
+    "permissions": [
+      "audioCapture",
+      "videoCapture",
+      "midi"
+    ],
+    "delay_connection": true
+  },
+  "runtime": {
+    "arguments": "--v=1 --noerrdialogs --enable-aggressive-domstorage-flushing",
+    "version": "6.49.11.70"
+  },
+  "shortcut": {
+    "company": "Green Key Technologies",
+    "description": "Green Key Technologies",
+    "name": "Green Key",
+    "icon": "https://web.tradervoicebox.com/img/favicon-gk.ico",
+    "target": [
+      "desktop",
+      "start-menu"
+    ],
+    "force": true
+  }
+}

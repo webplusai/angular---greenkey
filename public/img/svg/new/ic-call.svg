@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<svg width="24px" height="25px" viewBox="0 0 24 25" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:sketch="http://www.bohemiancoding.com/sketch/ns">
+    <!-- Generator: sketchtool 3.5.1 (25234) - http://www.bohemiancoding.com/sketch -->
+    <title>Fill 1</title>
+    <desc>Created with sketchtool.</desc>
+    <defs>
+        <filter x="-50%" y="-50%" width="200%" height="200%" filterUnits="objectBoundingBox" id="filter-1">
+            <feOffset dx="0" dy="-1" in="SourceAlpha" result="shadowOffsetOuter1"></feOffset>
+            <feGaussianBlur stdDeviation="0" in="shadowOffsetOuter1" result="shadowBlurOuter1"></feGaussianBlur>
+            <feColorMatrix values="0 0 0 0 0   0 0 0 0 0   0 0 0 0 0  0 0 0 0.7 0" in="shadowBlurOuter1" type="matrix" result="shadowMatrixOuter1"></feColorMatrix>
+            <feMerge>
+                <feMergeNode in="shadowMatrixOuter1"></feMergeNode>
+                <feMergeNode in="SourceGraphic"></feMergeNode>
+            </feMerge>
+        </filter>
+    </defs>
+    <g id="Page-1" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd" sketch:type="MSPage">
+        <g id="TVBWEB-1744-contactsPopup" sketch:type="MSArtboardGroup" transform="translate(-1303.000000, -745.000000)" filter="url(#filter-1)" fill="#FFFFFF">
+            <g id="Group-Copy-9" sketch:type="MSLayerGroup" transform="translate(1276.000000, 740.535156)">
+                <path d="M28.9557667,7.65864899 C29.5573196,7.03500563 30.2783917,6.5976475 31.0457879,6.34624488 C31.3977516,6.18864428 31.8265373,6.25293741 32.120802,6.5443996 L37.3943224,11.7529674 C37.6712774,12.0259659 37.7487588,12.4199674 37.6383065,12.7653369 L37.6416036,12.768634 C37.4129509,13.5734521 36.9899351,14.3367269 36.3684348,14.9798231 C35.9511889,15.4124004 35.4767386,15.7574402 34.9694823,16.0109859 C35.5510878,16.7101325 36.1869304,17.4073008 36.8714049,18.0919402 C37.5649464,18.7691612 39.8234487,20.9740858 40.5291894,21.5453056 C40.7680631,21.0260149 41.0964526,20.5378817 41.514358,20.105634 C42.136188,19.4628676 42.8808343,19.016937 43.6731235,18.7691612 L43.6746071,18.7703152 C44.0135473,18.6504662 44.4080434,18.7238263 44.6835147,18.9948466 L49.9567053,24.2034143 C50.252124,24.4948765 50.3258138,24.9271242 50.1779396,25.2866711 C49.9469789,26.0672557 49.5315464,26.8061321 48.9299935,27.4296106 C47.5702762,28.8356519 45.6141166,29.2975733 43.8587493,28.8104292 C41.3310401,28.2919628 36.463226,24.7494114 33.4106211,21.761924 C33.3957843,21.7470871 33.3827608,21.7338987 33.3670996,21.7190619 C33.3540762,21.7057087 33.3390744,21.6908718 33.3250618,21.6773538 C31.549912,19.9087981 30.1245828,18.0406706 29.1308418,16.2849736 L28.2531582,14.4948221 C28.0119765,13.908106 27.8268453,13.3449642 27.70848,12.8157823 C27.1850679,11.052502 27.5957197,9.06469028 28.9557667,7.65864899" id="Fill-1" sketch:type="MSShapeGroup"></path>
+            </g>
+        </g>
+    </g>
+</svg>

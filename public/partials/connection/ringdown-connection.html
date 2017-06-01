@@ -1,0 +1,23 @@
+<div id="{{::connection.uid}}" class="ringdown-box-wrapper connection-wrapper"
+     ng-class="{
+      'col-1-2': !uiState.compactMode || uiState.wideScreenMode,
+      'col-1-1': uiState.compactMode,
+      'empty-slot': connection.emptySlot,
+      'rectangular-border': connection.type === connectionTypes.hoot
+     }">
+
+    <ringdown-box
+            ng-if="connection.type === connectionTypes.ringdown || connection.type === connectionTypes.external
+             || connection.type === connectionTypes.sipTDMRingdown "
+            ringdown="connection"
+            columns="columns"
+            dragging-data="draggingData">
+    </ringdown-box>
+
+    <hoot-box ng-if="connection.type === connectionTypes.hoot"
+              hoot="connection"
+              columns="columns"
+              dragging-data="draggingData">
+    </hoot-box>
+
+</div>

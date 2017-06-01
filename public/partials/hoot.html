@@ -1,0 +1,115 @@
+<div class="flex-height-layer">
+  <div class="hoot connection"
+       ng-show="!hoot.emptySlot"
+       ng-class="{
+        'offline': !isOnline,
+        'online': isOnline,
+        'away': hoot.contact.last_idle_status,
+        'ransquawk': hoot.isRansquawk(),
+        'shouting': isOutgoingShouting,
+        'connecting': isConnecting,
+        'shout-incoming-call': isIncomingShouting,
+        'settings-visible': uiState.settingsVisible,
+        'silenced': hoot.paused
+      }">
+
+    <div ng-show="isConnecting" class="connecting-hoot-overlay"
+         ng-class="{ 'animated fade': !isConnecting }">
+      Connecting
+    </div>
+
+    <div class="shout-panel"
+         ng-show="!uiState.settingsVisible"
+         ng-mousedown="handleShoutPressed($event)"
+         ng-mouseup="handleShoutDepressed($event)"
+         ng-mouseleave="handleShoutDepressed()"
+         click-sound audio-context="getOutputDeviceContext">
+
+      <div class="contact-name"
+         uib-tooltip="{{ hoot.contact.display_name }}"
+         tooltip-placement="bottom">
+        <!-- TODO: uncomment this when we get design -->
+        <!--{{ hoot.contact.full_photo_link ? '' : hoot.contact.display_name }}-->
+        {{ hoot.contact.display_name }}
+      </div>
+
+      <div class="connection-footer" ng-class="{'with-hotkey': hotKey}">
+        <div class="main-footer-content micro-progress" ng-show="!hoot.mutedUser">
+          <div class="pull-left micro-phone">
+            <i class="fa fa-microphone"></i>
+          </div>
+          <div data-volume-meter></div>
+        </div>
+
+        <span class="hotkey">{{ hotKey }}</span>
+      </div>
+
+      <!-- TODO: uncomment this when we get design -->
+      <!--<div class="contact-photo"-->
+          <!--ng-show="hoot.contact.full_photo_link" >-->
+        <!--<img class="contact-photo-img"-->
+            <!--ng-src="{{ hoot.contact.full_photo_link }}"-->
+            <!--alt="{{ hoot.contact.display_name }}"-->
+            <!--uib-tooltip="{{ hoot.contact.display_name }}"-->
+            <!--tooltip-append-to-body="true"-->
+            <!--tooltip-placement="bottom" >-->
+      <!--</div>-->
+    </div>
+
+    <div class="settings-wrapper"
+         ng-show="uiState.settingsVisible">
+      <div class="settings-title-wrapper">
+        <span class="settings-title-status"></span>
+        <span class="settings-title" title="{{ hoot.contact.display_name }}">{{ hoot.contact.display_name }}</span>
+          <span class="settings-delete" ng-mouseup="deleteHoot()">
+            <i class="fa fa-close"></i>
+          </span>
+      </div>
+      <div class="row settings-buttons">
+        <!-- silence -->
+        <div class="settings-button-wrapper" ng-class="isOpenFin ? 'col-xs-3' : 'col-xs-4'">
+          <button class="btn btn-default settings-button silence-button"
+                  ng-click="togglePauseAudio()"
+                  ng-class="{'pressed': hoot.paused, 'depressed': !hoot.paused}">
+            <span class="settings-button-icon"></span>
+            <span class="settings-button-tooltip" uib-tooltip="Silence"
+                  tooltip-placement='bottom'></span>
+            <span class="settings-button-caption">Silence</span>
+          </button>
+        </div>
+
+        <!-- tear out -->
+        <div class="settings-button-wrapper" ng-class="isOpenFin ? 'col-xs-3' : 'hidden'">
+          <button class="btn btn-default settings-button pop-out-button"
+                  ng-click="tearOut()">
+            <span class="settings-button-icon"></span>
+            <span class="settings-button-tooltip" uib-tooltip="Pop-out"
+                  tooltip-placement='bottom'></span>
+            <span class="settings-button-caption">Pop-out</span>
+          </button>
+        </div>
+
+        <!-- ptt -->
+        <div class="settings-button-wrapper" ng-class="isOpenFin ? 'col-xs-3' : 'col-xs-4'">
+          <button class="btn btn-default settings-button ptt-button"
+                  ng-class="{'pressed': isInPttMode, 'depressed': !isInPttMode}"
+                  ng-click="switchPttMode()">
+            <span class="settings-button-icon ptt-button-icon"></span>
+            <span class="settings-button-tooltip" uib-tooltip="{{ pttLabel }}"
+                  tooltip-placement='bottom'></span>
+            <span class="settings-button-caption">{{ pttLabel }}</span>
+          </button>
+        </div>
+
+        <switch-audio-button connection="hoot" button-style="volume" tool-tip-placement="bottom" ng-class="isOpenFin ? 'col-xs-3' : 'col-xs-4'">
+      </div>
+    </div>
+
+    <div class="dragging-spot">
+      <i class="fa fa-arrows-alt" aria-hidden="true"></i>
+    </div>
+
+  </div>
+
+  <div ng-show="hoot.emptySlot" class="empty hoot connection"></div>
+</div>

@@ -1,0 +1,151 @@
+/* Default light (day) theme */
+
+.symphony-mode #ringdowns-main-container {
+  background-color: transparent;
+  color: #3c3c3c;
+  padding: 0;
+  border-radius: 0;
+  box-shadow: none;
+  border: 1px solid #d8d8d8;
+}
+
+.symphony-mode #ringdowns-main-container .flex-height-wrapper {
+  width: 100%;
+  height: 100%;
+}
+
+.symphony-mode #ringdowns-main-container .window-header {
+  height: auto;
+  background-color: #f3f3f3;
+  border-bottom: 1px solid #d8d8d8;
+}
+
+.compact.symphony-mode #ringdowns-main-container .window-header {
+  margin-bottom: 3px;
+}
+
+.symphony-mode #ringdowns-main-container .ringdowns-wrapper {
+  padding: 0 5px;
+}
+
+.symphony-mode #ringdowns-main-container .tabs-panel-wrapper .nav-tabs.tabs-panel .tab {
+  padding-top: 0;
+  padding-bottom: 0;
+  margin-left: 0;
+  border: 0;
+  border-left: 1px solid #d8d8d8;
+  border-radius: 0;
+  background: transparent none;
+  box-shadow: none;
+}
+
+.symphony-mode #ringdowns-main-container .tabs-panel-wrapper .nav-tabs.tabs-panel .tab:first-child {
+  border-left: 0;
+}
+
+.symphony-mode #ringdowns-main-container .tabs-panel-wrapper .nav-tabs.tabs-panel .tab.active {
+  background: #c2c2c2 none;
+}
+
+.symphony-mode #ringdowns-main-container .tabs-panel-wrapper .nav-tabs.tabs-panel .tab .tab-title {
+  color: #626262;
+  line-height: 50px;
+}
+
+.compact.symphony-mode #ringdowns-main-container .tabs-panel-wrapper .nav-tabs.tabs-panel .tab .tab-title {
+  line-height: 34px;
+}
+
+.symphony-mode #ringdowns-main-container .tabs-panel-wrapper .nav-tabs.tabs-panel .tab.active .tab-title {
+  color: #f9f9f9;
+}
+
+.symphony-mode .ringdown-box-wrapper {
+  box-shadow: none;
+}
+
+.symphony-mode .ringdown-box-wrapper .ringdown {
+  border: solid 1px #c3c3c3;
+  border-radius: 100px;
+  background-color: #f3f3f3;
+  box-shadow: none;
+}
+.symphony-mode .ringdown-box-wrapper .ringdown.offline {
+  background-color: #d0d0d0;
+}
+.symphony-mode .ringdown-box-wrapper .ringdown.online {
+  background-color: #e8e8e8;
+}
+.symphony-mode .ringdown-box-wrapper .ringdown.online.on-call {
+  background-color: #66bb66;
+  border-color: #059819;
+}
+
+.symphony-mode .ringdown-box-wrapper .ringdown .ringdown-panel {
+  height: 100%;
+  background: transparent;
+}
+
+.symphony-mode .ringdown-box-wrapper .ringdown .contact-name {
+  color: #909090;
+  background-image: url(../../img/svg/symphony/red-led.svg);
+}
+.symphony-mode .ringdown-box-wrapper .ringdown.online .contact-name {
+  color: #555555;
+  background-image: url(../../img/svg/symphony/green-led.svg);
+}
+.symphony-mode .ringdown-box-wrapper .ringdown.on-call .contact-name {
+  color: #ffffff;
+}
+
+
+/* Dark (night) theme */
+
+.symphony-mode.dark #ringdowns-main-container {
+  background-color: #505050;
+  color: #959595;
+  border-color: #5c5c5c;
+}
+
+.symphony-mode.dark #ringdowns-main-container .window-header {
+  background-color: #3e3e3e;
+  border-color: #5c5c5c;
+}
+
+.symphony-mode.dark #ringdowns-main-container .tabs-panel-wrapper .nav-tabs.tabs-panel .tab {
+  /* not just border-color because it needs to bring back left border of first tab */
+  border-left: 1px solid #5c5c5c;
+}
+.symphony-mode.dark #ringdowns-main-container .tabs-panel-wrapper .nav-tabs.tabs-panel .tab.active {
+  background: #2d2d2d;
+}
+
+.symphony-mode.dark .ringdown-box-wrapper .ringdown {
+  border-color: #383838;
+  background-color: #505050;
+}
+.symphony-mode.dark .ringdown-box-wrapper .ringdown.offline {
+  background-color: #5a5a5a;
+}
+.symphony-mode.dark .ringdown-box-wrapper .ringdown.online {
+  background-color: #868686;
+}
+.symphony-mode.dark .ringdown-box-wrapper .ringdown.online.on-call {
+  background-color: #66bb66;
+  border-color: #059819;
+}
+
+.symphony-mode.dark .ringdown-box-wrapper .ringdown .contact-name {
+  background-image: url(../../img/svg/symphony/dark-red-led.svg);
+}
+.symphony-mode.dark .ringdown-box-wrapper .ringdown.online .contact-name {
+  color: #dddddd;
+  background-image: url(../../img/svg/symphony/dark-green-led.svg);
+}
+.symphony-mode.dark .ringdown-box-wrapper .ringdown.on-call .contact-name {
+  color: #ffffff;
+}
+
+.symphony-mode.dark .ringdown-settings-delete {
+  color: #dddddd;
+}

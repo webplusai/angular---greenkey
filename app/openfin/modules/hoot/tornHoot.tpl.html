@@ -1,0 +1,80 @@
+<div class="hoot-wrapper connection-wrapper" ng-class="{
+    'popout pop-out-wrapper': !inPanel,
+    'col-1-2': inPanel
+  }">
+  <div class="hoot-wrapper-inner" ng-class="{
+      'pop-out-inner': !inPanel,
+      'flex-height-layer': inPanel
+    }">
+    <div class="hoot connection"
+         ng-hide="hoot.emptySlot"
+         ng-class="{
+          'pop-out': !inPanel,
+          'blast-button': hoot.isBlast,
+          'online': hoot.isOnline,
+          'offline': !hoot.isOnline,
+          'away': hoot.isAway,
+          'shouting': hoot.shouting,
+          'shout-incoming-call': hoot.inboundShout,
+          'silenced': hoot.silenced,
+          'connecting': hoot.connecting
+        }">
+
+      <div ng-show="hoot.isOnline && hoot.connecting" class="connecting-hoot-overlay"
+           ng-class="{ 'animated fade': !hoot.connecting }">
+        Connecting
+      </div>
+
+      <div class="shout-panel"
+           ng-mousedown="handleShoutPressed()"
+           ng-mouseup="handleShoutDepressed()"
+           ng-mouseleave="handleShoutDepressed()">
+
+        <div class="contact-name" uib-tooltip="{{hoot.contactName}}" tooltip-placement="bottom">
+          <div ng-show="initialized">
+            <div class="blast-badge-wrapper">
+                <span class="blast-badge">blast</span>
+                <span class="action-text">{{hoot.shouting ? "UNSHOUT" : "SHOUT"}}</span>
+            </div>
+            <span
+                  class="hoot-contact-name">{{hoot.contactName}}</span>
+          </div>
+          <span ng-hide="initialized">Loading...</span>
+        </div>
+
+        <div class="text-center">
+          <div class="blast-contact-name">{{hoot.contactName}}</div>
+          <span class="action-text">{{hoot.shouting ? "UNSHOUT" : "SHOUT"}}</span>
+        </div>
+
+        <!-- TODO: uncomment this when we get design -->
+        <!--<div class="contact-photo" ng-show="hoot.photo">-->
+          <!--<img class="contact-photo-img"-->
+               <!--ng-src="{{ hoot.photo }}"-->
+               <!--alt="{{ hoot.contactName }}"-->
+               <!--uib-tooltip="{{ hoot.contactName }}"-->
+               <!--tooltip-append-to-body="true"-->
+               <!--tooltip-placement="bottom" >-->
+        <!--</div>-->
+
+        <span class="hotkey">{{hoot.hotKey}}</span>
+      </div>
+
+
+
+      <div ng-if="!inPanel && isTornWindow" class="dragging-plate">
+        <i class="fa fa-ellipsis-v"></i>
+        <i class="fa fa-ellipsis-v"></i>
+      </div>
+      <button ng-if="!inPanel" class="close-button"
+              ng-click="close(); $event.preventDefault();">
+              <i class="fa fa-close" ng-show="!hoot.isBlast"></i>
+              <span class="close-cross" ng-show="hoot.isBlast">X</span>
+      </button>
+    </div>
+
+    <div ng-if="inPanel"
+         ng-show="hoot.emptySlot" class="empty hoot connection"></div>
+
+  </div>
+</div>

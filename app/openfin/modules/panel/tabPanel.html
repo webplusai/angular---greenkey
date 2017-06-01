@@ -1,0 +1,19 @@
+<!-- TODO use template from main app template cache -->
+<div class="tabs-panel-wrapper">
+  <ul class="nav nav-tabs tabs-panel" role="tablist">
+    <li class="tab active" ng-if="!tabs.length">
+      <a href="" data-toggle="tab">Page 1</a>
+    </li>
+    <li class="tab" ng-repeat="tab in tabs track by tab.index"
+      ng-class="{
+        'active': tab.index === active,
+        'with-inbound-calls': tab.inboundCallsQty > 0,
+        'with-outbound-calls': tab.outboundCallsQty > 0
+        }"
+      ng-click="onTabClicked(tab.index)">
+      <a class="tab-title" href="" data-toggle="tab">
+        <span ng-hide="uiState.compactMode">Page </span>{{tab.index + 1}}
+      </a>
+    </li>
+  </ul>
+</div>

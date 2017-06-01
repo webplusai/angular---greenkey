@@ -1,0 +1,52 @@
+<div class="adaptive modal-window blast-panel-wrapper" id="blast-panel">
+	<div class="modal-window-header">
+		<h1 class="modal-window-title">Blast Groups</h1>
+        <span class="modal-window-close-button"
+			  uib-tooltip="Close window"
+			  tooltip-placement="left"
+			  ng-click="closeBlastPanel()"></span>
+	</div>
+	<div class="modal-window-content body">
+		<div class="row">
+			<div class="col-md-4 blast-groups-panel">
+
+				<div class="blast-groups-actions">
+					<button class="new-blast-group"
+							ng-click="addNewBlastGroup()"
+							uib-tooltip="New Blast Group"
+							tooltip-placement="bottom">
+						Add new group
+					</button>
+
+					<button ng-disabled="!isBlastsModified()"
+							ng-class="{'disabled': !isBlastsModified()}"
+							ng-click="saveChanges()"
+							uib-tooltip="Save Changes"
+							tooltip-placement="bottom">{{ isBlastsModified() ?
+						'SAVE CHANGES' : 'ALL CHANGES SAVED'}}
+					</button>
+				</div>
+				<div class="blast-groups">
+					<blast-group
+							ng-repeat="blast in getBlastGroups() track by $index"
+							blast="blast">
+					</blast-group>
+				</div>
+			</div>
+			<div class="col-md-8 contact-list-panel">
+
+				<div class="contacts-filter">
+					<input type="text" placeholder="Search for Contacts"
+						   ng-model="panelCtrl.hootSearchValue"/>
+				</div>
+				<div class="contact-list">
+					<blast-group-item
+							ng-repeat="hoot in hoots | orderBy:sortBlastGroupItems"
+							hoot="hoot">
+					</blast-group-item>
+				</div>
+			</div>
+		</div>
+
+	</div>
+</div>

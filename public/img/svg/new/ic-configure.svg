@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<svg width="20px" height="19px" viewBox="0 0 20 19" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: sketchtool 3.6 (26304) - http://www.bohemiancoding.com/sketch -->
+    <title>ic_configure</title>
+    <desc>Created with sketchtool.</desc>
+    <defs>
+        <filter x="-50%" y="-50%" width="200%" height="200%" filterUnits="objectBoundingBox" id="filter-1">
+            <feOffset dx="0" dy="-1" in="SourceAlpha" result="shadowOffsetOuter1"></feOffset>
+            <feGaussianBlur stdDeviation="0" in="shadowOffsetOuter1" result="shadowBlurOuter1"></feGaussianBlur>
+            <feColorMatrix values="0 0 0 0 0   0 0 0 0 0   0 0 0 0 0  0 0 0 0.7 0" in="shadowBlurOuter1" type="matrix" result="shadowMatrixOuter1"></feColorMatrix>
+            <feMerge>
+                <feMergeNode in="shadowMatrixOuter1"></feMergeNode>
+                <feMergeNode in="SourceGraphic"></feMergeNode>
+            </feMerge>
+        </filter>
+    </defs>
+    <g id="Page-1" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd" filter="url(#filter-1)">
+        <g id="TVBWEB-1857-mainWindow-Settings" transform="translate(-822.000000, -422.000000)" fill="#BFBFBF">
+            <g id="Group-2" transform="translate(604.000000, 413.000000)">
+                <path d="M220.650006,23.9768559 C220.045292,24.4830453 220.011263,25.3590759 220.514923,25.9650547 C221.021802,26.5368889 221.928183,26.6056377 222.504961,26.0659936 C223.075646,25.5617586 223.14382,24.6850382 222.636366,24.0803241 C222.099136,23.5072253 221.22368,23.4408907 220.650006,23.9768559 M219.440808,23.3991585 L226.754974,16.9847055 C226.280975,15.0113371 226.904199,12.8398847 228.528649,11.3909852 C230.267145,9.86471437 232.669101,9.61949476 234.651437,10.5324291 C234.830437,10.6149737 234.863547,10.8562845 234.717197,10.988264 L232.023,13.4157427 C231.728231,13.681311 231.700524,14.1341568 231.960804,14.4336398 L233.477188,16.1786883 C233.744826,16.4867936 234.213537,16.5145 234.515779,16.2400794 L237.182844,13.8176591 C237.330573,13.6834954 237.570849,13.7439668 237.631551,13.9341183 C238.294437,16.0130242 237.704783,18.3547393 235.967667,19.8807801 C234.344711,21.3274954 232.124169,21.6530753 230.226447,20.9031608 L222.909177,27.3188784 C221.812414,28.2691763 220.164166,28.1685822 219.216742,27.0943525 C218.268399,26.0215023 218.366578,24.3493414 219.440808,23.3991585" id="ic_configure"></path>
+            </g>
+        </g>
+    </g>
+</svg>

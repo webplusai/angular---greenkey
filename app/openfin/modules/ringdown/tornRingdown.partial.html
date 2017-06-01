@@ -1,0 +1,34 @@
+<div class="ringdown-box-wrapper connection-wrapper" ng-class="{
+    'popout pop-out-wrapper': !inPanel,
+    'col-1-2': inPanel
+  }">
+  <div ng-hide="ringdown.emptySlot" class="ringdown connection"
+       ng-class="{
+             'online' : ringdown.isOnline,
+             'offline' : !ringdown.isOnline,
+             'on-call': ringdown.inCall,
+             'speed-dial': ringdown.isSpeedDial,
+             'away': ringdown.isAway,
+           }"
+       ng-click="call()">
+
+    <div class="ringdown-panel">
+      <div class="contact-name text-ellipsis-multiple"
+           uib-tooltip="{{ ringdown.contactName }}"
+           tooltip-placement="bottom">
+        {{ ringdown.contactName }}
+      </div>
+    </div>
+
+    <div ng-if="inPanel"
+         ng-show="ringdown.emptySlot" class="empty ringdown connection"></div>
+
+    <div ng-if="!inPanel" class="dragging-plate">
+      <i class="fa fa-ellipsis-v"></i>
+      <i class="fa fa-ellipsis-v"></i>
+    </div>
+  </div>
+  <button ng-if="!inPanel" class="close-button" ng-click="close()">
+    <i class="fa fa-close"></i>
+  </button>
+</div>

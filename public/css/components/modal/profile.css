@@ -1,0 +1,125 @@
+#profile-panel {
+    width: 600px;
+}
+
+#profile-panel .main-info {
+    overflow: hidden;
+    margin-bottom: 20px;
+}
+
+#profile-panel .overlay {
+    background: rgba(0, 0, 0, .5);
+    position: absolute;
+    width: 100%;
+    height: calc(100% - 60px);
+    top: 60px;
+    left: 0;
+}
+
+#profile-panel .main-info .photo {
+    float: left;
+    width: 150px;
+    height: 150px;
+    overflow: hidden;
+    box-sizing: content-box;
+    border-radius: 10px;
+}
+
+#profile-panel .photo .placeholder {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    color: #424242;
+    background: #eee;
+    justify-content: center;
+    font-size: 2em;
+    font-weight: bold;
+}
+
+#profile-panel .names {
+    margin-left: 200px;
+}
+
+#profile-panel .info-block {
+    border-bottom: 1px solid #4e4e4e;
+    margin-bottom: 18px;
+}
+
+#profile-panel .body .title {
+    color: #b3b3b3;
+    margin-bottom: 10px;
+}
+
+#profile-panel .body .content {
+    color: #fff;
+    font-size: 1.2em;
+    margin-bottom: 20px;
+}
+
+#profile-panel .products .content span {
+    display: inline-block;
+    padding: 3px 10px;
+    border-radius: 4px;
+    margin-right: 10px;
+    margin-bottom: 10px;
+}
+
+#profile-panel .products .content span:last-child {
+    margin-right: 0;
+}
+
+#profile-panel .products .content span:nth-child(even) {
+    background: #fd9727;
+}
+
+#profile-panel .products .content span:nth-child(odd) {
+    background: #2b98f0;
+}
+
+#profile-panel .other-connections {
+    max-height: 183px;
+}
+
+#profile-panel .other-connections .content .connection-item {
+    display: inline-block;
+    padding: 5px 10px;
+    min-width: 30%;
+}
+
+#profile-panel .other-connections .content .connection-item:last-child {
+    border-right: 0;
+}
+
+#profile-panel .other-connections .content .photo {
+    float: left;
+    width: 36px;
+    height: 36px;
+    border-radius: 4px;
+    overflow: hidden;
+}
+
+#profile-panel .other-connections .content .name {
+    margin-left: 41px;
+    font-size: .9em;
+    white-space: nowrap;
+    margin-top: 6px;
+}
+
+#profile-panel .other-connections .content a {
+    text-decoration: none;
+}
+
+#profile-panel .other-connections .content a:hover,
+#profile-panel .other-connections .content a:active {
+    text-decoration: underline;
+}
+
+#profile-panel .modal-window-footer {
+    text-align: right;
+}
+
+#profile-panel .modal-window-footer .btn-connect {
+    background: -webkit-linear-gradient(top,
+    #00b917 0%, #00720e 100%);
+}

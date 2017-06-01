@@ -1,0 +1,27 @@
+/* Common css rules for error pages */
+.error-page .warning-widget {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    width: 488px;
+    padding: 125px 43px 25px;
+    margin: -250px 0 0 -244px;
+    border-radius: 3px;
+    box-shadow: 0 0 12px 3px rgba(0, 0, 0, .56);
+    background: transparent url(/img/GKT_Logo_White.png) 50% 20px no-repeat;
+    text-align: center;
+}
+
+
+.network-unavailable-page .try-again-link {
+    display: block;
+    margin-top: 30px;
+    font-size: 1.3em;
+    font-weight: bold;
+    color: #fff;
+    transition: color 0.4s;
+    text-decoration: none;
+}
+.network-unavailable-page .try-again-link:hover {
+    color: #5e9732;
+}

@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<head>
+  <link rel="stylesheet" type="text/css" href="/openFin.css"/>
+</head>
+<body class="whats-app-notification">
+  <h1 id="message-title"></h1>
+  <div id="message-close-icon" class="message-close-icon">x</div>
+
+  <img id="message-icon" class="message-icon">
+  <div id="message-text" class="message-text"></div>
+
+  <script type="text/javascript">
+
+    window.onNotificationMessage = function(message) {
+      document.getElementById('message-title').textContent = message.title;
+      document.getElementById('message-title').title = message.title;
+
+      document.getElementById('message-text').textContent = message.text;
+      document.getElementById('message-text').title = message.text;
+
+      if (message.icon && message.icon !== 'undefined') {
+        document.getElementById('message-icon').src = message.icon;
+      }
+
+      document.getElementById('message-close-icon').addEventListener('click', function() {
+        fin.desktop.Window.getCurrent().close();
+      });
+    };
+
+  </script>
+</body>
+</html>

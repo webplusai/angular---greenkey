@@ -1,0 +1,26 @@
+.modal-window.chatlog-modal-window {
+    height: 678px;
+}
+
+.openfin-popout .modal-window.chatlog-modal-window {
+    height: 601px;
+}
+
+.openfin-popout .modal-window.chatlog-modal-window .external-contacts-list {
+    height: 440px;
+}
+
+.chatlog-modal-window .external-contact-wrapper {
+    overflow: auto;
+    padding-top: 6px;
+    color: #FFFFFF;
+}
+
+.chatlog-modal-window .external-contact-wrapper .chat-message {
+    height: 100%;
+    overflow: auto;
+}
+
+.chatlog-modal-window .external-contact-wrapper .gkt-id {
+    font-size: 12px;
+}

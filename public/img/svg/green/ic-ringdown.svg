@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<svg width="48px" height="49px" viewBox="0 0 48 49" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:sketch="http://www.bohemiancoding.com/sketch/ns">
+    <!-- Generator: sketchtool 3.4 (381) - http://www.bohemiancoding.com/sketch -->
+    <title>ic_ringdown</title>
+    <desc>Created with sketchtool.</desc>
+    <defs>
+        <filter x="-50%" y="-50%" width="200%" height="200%" filterUnits="objectBoundingBox" id="filter-1">
+            <feMorphology radius="3" in="SourceAlpha" operator="dilate" result="shadowSpreadOuter1"></feMorphology>
+            <feOffset dx="0" dy="0" in="shadowSpreadOuter1" result="shadowOffsetOuter1"></feOffset>
+            <feGaussianBlur stdDeviation="3.5" in="shadowOffsetOuter1" result="shadowBlurOuter1"></feGaussianBlur>
+            <feColorMatrix values="0 0 0 0 0.383637313   0 0 0 0 0.965215774   0 0 0 0 0.180178181  0 0 0 0.7 0" in="shadowBlurOuter1" type="matrix" result="shadowMatrixOuter1"></feColorMatrix>
+            <feOffset dx="0" dy="1" in="SourceAlpha" result="shadowOffsetInner1"></feOffset>
+            <feGaussianBlur stdDeviation="0" in="shadowOffsetInner1" result="shadowBlurInner1"></feGaussianBlur>
+            <feComposite in="shadowBlurInner1" in2="SourceAlpha" operator="arithmetic" k2="-1" k3="1" result="shadowInnerInner1"></feComposite>
+            <feColorMatrix values="0 0 0 0 0.14290391   0 0 0 0 0.373883929   0 0 0 0 0.120858747  0 0 0 0.7 0" in="shadowInnerInner1" type="matrix" result="shadowMatrixInner1"></feColorMatrix>
+            <feMerge>
+                <feMergeNode in="shadowMatrixOuter1"></feMergeNode>
+                <feMergeNode in="SourceGraphic"></feMergeNode>
+                <feMergeNode in="shadowMatrixInner1"></feMergeNode>
+            </feMerge>
+        </filter>
+    </defs>
+    <g id="Iteration-5" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd" sketch:type="MSPage">
+        <g id="TVBWEB--1156-mainWindow" sketch:type="MSArtboardGroup" transform="translate(-1643.000000, -1.000000)" filter="url(#filter-1)" fill="#FFFFFF">
+            <g id="Top-Bar" sketch:type="MSLayerGroup">
+                <path d="M1676.13208,25.2262242 L1676.11295,25.2262242 C1675.37248,25.2156766 1674.78074,24.6071351 1674.79111,23.8666596 C1674.81149,22.4064462 1674.42999,20.96411 1673.68791,19.6957194 C1672.91364,18.3724456 1671.78791,17.3037439 1670.43264,16.6052799 C1669.7744,16.2659697 1669.51571,15.4573819 1669.85485,14.7991417 C1670.19416,14.1409015 1671.00274,13.8823965 1671.66098,14.2215279 C1673.46945,15.1534687 1674.9706,16.5781064 1676.00229,18.341518 C1676.99144,20.0318116 1677.49969,21.9554032 1677.47252,23.9042018 C1677.46215,24.6382415 1676.8638,25.2262242 1676.13208,25.2262242 M1679.74348,25.3424084 C1679.71184,25.3424084 1679.68002,25.3413357 1679.64784,25.3390117 C1678.90915,25.2869889 1678.35263,24.6459109 1678.40466,23.9074018 C1678.55429,21.7819761 1678.06231,19.6822935 1676.98163,17.8352165 C1675.87592,15.9450553 1674.24266,14.4667858 1672.259,13.5604094 C1671.58538,13.252742 1671.28898,12.4572046 1671.59664,11.7837687 C1671.90449,11.1101541 1672.70003,10.8141069 1673.37328,11.1214168 C1675.86198,12.2584096 1677.91017,14.1117437 1679.29637,16.4811939 C1680.65075,18.7962972 1681.26734,21.4294368 1681.07963,24.0956492 C1681.02975,24.8023368 1680.44105,25.3424084 1679.74348,25.3424084 M1677.13696,34.9683757 C1677.17022,33.4413014 1674.01524,31.8477236 1673.51718,31.3498424 L1673.51718,24.0224956 C1673.51718,19.1291358 1669.16282,16.6311482 1667.50667,15.8583149 C1667.50739,15.8352532 1667.50846,15.8125491 1667.50846,15.7894875 C1667.50846,14.4613869 1666.41312,13.3991209 1665.08484,13.3991209 C1663.7571,13.3991209 1662.6614,14.428314 1662.6614,15.7894875 C1662.6614,15.8082586 1662.66247,15.8270297 1662.66283,15.8458008 C1661.03278,16.6079078 1656.61961,19.1234151 1656.61961,24.0224956 L1656.61961,31.3498424 C1656.12137,31.8477236 1653,33.4413014 1653,34.9683757 L1653,35.7319129 C1653,35.9702166 1653.19325,36.1634696 1653.43156,36.1634696 L1660.96199,36.1634696 C1661.36798,38.0670387 1663.06292,39.4999 1665.08484,39.4999 C1667.10729,39.4999 1668.80206,38.0670387 1669.20823,36.1634696 L1676.70541,36.1634696 C1676.94353,36.1634696 1677.13696,35.9702166 1677.13696,35.7319129 L1677.13696,34.9683757 Z" id="ic_ringdown" sketch:type="MSShapeGroup"></path>
+            </g>
+        </g>
+    </g>
+</svg>

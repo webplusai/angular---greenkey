@@ -1,0 +1,69 @@
+<div class="modal-window user-profile-wrapper">
+
+    <div class="modal-window-header">
+        <div class="avatar-editor-header" ng-show="isAvatarEditorShown">
+            <button class="modal-window-header-button" ng-click="saveAvatar()">Save</button>
+            <button class="modal-window-header-button" ng-click="closeAvatarEditor()">Cancel</button>
+            <h1 class="modal-window-title">Avatar editor</h1>
+        </div>
+
+        <h1 class="modal-window-title" ng-show="!isAvatarEditorShown">My Profile</h1>
+        <span class="modal-window-close-button"
+              uib-tooltip="Close window"
+              tooltip-placement="left"
+              ng-click="closeThisDialog()"></span>
+    </div>
+
+
+    <div class="modal-window-content">
+        <div class="user-avatar-wrapper user-profile-panel">
+            <img class="user-avatar" ng-src="{{ avatar }}">
+            <div class="user-avatar-uploader-wrapper">
+                <input id="user-avatar-file" class="hidden" type="file">
+                <span class="user-avatar-upload-button" ng-click="selectAvatar()">{{'MYINFO.ADD_EDIT_PHOTO' | translate}}</span>
+            </div>
+        </div>
+
+        <div class="user-common-information user-profile-panel">
+            <div class="form-group">
+                <label class="user-profile-detail-label">{{'MYINFO.NAME' | translate}}</label>
+                <span class="user-profile-detail">{{ firstName }} {{ lastName }}</span>
+            </div>
+            <div class="form-group">
+                <label class="user-profile-detail-label">{{'MYINFO.COMPANY' | translate}}</label>
+                <span class="user-profile-detail">{{ company }}</span>
+            </div>
+            <div class="form-group">
+                <label class="user-profile-detail-label">{{'MYINFO.PHONE' | translate}}</label>
+                <span class="user-profile-detail">{{ phone }}</span>
+            </div>
+            <div class="form-group">
+                <label class="user-profile-detail-label">{{'MYINFO.CALL_RECORDING_STATUS' | translate}}</label>
+                <span class="user-profile-detail">{{ callRecordingStatus ? 'On' : 'Off' }}</span>
+            </div>
+
+            <div class="form-group" ng-show="isOpenfin">
+                <label class="user-profile-detail-label">{{'MYINFO.DISABLE_MSG_SOND_ALERT' | translate}}</label>
+                <div class="user-profile-switch">
+                    <switch ng-model="msgAlertEnabled" on="On" off="Off" class="green"></switch>
+                </div>
+            </div>
+        </div>
+
+        <div class="user-products-wrapper" ng-show="products">
+            <h1>Products</h1>
+            <span class="user-products">{{ products }}</span>
+        </div>
+
+        <div class="user-profile-preloader" ng-show="isPreloaderVisible">
+            <span us-spinner="{radius: 30, width: 8, length: 16, color: '#fff'}"
+                  spinner-start-active="true"
+                  spinner-key="user-profile-preloader-spinner"></span>
+        </div>
+
+        <div class="avatar-editor-wrapper" ng-show="isAvatarEditorShown">
+            <div id="avatar-editor" class="avatar-editor"></div>
+        </div>
+
+    </div>
+</div>

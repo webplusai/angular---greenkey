@@ -1,0 +1,59 @@
+<div class="modal-window add-teamhoot-connection-panel">
+  <!-- modal-header -->
+  <div class="modal-window-header">
+    <h1 class="modal-window-title">Green Key</h1>
+    <span class="modal-window-close-button"
+        uib-tooltip="Close window"
+        tooltip-placement="left"
+        ng-click="closeThisDialog()" >
+    </span>
+  </div><!-- / modal-header -->
+
+  <form role="form" class="default-modal-dialog add-company-connection add-teamhoot-connection">
+    <!-- modal-body -->
+    <div class="modal-window-content">
+      <div class="form-group ">
+        <p>Request Connection to "{{teamHoot.name}}" Team Hoot</p>
+        <p>Company "{{teamHoot.company.name}}"</p>
+      </div>
+
+      <div class="form-group">
+        <div class="col-sm-5">
+          <label class="control-label">
+            Message to Connection Manager*
+          </label>
+          <small class="color-green">
+            Please enter a message to be sent to the connection manager for this team hoot, who will then either approve or disapprove the request
+          </small>
+        </div>
+
+        <div class="col-sm-7 form-group">
+          <textarea ng-model="message"
+            class="form-control"
+            ng-class="{ 'with-error': showError }" >
+          </textarea>
+        </div>
+      </div>
+
+      <!-- modal-footer -->
+      <div class="modal-window-footer">
+        <div class="col-cancel pull-left text-center">
+          <button type="button"
+              class="btn btn-default control-button"
+              data-dismiss="modal"
+              ng-click="closeThisDialog()" >
+            Cancel
+          </button>
+        </div>
+        <div class="col-ok pull-right text-center">
+          <button type="button"
+              class="btn control-button"
+              ng-click="saveTeamHootRequest()">
+            OK
+          </button>
+        </div>
+      </div><!-- / modal-footer -->
+
+    </div><!-- modal-body -->
+  </form>
+</div>

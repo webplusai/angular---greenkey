@@ -1,0 +1,27 @@
+<div class="tabs-panel-wrapper">
+  <ul class="nav nav-tabs tabs-panel" role="tablist">
+    <li class="tab active" ng-if="!tabs.length">
+      <a href="" data-toggle="tab">Page 1</a>
+    </li>
+    <li class="tab" ng-repeat="tab in tabs track by tab.index"
+      ng-class="{
+        'active': tab.index === active,
+        'with-inbound-calls': tab.inboundCallsQty > 0,
+        'with-outbound-calls': tab.outboundCallsQty > 0
+        }"
+      ng-click="onTabClicked(tab.index)"
+      data-drop="true"
+      data-ng-model="tabs"
+      data-drop-page="{{tab.index}}"
+      data-jqyoui-options="{
+        scope: '{{dragAndDropScope}}'
+      }"
+      jqyoui-droppable="{
+        beforeDrop: 'onDropToPage'
+      }" >
+      <a class="tab-title" href="" data-toggle="tab">
+        <span ng-hide="uiState.compactMode">{{'PAGE_TEXT' | translate}} </span>{{tab.index + 1}}
+      </a>
+    </li>
+  </ul>
+</div>

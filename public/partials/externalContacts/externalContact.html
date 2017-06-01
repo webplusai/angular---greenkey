@@ -1,0 +1,48 @@
+<div class="external-contact-wrapper">
+    <div class="row external-contact">
+        <div class="col-xs-4 external-contact-name">{{ contact.contact.display_name }}</div>
+        <div class="col-xs-3 external-contact-company text-ellipsis" title="{{ contact.contact.company }}" >{{ contact.contact.company }}</div>
+        <div class="col-xs-5 external-contact-buttons">
+            <button
+                class="external-contact-button external-contact-control-button external-contact-control-edit"
+                ng-click="editContact()"
+                ng-show="isEditable"
+            >
+                <span class="button-title">Edit</span>
+            </button>
+
+            <!--this functionality is not implemented yet, so hide the button-->
+            <button
+                class="external-contact-button external-contact-control-button external-contact-control-create-ringdown"
+                ng-hide="true"
+            >
+                <span class="button-title">+ <span class="ringdown-icon"></span></span>
+            </button>
+
+            <div class="external-contact-actions-list" ng-show="isEditable">
+                <a class="dropdown-toggle external-contact-actions-button" data-toggle="dropdown">
+                    <span class="dropdown-button-container open-button-container">
+                        <span class="dropdown-button">
+                            <i class="fa fa-angle-down"></i>
+                        </span>
+                    </span>
+
+                    <span class="dropdown-button-container close-button-container">
+                        <span class="dropdown-button">
+                            <i class="fa fa-angle-up"></i>
+                        </span>
+                    </span>
+                </a>
+                <ul class="dropdown-menu" role="menu">
+                    <li>
+                        <a href="#" class="external-contact-action" ng-click="editContact()">Edit contact</a>
+                    </li>
+                </ul>
+            </div>
+
+            <button class="external-contact-button external-contact-call-button" ng-click="callExternalContact()">
+                <span class="button-title"><span class="call-icon"></span></span>
+            </button>
+        </div>
+    </div>
+</div>

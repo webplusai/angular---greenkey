@@ -1,0 +1,23 @@
+<form role="form" class="default-modal-dialog form-horizontal">
+    <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal" aria-hidden="true" ng-click="closeThisDialog()">×</button>
+        <h5 class="modal-title ng-binding">Green Key</h5>
+    </div>
+    <div class="form-group m-n text-center">
+        <p>"Online" state will be switched to "Away" if user stays inactive during the specified time period</p>
+    </div>
+    <div class="form-group m-n">
+        <label for="inactivity_time_seconds" class="col-sm-5 p-r-none">Inactivity time </label>
+        <select name="inactivity_time_seconds" id="inactivity_time_seconds" class="col-sm-6"
+                ng-options="option.name for option in inactivityTimeSelectorData.availableOptions track by option.id"
+                ng-model="inactivityTimeSelectorData.selectedOption"></select>
+    </div>
+    <div class="modal-footer">
+        <div class="col-cancel pull-left text-center">
+            <button type="button" class="btn btn-default" data-dismiss="modal" ng-click="closeThisDialog()">Cancel</button>
+        </div>
+        <div class="col-ok pull-right text-center">
+            <button type="button" class="btn btn-primary" ng-click="saveConfig(); closeThisDialog();">OK</button>
+        </div>
+    </div>
+</form>

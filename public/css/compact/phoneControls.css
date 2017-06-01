@@ -1,0 +1,59 @@
+.compact #phone-main-container .panel-hold
+{
+  display: none;
+}
+
+.compact #phone-main-container{
+  height: 160px;
+}
+
+.compact #phone-main-container .window-wrapper {
+  padding: 5px;
+}
+
+.compact .phone-controls .search-contact {
+  width: calc(100% - 45px);
+  padding: 2px 5px;
+}
+
+.compact .phone-controls .dialer-pad-button {
+  width: 35px;
+  margin: 3px 6px 0 0;
+  height: 34px;
+  padding-left: 4px;
+}
+
+.compact .phone-controls .number-input input {
+  display: block;
+  margin: 0;
+  width: calc(100% - 99px);
+  height: 34px;
+  font-size: .8em;
+}
+
+.compact #phone-block .dialer-panel {
+  margin-bottom: 5px;
+}
+
+.compact .phone-controls .controls-panel .controls {
+  width: 100%;
+  margin: 0;
+}
+
+.compact .phone-controls .controls-panel .controls .buttons-row {
+  width: 50%;
+  float: left;
+  padding: 0 5px;
+}
+
+.compact #phone-block .controls .button {
+  /* have to use !importants because of MediaQuery style */
+  height: 32px !important;
+  width: 100% !important;
+  margin: 0 0 4px 0 !important;
+  float: none;
+}
+
+.compact .phone-controls .call-button{
+  line-height: 32px;
+}

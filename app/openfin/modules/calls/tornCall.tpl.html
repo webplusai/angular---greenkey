@@ -1,0 +1,38 @@
+<div class="torn-call">
+  <div class="heading" ng-class="{
+      'draggable': poppedOut
+    }">
+    <span ng-show="initialized">{{call.displayName}}</span>
+    <span ng-hide="initialized">Loading...</span>
+    <div class="close button">
+      <i class="fa fa-close icon" ng-click="close()"></i>
+    </div>
+  </div>
+  <div class="controls" ng-show="initialized">
+    <div class="accept button" ng-show="call.ringing" ng-click="acceptCall()">
+      Accept
+    </div>
+    <div class="reject button" ng-show="call.ringing" ng-click="rejectCall()">
+      Reject
+    </div>
+
+    <div class="button" ng-hide="call.ringing" ng-click="toggleSelect()"
+         ng-class="{'selected': call.selected}">
+      {{call.selected ? 'Selected' : 'Select'}}
+    </div>
+
+    <div class="button" ng-show="call.selected" ng-click="release()">Release</div>
+
+    <div class="button" ng-show="!call.ringing && !call.selected"
+         ng-click="toggleMute()"
+         ng-class="{'selected': call.muted}">
+      {{call.muted ? 'Muted' : 'Mute'}}
+    </div>
+
+    <div class="button" ng-show="!call.ringing && !call.selected"
+        ng-class="{'selected': call.silenced}"
+        ng-click="toggleSilence()" >
+      {{call.silenced ? 'Silenced' : 'Silence'}}
+    </div>
+  </div>
+</div>

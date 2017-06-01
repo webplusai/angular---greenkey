@@ -1,0 +1,66 @@
+<div class="modal-window" id="error-correction-panel">
+  <div class="modal-window-header">
+    <h1 class="modal-window-title">Transcription Error Correction</h1>
+        <span class="modal-window-close-button"
+              uib-tooltip="Close window"
+              tooltip-placement="left"
+              ng-click="closeThisDialog()"></span>
+  </div>
+  <div class="modal-window-content body">
+
+    <div class="record-playback">
+      <div class="title">Record playback</div>
+      <div class="sound-wave">
+        <img src="/img/temp/soundWave.png"/>
+      </div>
+      <div class="controls">
+        <div class="btn btn-sm btn-success"><i class="fa fa-fast-backward"></i> Begin</div>
+        <div class="btn btn-sm btn-success"><i class="fa fa-backward"></i> Rewind</div>
+        <div class="btn btn-sm btn-success"><i class="fa fa-play"></i> Play</div>
+        <div class="btn btn-sm btn-success"><i class="fa fa-forward"></i> Forward</div>
+      </div>
+    </div>
+
+    <div class="inputs row">
+      <div class="col-md-6">
+        <label class="title" for="originalErrorCorrectionText">Original text</label>
+        <textarea id="originalErrorCorrectionText"
+                  rows="10" readonly="readonly">{{originalText}}</textarea>
+      </div>
+      <div class="col-md-6">
+        <label class="title" for="correctedErrorCorrectionText">Corrected text</label>
+        <textarea id="correctedErrorCorrectionText"
+                  rows="10" ng-model="correctedText" ng-change="onChange()"></textarea>
+      </div>
+    </div>
+
+    <div class="clearfix"></div>
+
+    <div class="accuracy">
+      <div class="value">Accuracy: {{accuracy}}%</div>
+      <div class="progress">
+        <div class="progress-bar progress-bar-striped" role="progressbar" style="width: {{accuracy}}%"
+        ng-class="{
+          'progress-bar-success': accuracy >= 80,
+          'progress-bar-warning': accuracy < 80 && accuracy >= 30,
+          'progress-bar-danger': accuracy < 30
+        }">
+          <span class="sr-only">{{accuracy}}%</span>
+        </div>
+      </div>
+    </div>
+
+
+    <div class="modal-window-footer">
+      <button class="control-button btn-danger" ng-click="closeThisDialog()">
+        Cancel
+      </button>
+      <button class="control-button btn-warning" ng-click="reset()">
+        Reset
+      </button>
+      <button class="control-button btn-info" ng-click="confirm()">
+        Confirm
+      </button>
+    </div>
+  </div>
+</div>

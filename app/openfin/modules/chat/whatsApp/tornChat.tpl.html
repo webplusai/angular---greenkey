@@ -1,0 +1,81 @@
+<div class="whats-app chat-window">
+
+  <div class="chat-tabs" ng-if="chats">
+    <div class="chat-tab" ng-repeat="chatData in chats" ng-class="{
+      'active': chatData.uid === activeUid,
+      'unread-alert': chatData.unread
+    }" ng-click="switchChat(chatData)">
+      {{chatData.contactName}}
+      <span class="chat-icon"
+        ng-class="{
+          'icon-yahoo': chatData.chatNetworkId === chatConstants.yahoo,
+          'icon-whatsapp': chatData.chatNetworkId === chatConstants.whatsapp,
+          'icon-wechat': chatData.chatNetworkId === chatConstants.wechat
+        }" >
+      </span>
+      <span ng-show="chatData.unreadQty === true">(!)</span>
+      <span ng-show="chatData.unreadQty !== true && chatData.unreadQty > 0"> ({{chatData.unreadQty}})</span>
+
+      <span title="Close chat"
+        class="close-button fa fa-close"
+        ng-show="initialized"
+        ng-click="closeChat(chatData.uid)">
+      </span>
+    </div>
+  </div>
+
+  <div class="contact-name">
+    <div class="avatar" ng-class="{
+      'empty': !avatar && !isGroup,
+      'empty-group': !avatar && isGroup
+    }">
+      <img width="40" height="40" ng-src="{{avatar}}" ng-if="avatar"/>
+    </div>
+    <span class="contact-name-text" title="{{contactName}}">{{contactName}}</span>
+    <button ng-if="!tabbedView" title="Tab chat" class="pin torn-out-button"
+            ng-show="initialized" ng-click="pin()">
+      <span class="pin-label">Tab</span>
+    </button>
+    <button ng-if="tabbedView" title="Tear chat out" class="unpin torn-out-button"
+            ng-show="initialized" ng-click="unpin()">
+      <span class="pin-label">Pop-out</span>
+    </button>
+  </div>
+  <div class="messages">
+    <div ng-repeat="($index, msg) in messages track by $index">
+      <div class="message" ng-class="{
+          'inbound': !msg.isOutbound,
+          'outbound': msg.isOutbound
+        }">
+        <div class="name">{{msg.from}}</div>
+        <div>
+          <span ng-show="msg.type !== 'image'" class="text" ng-bind-html="msg.content | linkify"></span>
+          <img  ng-show="msg.type === 'image'" class="text" ng-src="{{msg.decodedUrl}}" >
+          <span  ng-show="msg.type === 'image'" class="text">{{msg.attachmentCaption}}</span>
+        </div>
+        <div class="date">{{msg.date | date:'short'}}</div>
+      </div>
+      <div class="clearfix"></div>
+    </div>
+  </div>
+  <div ng-show="waitingForUpdate" class="unread-notification">
+    <div class="content alert alert-info">
+      <i class="fa fa-bell"></i>
+      <div class="unread-messages" ng-show="unreadQty === true || unreadQty > 0">
+        You have
+        <span class="badge" ng-hide="unreadQty === true">{{unreadQty}}</span>
+        unread messages
+      </div>
+      <!-- TODO plug in spinner service -->
+      <div class="loading" ng-show="unreadQty === 0">
+        Loading...
+      </div>
+    </div>
+  </div>
+  <div class="answer-area">
+    <textarea placeholder="Type a message" ng-model="messageText"
+              ng-keydown="onKeydown($event)"></textarea>
+    <button class="btn btn-default" ng-click="send()"><i class="fa fa-send"></i>
+    </button>
+  </div>
+</div>

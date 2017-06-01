@@ -1,0 +1,6 @@
+{
+    "url": "https://messenger.yahoo.com/",
+    "file": "monitor/data/yahoo-db.json",
+    "exclude": ["^https://a.analytics.yahoo.com/fpc.pl"],
+    "debug": false
+}

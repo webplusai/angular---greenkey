@@ -1,0 +1,47 @@
+<div class="dropdown-menu" ng-class="{ 'compact-dropdown-menu': compactMode }">
+
+  <div class="events-number" ng-show="getEvents().length === 0">
+    <strong>You have <br><span>0</span> Missed Events</strong>
+  </div>
+
+  <div class="list-group missed-connections-list-group" ng-show="getEvents().length > 0">
+
+    <div ng-repeat="(key, missedEvent) in getEvents()"
+      class="row info-menu-item"
+      ng-click="$event.stopPropagation()">
+
+      <div  class="col-xs-2 info-menu-item-component dropdown-menu-icon"
+        ng-class="::{
+          'hoot-menu-icon': missedEvent.shoutEvent,
+          'ringdown-menu-icon': missedEvent.ringdownEvent,
+          'external-call-menu-icon': !missedEvent.shoutEvent && !missedEvent.ringdownEvent
+        }">
+      </div>
+
+      <span class="col-xs-9 text-ellipsis info-menu-item-component dropdown-menu-contact-name">
+        <p class="text-ellipsis dropdown-menu-company" ng-show="compactMode">{{ missedEvent.time | date:"MM/dd/yyyy HH:mm:ss" }}</p>
+        {{ missedEvent.user }}
+        <br>
+        <p class="text-ellipsis dropdown-menu-company" ng-show="!compactMode">{{ missedEvent.time | elapsed:updateTimeAgo }}</p>
+      </span>
+
+      <i class="col-xs-1 info-menu-item-component close-button fa fa-times"
+        ng-click="removeEvent(key); $event.stopPropagation()">
+      </i>
+
+      <!-- Commented until finding a reliable way to record same streams several times.
+      <audio-record
+        connection="missedEvent.connection"
+        class="pull-right">
+      </audio-record>
+      -->
+      <br>
+      <div class="col-xs-12 info-menu-separator" ng-show="!$last">
+        <div class="info-menu-separator-line"></div>
+      </div>
+
+    </div>
+
+  </div>
+
+</div>

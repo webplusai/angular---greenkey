@@ -1,0 +1,15 @@
+node_modules/
+bower_components/
+.DS_Store
+.idea/
+*.iml
+npm-debug.log
+Thumbs.db
+env.js
+build/
+.project
+.tern-project
+.settings/
+app.json
+e2e-ui-tests/reports/*
+/nbproject/private/

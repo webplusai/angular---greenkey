@@ -1,0 +1,25 @@
+<div class="adaptive modal-window hotkeys-panel" id="midi-panel">
+  <div class="modal-window-header">
+    <h1 class="modal-window-title">MIDI Hotkey Configuration</h1>
+        <span class="modal-window-close-button"
+              uib-tooltip="Close window"
+              tooltip-placement="left"
+              ng-click="closeThisDialog()"></span>
+  </div>
+  <div class="modal-window-content body scrollable">
+    <div class="contact-list-panel">
+      <div class="contact-list scrollable">
+        <div class="contact-list-header">
+          <div class="col-xs-6 column">HOOT</div>
+          <div class="col-xs-6 column">MIDI PAD KEY</div>
+        </div>
+        <contact-list-item item="item"
+                           ng-repeat="item in itemsById"></contact-list-item>
+      </div>
+    </div>
+  </div>
+  <div class="modal-window-footer">
+    <button class="control-button"  ng-click="save(); closeThisDialog();">Save</button>
+    <button class="control-button"  ng-click="discard(); closeThisDialog();">Cancel</button>
+  </div>
+</div>

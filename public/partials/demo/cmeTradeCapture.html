@@ -1,0 +1,208 @@
+<div class="modal-window" id="trade-capture-panel">
+  <div class="modal-window-header">
+    <h1 class="modal-window-title">Trade Capture</h1>
+        <span class="modal-window-close-button"
+              uib-tooltip="Close window"
+              tooltip-placement="left"
+              ng-click="closeThisDialog()"></span>
+  </div>
+  <div class="modal-window-content body">
+
+    <div class="preview">
+      CME Clearport API Trade Capture Report submission
+    </div>
+
+    <form id="trade-capture-form">
+
+      <div class="row">
+        <div class="col-md-4">
+          <label>Trade Type</label>
+        </div>
+        <div class="col-md-8">
+          <select ng-model="formData.TradeType" ng-style="{'color':'black'}">
+            <option ng-repeat="t in tradeTypes" value="{{t.name}}">{{t.name}}</option>
+          </select>
+        </div>
+      </div>
+
+      <div class="row">
+        <div class="col-md-4">
+          <label>Execution Time</label>
+        </div>
+        <div class="col-md-8">
+          <input name="ExecutionTime" id="ExecutionTime" type="text" value="{{currentTime()}}" ng-style="{'color':'black', 'width':'210px'}"/>
+        </div>
+      </div>
+
+      <div class="row">
+        <div class="col-md-4">
+          <label>Trade Report ID</label>
+        </div>
+        <div class="col-md-8">
+          <input name="RptID" id="RptID" type="text" value="RptID12345678" ng-style="{'color':'black', 'width':'210px'}"/>
+        </div>
+      </div>
+
+      <div class="row">
+        <div class="col-md-4">
+          <label>Execution ID</label>
+        </div>
+        <div class="col-md-8">
+          <input name="ExecID" id="ExecID" type="text" value="ExecID12345678" ng-style="{'color':'black', 'width':'210px'}"/>
+        </div>
+      </div>
+
+      <div class="divider"></div>
+      <div class="divider"></div>
+
+      <div class="row">
+        <div class="col-md-4">
+          <label>Exchange</label>
+        </div>
+        <div class="col-md-8">
+          <select ng-model="formData.Exchange" ng-style="{'color':'black'}">
+            <option ng-repeat="e in exch" value="{{e.exch}}">{{e.exch}}</option>
+          </select>
+        </div>
+      </div>
+
+      <div class="row">
+        <div class="col-md-4">
+          <label>Product</label>
+        </div>
+        <div class="col-md-8">
+            <select ng-model="formData.Product" ng-style="{'color':'black'}" ng-options="p.prod as p.prod for p in prod"></select>
+        </div>
+      </div>
+
+      <div class="row">
+        <div class="col-md-4">
+          <label>Expiry</label>
+        </div>
+        <div class="col-md-8">
+          <select ng-model="formData.ExpMonth" ng-style="{'color':'black'}">
+            <option ng-repeat="m in month" value="{{m.month}}">{{m.month}}</option>
+          </select>
+          <select ng-model="formData.ExpYear" ng-style="{'color':'black'}">
+            <option ng-repeat="y in year" value="{{y.year}}">{{y.year}}</option>
+          </select>
+        </div>
+      </div>
+
+      <div class="row">
+        <div class="col-md-4">
+          <label>Price</label>
+        </div>
+        <div class="col-md-8">
+          <input name="Price" id="Price" type="text"
+                 ng-model="formData.price" ng-style="{'color':'black'}"/>
+        </div>
+      </div>
+
+      <div class="row">
+        <div class="col-md-4">
+          <label>Quantity</label>
+        </div>
+        <div class="col-md-8">
+          <input name="Quantity" id="Quantity" type="text"
+                 ng-model="formData.qty" ng-style="{'color':'black'}"/>
+        </div>
+      </div>
+
+      <div class="divider"></div>
+      <div class="divider"></div>
+
+      <div class="row">
+        <div class="col-md-4">
+          <label>Broker Firm</label>
+        </div>
+        <div class="col-md-8">
+          <input name="BrokerFirm" id="BrokerFirm" type="text" value="green_key" ng-style="{'color':'black'}"/>
+        </div>
+      </div>
+
+      <div class="row">
+        <div class="col-md-4">
+          <label>Broker Name</label>
+        </div>
+        <div class="col-md-8">
+          <input name="BrokerName" id="BrokerName" type="text" value="arivera1" ng-style="{'color':'black'}"/>
+        </div>
+      </div>
+
+      <div class="divider"></div>
+      <div class="divider"></div>
+
+      <div class="row">
+        <div class="col-md-4">
+          <label>Buyer Clearing</label>
+        </div>
+        <div class="col-md-8">
+          <select ng-model="formData.BuyerClearing" ng-style="{'color':'black'}" ng-options="c.id as c.name for c in clearing"></select>
+        </div>
+      </div>
+
+      <div class="row">
+        <div class="col-md-4">
+          <label>Buyer Account</label>
+        </div>
+        <div class="col-md-8">
+          <input name="BuyerAccount" id="BuyerAccount" type="text" value="JMCDEM01" ng-style="{'color':'black'}"/>
+        </div>
+      </div>
+
+      <div class="row">
+        <div class="col-md-4">
+          <label>Buyer Trader</label>
+        </div>
+        <div class="col-md-8">
+          <input name="BuyerTrader" id="BuyerTrader" type="text" value="jmcbtest1" ng-style="{'color':'black'}"/>
+        </div>
+      </div>
+
+      <div class="divider"></div>
+      <div class="divider"></div>
+
+      <div class="row">
+        <div class="col-md-4">
+          <label>Seller Clearing</label>
+        </div>
+        <div class="col-md-8">
+          <select ng-model="formData.SellerClearing" ng-style="{'color':'black'}" ng-options="c.id as c.name for c in clearing"></select>
+        </div>
+      </div>
+
+      <div class="row">
+        <div class="col-md-4">
+          <label>Seller Account</label>
+        </div>
+        <div class="col-md-8">
+          <input name="SellerAccount" id="SellerAccount" type="text" value="072ACETEST" ng-style="{'color':'black'}"/>
+        </div>
+      </div>
+
+      <div class="row">
+        <div class="col-md-4">
+          <label>Seller Trader</label>
+        </div>
+        <div class="col-md-8">
+          <input name="SellerTrader" id="SellerTrader" type="text" value="jmcace1" ng-style="{'color':'black'}"/>
+        </div>
+      </div>
+
+    </form>
+
+  </div>
+
+
+
+  <div class="modal-window-footer">
+    <button class="control-button btn-success" ng-click="submitForm()">
+      Submit
+    </button>
+    <button class="control-button btn-danger" ng-click="reset()">
+      Clear
+    </button>
+  </div>
+
+</div>

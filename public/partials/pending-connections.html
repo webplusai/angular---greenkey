@@ -1,0 +1,113 @@
+<div class="dropdown-menu" ng-class="{ 'compact-dropdown-menu': compactMode }" >
+
+  <div class="events-number" ng-show="pendingCons.length === 0">
+    <strong>You have<br><span>{{ pendingCons.length }}</span> Pending Connections</strong>
+  </div>
+
+  <div class="list-group padding-connections-list-group pending-connection-list" ng-show="pendingCons.length > 0">
+
+    <div href ng-repeat="(key, conn) in pendingCons track by key"
+      class="row info-menu-item"
+      ng-click="$event.stopPropagation(); $event.preventDefault()" >
+
+      <div  class="col-xs-1 info-menu-item-component dropdown-menu-icon"
+        ng-class="::{
+          'hoot-menu-icon': conn.connection_type.toLowerCase() === constants.GKT.CONTACT_TYPE.hoot.toLowerCase(),
+          'ringdown-menu-icon': conn.connection_type.toLowerCase() === constants.GKT.CONTACT_TYPE.ringdown.toLowerCase()
+        }"
+        >
+      </div>
+
+      <span class="text-ellipsis info-menu-item-component dropdown-menu-contact-name"
+          ng-class="{
+            'col-xs-10': compactMode,
+            'col-xs-5': !compactMode
+          }"  >
+        {{ (currentUserName === conn.from) ? conn.to : conn.from }}
+        <br>
+        <p class="text-ellipsis dropdown-menu-company" ng-show="currentUserName !== conn.from">
+          {{ conn.company.from }}
+        </p>
+        <p class="text-ellipsis dropdown-menu-company" ng-show="currentUserName === conn.from">
+          {{ conn.company.to }}
+        </p>
+      </span>
+
+      <div class="btn-container"
+          ng-show="currentUserName !== conn.from"
+          ng-class="{
+            'col-xs-4 pull-right': compactMode,
+            'col-xs-3': !compactMode
+          }" >
+        <div class="col-xs-12 info-menu-item-component info-menu-button"
+            ng-click="acceptPendingConnection(conn)">
+          Approve
+        </div>
+      </div>
+
+      <div class="btn-container"
+          ng-show="currentUserName !== conn.from"
+          ng-class="{
+            'col-xs-4 pull-right': compactMode,
+            'col-xs-3': !compactMode
+          }" >
+        <div class="col-xs-12 info-menu-item-component info-menu-button btn-warning"
+            ng-click="rejectPendingConnection(conn)" >
+          Ignore
+        </div>
+      </div>
+
+      <div class="btn-container"
+          ng-show="currentUserName === conn.from"
+          ng-class="{
+            'col-xs-4 pull-right': compactMode,
+            'col-xs-3': !compactMode
+          }" >
+        <div class="col-xs-12 info-menu-item-component info-menu-button"
+            ng-click="resendPendingConnection(conn)" >
+          Resend
+        </div>
+      </div>
+
+      <div class="btn-container"
+          ng-show="currentUserName === conn.from"
+          ng-class="{
+            'col-xs-4 pull-right': compactMode,
+            'col-xs-3': !compactMode
+          }" >
+        <div class="col-xs-12 info-menu-item-component info-menu-button btn-warning"
+            ng-click="cancelPendingConnection(conn)" >
+          Cancel
+        </div>
+      </div>
+
+      <p class="text-ellipsis pending-connection-label pull-left text-muted" >
+        <span ng-show="conn.connection_type.toLowerCase() === constants.GKT.CONTACT_TYPE.hoot.toLowerCase() && currentUserName !== conn.from" >
+         {{conn.from}} wants to be a Shout Connection
+        </span>
+        <span ng-show="conn.connection_type.toLowerCase() === constants.GKT.CONTACT_TYPE.hoot.toLowerCase() && currentUserName === conn.from" >
+         You requested {{conn.to}} to be a Shout Connection
+        </span>
+        <span ng-show="conn.connection_type.toLowerCase() === constants.GKT.CONTACT_TYPE.ringdown.toLowerCase() && currentUserName !== conn.from" >
+          {{conn.from}} wants to be a Ringdown Connection
+        </span>
+        <span ng-show="conn.connection_type.toLowerCase() === constants.GKT.CONTACT_TYPE.ringdown.toLowerCase() && currentUserName === conn.from" >
+          You requested {{conn.to}} to be a Ringdown Connection
+        </span>
+      </p>
+
+      <br>
+      <div class="col-xs-12 info-menu-separator" ng-show="!$last">
+        <div class="info-menu-separator-line"></div>
+      </div>
+
+      <p class="pending-connection-hide-btn"
+        ng-click="hide(conn, key); $event.stopPropagation();">
+         Hide
+      </p>
+
+    </div>
+
+  </div>
+
+</div>

@@ -1,0 +1,94 @@
+<div class="login-page">
+    <div class="widget-wrapper">
+        <div class="login-widget">
+            <span us-spinner="{radius:30, width:8, length: 16}" spinner-key="spinner-1"></span>
+            <div class="login-widget-header">
+                <h4>{{'LOGIN.LOGIN_ACCOUNT_TEXT' | translate}}</h4>
+            </div>
+            <div class="login-widget-body">
+                <form class="form-horizontal" ng-submit="login()" role="form" >
+                    <div class="form-fields">
+                        <div class="form-group">
+                            <input type="username"
+                                class="form-control"
+                                ng-class="{'has-error':user.usernameWrong}"
+                                ng-change="resetErrors()"
+                                ng-model="user.username"
+                                placeholder="{{'LOGIN.USERNAME' | translate}}"
+                                autofocus />
+                        </div>
+                        <div class="form-group">
+                            <input type="password"
+                                class="form-control"
+                                ng-class="{'has-error':user.passwordWrong}"
+                                ng-change="resetErrors()"
+                                ng-model="user.password"
+                                placeholder="{{'LOGIN.PASSWORD' | translate}}" />
+                        </div>
+                    </div>
+                    <div class="form-actions">
+                        <div class="form-links">
+                            <a href="{{::tvcUrl}}/#/login/forgot/" target="_blank" class="loginlink pull-right">{{'LOGIN.FORGOT_PASSWORD' | translate}}</a>
+                        </div>
+                        <button type="submit" ng-class="{'has-error':!!user.error}"  class="btn btn-block btn-login">
+                            {{loginText | translate}}
+                        </button>
+                        <button type="button" ng-click="linkedinLogin()" id="linkedin" class="btn btn-block btn-login">
+                            <i class="fa fa-linkedin"></i>
+                            <small>{{'LOGIN.LINKEDIN_REGISTER' | translate}}</small>
+                        </button>
+                        <button ng-if="false" type="button" ng-click="ttLogin()" id="tt-login" class="btn btn-block btn-login">
+                          <small>{{'LOGIN.TT_REGISTER' | translate}}</small>
+                        </button>
+                        <button type="button" ng-click="goToRegisterPage()" class="btn btn-block btn-login">
+                            {{'LOGIN.EMAIL_REGISTER' | translate}}
+                        </button>
+                    </div>
+
+                    <div class="terms-of-use">
+                      {{ 'LOGIN.AGREE_TERMS' | translate }}
+                      <a href="http://greenkeytech.com/application-terms-of-use"
+                          target="_blank"
+                          class="login-link">
+                        {{ 'LOGIN.TERMS_OF_USE' | translate }}
+                      </a>
+                    </div>
+                </form>
+            </div>
+            <a href="https://dl.openfin.co/services/download?fileName=GreenKey&config={{::openFinConfigURL}}"
+               target="_blank"
+               class="desktop-app-link"
+               ng-hide="isOpenFin"
+            >{{'LOGIN.DOWNLOAD_DESKTOP_APP' | translate}}</a>
+        </div>
+    </div>
+
+    <gkt-footer></gkt-footer>
+
+
+  <script type="text/ng-template" id="loginFailedDialog">
+    <form role="form" class="modal-dialog login-failure-dialog">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal" aria-hidden="true" ng-click="ngDialogData.closeDialog()">×</button>
+        <h5 class="modal-title ng-binding">{{ngDialogData.title}}</h5>
+      </div>
+      <div class="form-group error-text">
+          <label>
+            <p ng-bind-html="ngDialogData.text"></p>
+            Please contact Green Key support desk {{ ngDialogData.reasonToContact }}:<br>
+            North America Support: +1 (646) 883 8830 <br>
+            EMEA Support: +44 (0) 203 026 3150 <br>
+            APAC Support: +65 90058530
+          </label>
+      </div>
+      <div ng-if="ngDialogData.yesNoDialog" class="form-group close-dialog-button-wrapper">
+        <button class="close-dialog-button" type="button" ng-click="ngDialogData.chooseYes()">Yes</button>
+        <button class="close-dialog-button" type="button" ng-click="ngDialogData.chooseNo()">No</button>
+      </div>
+      <div ng-if="!ngDialogData.yesNoDialog" class="form-group close-dialog-button-wrapper">
+        <button class="close-dialog-button" type="button" ng-click="ngDialogData.closeDialog()">Close</button>
+      </div>
+    </form>
+  </script>
+
+</div>

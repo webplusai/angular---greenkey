@@ -1,0 +1,60 @@
+
+<div class="modal-window proxy-panel">
+    <!-- modal-header -->
+    <div class="modal-window-header">
+        <h1 class="modal-window-title">{{'PROXY_CONFIG.TITLE' | translate}}</h1>
+        <span class="modal-window-close-button"
+              uib-tooltip="Close window"
+              tooltip-placement="left"
+              ng-click="discard(); closeThisDialog()"
+        ></span>
+    </div><!-- / modal-header -->
+    <form role="form" id="proxyConfigDlg" class="default-modal-dialog">
+    <!-- modal-body -->
+    <div class="modal-window-content">
+            <div class="body-wrapper">
+                <div class="row">
+                    <input type="checkbox"
+                           id="proxy_config_override-system-settings"
+                           ng-model="proxyConfig.overrideSystemSettings"/>
+                    <label for="proxy_config_override-system-settings">{{'PROXY_CONFIG.OVERRIDE_SYSTEM_SETTINGS' |
+                        translate}}</label>
+                </div>
+                <div class="form-group" ng-show="proxyConfig.overrideSystemSettings">
+                    <div class="row">
+                        <h4>{{'PROXY_CONFIG.SERVER' | translate}}</h4>
+                    </div>
+                    <div class="row">
+                        <label for="proxy_config_host">{{'PROXY_CONFIG.HOST' | translate}}</label>
+                        <input
+                                type="text"
+                                id="proxy_config_host"
+                                ng-readonly="!proxyConfig.overrideSystemSettings"
+                                ng-model="proxyConfig.host"/>
+                        <label
+                                for="proxy_config_port">{{'PROXY_CONFIG.PORT' | translate}}</label>
+                        <input
+                                type="number"
+                                id="proxy_config_port"
+                                ng-readonly="!proxyConfig.overrideSystemSettings"
+                                ng-model="proxyConfig.port"/>
+                    </div>
+                </div>
+                <div class="row" ng-show="proxyConfigWebRTCLimitEnabledInOpenFin">
+                    <input type="checkbox"
+                           id="proxy_config_force_voice_via_proxy"
+                           ng-model="proxyConfig.forceSendingVoiceViaProxy"/>
+                    <label for="proxy_config_force_voice_via_proxy">{{'PROXY_CONFIG.FORCE_VOICE_VIA_PROXY' |
+                        translate}}</label>
+
+                </div>
+            </div>
+        <!-- modal-footer -->
+        <div class="modal-window-footer">
+            <div class="submit">
+                <input class="pull-right" type="submit" ng-click="save(); closeThisDialog();" value="{{'PROXY_CONFIG.SAVE' | translate}}"/>
+            </div>
+        </div><!-- / modal-footer -->
+    </div><!-- modal-body -->
+    </form>
+</div>

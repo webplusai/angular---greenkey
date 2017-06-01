@@ -1,0 +1,70 @@
+.symphony-mode .login-page .login-widget {
+  background-color: #eaeaea;
+  box-shadow: none;
+  color: #a5a5a5;
+  padding-bottom: 70px;
+}
+
+.symphony-mode .login-page .login-widget .login-widget-header {
+  background-image: url("/img/svg/symphony/ic-logo.svg");
+  background-position-y: 50%;
+}
+
+.symphony-mode .login-page .login-widget .login-widget-header h4{
+  display: none;
+}
+
+.symphony-mode .login-page .login-widget .login-widget-body .form-control {
+  border-radius: 3px;
+  background-color: #f9f9f9;
+  color: #7e7e7e;
+  -webkit-text-fill-color: #7e7e7e;
+  font-weight: bold;
+  box-shadow: none;
+}
+
+.symphony-mode .login-page .login-widget .desktop-app-link {
+  display: none;
+
+}
+
+.symphony-mode .login-page .login-widget .login-widget-body .form-links {
+  position: absolute;
+  bottom: 10px;
+  width: calc(100% - 94px);
+  text-align: center;
+  border-bottom: 0;
+}
+
+.symphony-mode .login-page .login-widget .login-widget-body .form-links .loginlink {
+  float: none !important;
+  color: #a5a5a5;
+  font-weight: normal;
+}
+
+.symphony-mode .login-page .login-widget .login-widget-body .btn-login {
+  background: none #44b3dd;
+}
+
+.symphony-mode .login-page .login-widget .login-widget-body #linkedin {
+  background: none #007bb5;
+}
+
+/*dark mode*/
+.symphony-mode.dark .login-page .login-widget{
+  background-color: #5c5c5c;
+}
+
+.symphony-mode.dark .login-page .login-widget .login-widget-header{
+  background-image: url("/img/svg/symphony/ic-logo-dark-mode.svg")
+}
+
+.symphony-mode.dark .login-page .login-widget .login-widget-body .form-control{
+  background-color: #3c3c3c;
+  color: #9e9e9e;
+  -webkit-text-fill-color: #9e9e9e;
+}
+
+.symphony-mode.dark .login-page .login-widget .login-widget-body .form-links{
+  color: #9e9e9e;
+}

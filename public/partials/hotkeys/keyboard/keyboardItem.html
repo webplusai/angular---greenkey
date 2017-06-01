@@ -1,0 +1,21 @@
+<div class="contact-item row"
+    ng-click="onSelect(item)"
+    ng-class="{
+      'blast': isBlast,
+      'online': online,
+      'offline': !online
+    }" >
+
+  <div class="contact-name col-xs-6 column">
+    {{ item.name }}
+  </div>
+
+  <div class="col-xs-6 column">
+    <span ng-hide="item.selected">{{ item.key ? item.key : 'Not set' }}</span>
+    <span ng-show="item.selected">Press key</span>
+    <i ng-show="item.key && !item.selected"
+      class="fa fa-remove remove-icon"
+      ng-click="onUnsetKey(item); $event.stopPropagation();"></i>
+  </div>
+
+</div>

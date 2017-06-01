@@ -1,0 +1,13 @@
+<div class="settings-button-wrapper">
+        <button class="btn btn-default settings-button"
+                ng-class="{'ringdown-device': isHootAudioSet(), 'hoot-device': !isHootAudioSet()}"
+                ng-click="switchAudio()" ng-show="buttonStyle === 'volume'">
+            <span class="settings-button-icon"></span>
+            <span class="settings-button-tooltip" uib-tooltip="{{ getLabel() }}"
+                  tooltip-placement="{{toolTipPlacement}}"></span>
+            <span class="settings-button-caption">{{ getLabel() }}</span>
+        </button>
+
+    <a class="settings-button settings-button-tooltip" ng-class="{'openfin': isOpenFin, 'ringdown-device': isHootAudioSet(), 'hoot-device': !isHootAudioSet()}"
+       uib-tooltip="{{ getLabel() }}" tooltip-placement="{{toolTipPlacement}}" ng-click="switchAudio()" ng-show="buttonStyle === 'flat'"></a>
+</div>

@@ -1,0 +1,11 @@
+.symphony-mode #hoots-panel,
+.symphony-mode #right-panel {
+    padding-left: 0;
+    padding-right: 0;
+}
+
+.compact.symphony-mode .compact-settings-button {
+    border: none;
+    border-radius: 0;
+    background: none transparent;
+}

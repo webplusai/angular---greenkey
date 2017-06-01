@@ -1,0 +1,215 @@
+.login-page {
+    height: 100%;
+}
+
+.login-page .widget-wrapper {
+    height: 399px;
+}
+
+.login-page .login-widget {
+    position: fixed;
+    top: 45%;
+    left: 50%;
+    width: 488px;
+    padding: 25px 43px 40px 51px;
+    margin: -285px 0 0 -244px;
+    border-radius: 3px;
+    box-shadow: 0 0 12px 3px rgba(0, 0, 0, .56);
+}
+
+.login-page .login-widget .login-widget-header {
+    padding-top: 90px;
+    text-align: center;
+    background: transparent url(../../img/avatar.png) 50% 0 no-repeat;
+    background-size: 95px;
+}
+
+.login-page .login-widget .login-widget-header h4 {
+    line-height: 20px;
+    font-size: 15px;
+}
+
+.login-page .login-widget .login-widget-body {
+    margin-top: 25px;
+}
+
+.login-page .login-widget .login-widget-body .form-group {
+    margin: 0 0 25px;
+}
+
+.login-page .login-widget .login-widget-body .form-control {
+    padding: 23px 17px 25px;
+    font-size: 15px;
+}
+
+.login-page .login-widget .login-widget-body .form-control {
+    color: #fff;
+    background-color: #383838;
+    border-color: transparent;
+    border-radius: 8px;
+    box-shadow: inset 0 1px 3px 0 rgba(0, 0, 0, .5);
+}
+
+.login-page .login-widget .login-widget-body .form-control:-webkit-autofill {
+    transition: background-color 5000s ease-in-out 0s;
+    -webkit-box-shadow: inset 0 2px 3px #383838, inset 0 2px 5px 16px #424242;
+    box-shadow: inset 0 2px 3px #272727, inset 0 2px 5px 16px #383838;
+    -webkit-text-fill-color: #fff;
+    text-fill-collor: #fff;
+}
+
+.login-page .login-widget .login-widget-body .form-control.has-error {
+    border-color: #F10F0F;
+}
+
+.login-page .login-widget .login-widget-body .form-links {
+    overflow: hidden;
+    padding-bottom: 10px;
+    border-bottom: 1px solid #383838;
+    line-height: 50px;
+}
+
+.login-page .login-widget .login-widget-body .form-links a,
+.login-page .login-widget .desktop-app-link,
+.login-page .login-link {
+    font-size: 15px;
+    font-weight: bold;
+    color: #fff;
+    transition: color 0.4s;
+    text-decoration: none;
+}
+
+.login-page .login-widget .login-widget-body .form-links a:hover,
+.login-page .login-widget .desktop-app-link:hover,
+.login-page .login-link:hover {
+    color: #5e9732;
+}
+
+.login-page .login-widget .desktop-app-link {
+    font-size: 18px;
+    position: absolute;
+    top: 105%;
+    left: 75px;
+}
+
+.login-page .login-widget .login-widget-body .btn-login {
+    padding: 12px 0 11px;
+    margin-top: 25px;
+    font-size: 18px;
+    font-weight: bold;
+    border: none;
+    border-radius: 3px;
+}
+
+.login-page .login-widget .login-widget-body .btn-login {
+    color: #fff;
+    background: #348a00;
+    background: linear-gradient(to bottom, #88d313 0%, #348a00 100%);
+}
+
+
+.login-page .login-widget .login-widget-body .btn-login.has-error {
+    /* Permalink - use to edit and share this gradient: http://colorzilla.com/gradient-editor/#87d313+0,368902+100 */
+    background: #870100; /* Old browsers */
+    background: -moz-linear-gradient(top, #D2360A 0%, #870100 100%); /* FF3.6-15 */
+    background: -webkit-linear-gradient(top, #D2360A 0%,#870100 100%); /* Chrome10-25,Safari5.1-6 */
+    background: linear-gradient(to bottom, #D2360A 0%,#870100 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+    filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#D2360A', endColorstr='#870100',GradientType=0 ); /* IE6-9 */
+}
+
+.login-page .login-page-footer .gkt-links-wrapper {
+    padding: 12px 17px;
+    text-align: center;
+}
+
+.login-page .login-page-footer .gkt-links-wrapper .gkt-link {
+    padding-right: 20px;
+}
+
+.login-page .login-page-footer .gkt-links-wrapper a,
+.app-footer a {
+    font-size: 15px;
+    color: #868686;
+    transition: color 0.4s;
+    text-decoration: none;
+}
+
+.login-page .login-page-footer .gkt-links-wrapper a:hover,
+.app-footer a:hover {
+    color: #5e9732;
+}
+
+
+
+@media (max-height: 850px) {
+    .login-page .login-widget {
+        top: 36%;
+    }
+}
+
+@media (max-height: 700px) {
+    .login-page .login-widget {
+        top: 42%;
+        padding: 10px 43px 15px 51px;
+        margin: -255px 0 0 -244px;
+    }
+
+    .login-page .login-widget .login-widget-body .form-links {
+        margin-top: -20px;
+        padding-bottom: 0px;
+    }
+
+    .login-page .login-widget .desktop-app-link {
+        top: 103%;
+        left: 15%;
+        font-size: 15px;
+    }
+
+    .login-page .login-widget .login-widget-body .btn-login {
+        margin-top: 10px;
+        font-size: 18px;
+    }
+}
+
+@media (max-height: 570px) {
+    .login-page .login-widget {
+        top: 48%;
+    }
+
+    .login-page .login-page-footer .gkt-links-wrapper {
+        display: none;
+    }
+}
+
+@media (min-width: 401px) and (max-width: 542px) {
+    .login-page .widget-wrapper .login-widget {
+        min-width: 330px;
+        width: 90%;
+        margin-left: -45%;
+    }
+}
+
+/* Temp voice auth */
+.login-page .voice.login-widget {
+    padding-left: 30px;
+    padding-right: 30px;
+}
+
+.login-page .voice.login-widget .controls {
+    padding: 30px 0;
+}
+
+.terms-of-use {
+    float: right;
+    margin-top: 20px;
+    font-size: 13px;
+    color: #B5B5B5;
+}
+.terms-of-use .login-link {
+    font-size: 13px;
+    font-weight: normal;
+}
+
+.login-widget-body .form-links .loginlink {
+    line-height: 20px;
+}

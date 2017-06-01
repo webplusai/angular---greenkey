@@ -1,0 +1,54 @@
+/** Common volume meter */
+.volume-meter {
+    background: #2cc11e;
+    background: -moz-linear-gradient(left, #2cc11e 0%, #ffb408 33%, #e95100 66%, #e90000 100%);
+    background: -webkit-linear-gradient(left, #2cc11e 0%,#ffb408 33%,#e95100 66%,#e90000 100%);
+    background: linear-gradient(to right, #2cc11e 0%,#ffb408 33%,#e95100 66%,#e90000 100%);
+
+    height: 100%;
+    overflow: hidden;
+}
+
+.volume-meter .inactive-part-overlay,
+.volume-meter .active-part-overlay {
+    height: 100%;
+    background: transparent 0 0  none repeat-x;
+}
+
+.hoot .volume-meter .inactive-part-overlay {
+    background-image: url('/img/volumeMeter/offlineFilledBar.gif');
+}
+
+.hoot.online .volume-meter .inactive-part-overlay {
+    background-image: url('/img/volumeMeter/hootOnlineBar.png');
+}
+
+.hoot .volume-meter .active-part-overlay {
+    background-image: url('/img/volumeMeter/hootTransparentBar.png');
+}
+
+.shouting.hoot .volume-meter .inactive-part-overlay {
+    background-image: url('/img/volumeMeter/shoutingHootFilledBar.png');
+}
+
+.shouting.hoot .volume-meter .active-part-overlay {
+    background-image: url('/img/volumeMeter/shoutingHootTransparentBar.png');
+}
+
+.active-call-box .volume-meter .inactive-part-overlay {
+    background-image: url('/img/volumeMeter/callFilledBar.gif');
+}
+
+.active-call-box .volume-meter .active-part-overlay {
+    background-image: url('/img/volumeMeter/callTransparentBar.png');
+}
+
+/* Microphone volume meter */
+.micro-progress .volume-meter-wrapper {
+    height: 18px;
+    margin: 0 10px 0 28px;
+}
+
+.micro-progress .volume-meter .inactive-part-overlay {
+    margin-top: -18px;
+}

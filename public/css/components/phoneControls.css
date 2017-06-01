@@ -1,0 +1,354 @@
+/* Phone common styles */
+
+
+/* Phone block styles */
+
+#phone-block .block-header {
+  margin-top: 10px;
+}
+
+#phone-block .dial-pad {
+  font-size: 14px;
+}
+
+/* Dialer block styles */
+
+#phone-block .dialer-panel {
+  position: relative;
+  margin-bottom: 10px;
+}
+
+.call-button {
+  color: #fff;
+  font-size: large;
+  line-height: 52px;
+  background: -webkit-linear-gradient(top, rgba(0,185,23,1) 0%, rgba(0,114,14,1) 100%);
+  border: none;
+  border-left: 1px solid #999999;
+  box-shadow: 0px 1px 2px 0px rgba(0,0,0,0.25);
+  width: 99px;
+  font-weight: bold;
+  border-radius: 0px 77px 77px 0px;
+}
+
+.phone-controls .number-input {
+  text-align: center;
+}
+
+.phone-controls .number-input input {
+  height: 54px;
+  width: calc(100% - 109px);
+  padding: 0 10px;
+  margin-left: 10px;
+  font-weight: bold;
+  background-color: #fff;
+  border-radius: 35px 0 0 35px;
+  border: 0;
+  color: #000;
+  -webkit-box-shadow: inset 0px 1px 3px 0px rgba(0,0,0,0.5);
+  -moz-box-shadow: inset 0px 1px 3px 0px rgba(0,0,0,0.5);
+  box-shadow: inset 0px 1px 3px 0px rgba(0,0,0,0.5);
+}
+
+.phone-controls .number-input input[placeholder] {
+  text-overflow:ellipsis;
+}
+
+.phone-controls .number-input input::-webkit-input-placeholder {
+  color: #747474;
+}
+
+.phone-panel {
+  padding: 10px;
+}
+
+.phone-controls .search-contact {
+  position: relative;
+  width: calc(100% - 120px);
+}
+
+.phone-controls .button:hover {
+  cursor: pointer;
+  box-shadow: inset 0px 3px 4px -3px rgba(0,0,0,1);
+}
+
+/* Dial pad common styles */
+.phone-controls .dialer-numpad-panel {
+  position: absolute;
+  z-index: 999;
+  right: 2px;
+  top: 55px;
+  width: 240px;
+}
+
+.phone-controls .dial-pad {
+  position: fixed;
+  width: 240px;
+  background-color: #373634;
+  border: 3px solid #666;
+  border-radius: 11px;
+  padding: 10px;
+}
+
+.phone-controls .dial-pad.in-tone-mode .backspace.button,
+.phone-controls .dial-pad.in-tone-mode .plus.button {
+  cursor: default;
+  box-shadow: none;
+}
+
+.phone-controls .dial-pad.in-tone-mode .backspace.button span,
+.phone-controls .dial-pad.in-tone-mode .plus.button span {
+  color: #bbb;
+}
+
+.phone-controls .dial-pad .header {
+  margin-bottom: 10px;
+}
+
+.phone-controls .dial-pad .close-button {
+  border-radius: 50px;
+}
+
+.phone-controls .dial-pad .button {
+  width: 32%;
+  margin-bottom: 7px;
+  margin-right: 2%;
+  padding-left: 8px;
+  float: left;
+  border: 1px solid #666666;
+  background: -webkit-linear-gradient(top, rgba(104,104,104,1) 0%, rgba(81,81,81,1) 100%);
+  box-shadow: 0px 2px 0px 0px rgba(0,0,0,1);
+  height: 35px;
+  border-radius: 7px;
+  -webkit-touch-callout: none;
+  -webkit-user-select: none;
+}
+
+.phone-controls .dial-pad .button:hover {
+  box-shadow: inset 0px 3px 4px -3px rgba(0, 0, 0, 1);
+}
+
+.phone-controls .dial-pad .button:active {
+  box-shadow: inset 0px 3px 4px 0px rgba(0, 0, 0, 1);
+}
+
+.phone-controls .dial-pad .button span {
+  position: relative;
+  font-family: Arial;
+  font-weight: 700;
+  color: #fff;
+}
+
+.phone-controls .dial-pad .last.button {
+  margin-right: 0;
+}
+
+.phone-controls .dial-pad .half-sized.button {
+  width: 15%;
+  padding: 0;
+  text-align: center;
+}
+
+.phone-controls .dial-pad .button .symbol {
+  font-size: 20px;
+  line-height: 33px;
+}
+
+.phone-controls .dial-pad .button .number {
+  font-size: 25px;
+}
+
+.phone-controls .dial-pad .button .letters {
+  font-size: 11px;
+  margin-left: 4px;
+  bottom: 10px;
+  color: #a5a5a5;
+}
+
+/* Phone controls panel */
+
+@media screen and (max-width: 1280px) {
+  .phone-controls .panel-hold .icon {
+    margin-top: 3px;
+  }
+
+  .phone-controls .number-input input {
+    height: 40px;
+    font-size: .9em;
+  }
+
+  .phone-controls .call-button {
+    line-height: 38px;
+  }
+
+  .phone-controls .search-contact {
+    width: calc(100% - 75px);
+  }
+
+  .phone-controls .dialer-pad-button {
+    width: 40px;
+    height: 40px;
+  }
+
+  .phone-controls .dialer-numpad-panel {
+    top: -240px;
+  }
+
+  .phone-controls .dial-pad {
+    position: absolute;
+    z-index: 999;
+  }
+
+  .phone-controls .controls .button {
+    height: 42px !important;
+    margin: 0 !important;
+    width: 33.33333333% !important;
+  }
+
+  .phone-controls .controls .top.button,
+  .phone-controls .controls .bottom.button {
+    border-radius: 0 !important;
+  }
+
+  .phone-controls .controls .left.top.button {
+    border-radius: 3px 0 0 0 !important;
+  }
+
+  .phone-controls .controls .right.top.button {
+    border-radius: 0 3px 0 0 !important;
+  }
+
+  .phone-controls .controls .left.bottom.button {
+    border-radius: 0 0 0 3px !important;
+  }
+
+  .phone-controls .controls .right.bottom.button {
+    border-radius: 0 0 3px 0 !important;
+  }
+}
+
+@media (max-width: 1430px) {
+  #phone-block .controls .button .text {
+    padding: 0px !important;
+    background-position: center !important;
+  }
+  #phone-block .controls .button .text span {
+    display: none;
+  }
+}
+
+#phone-block .controls .buttons-row {
+  overflow: hidden;
+}
+
+#phone-block .controls .button {
+  height: 54px;
+  border-radius: 3px;
+  padding: 0;
+  font-weight: bold;
+  margin: 0px 0px 10px 10px;
+  border: 1px solid #666666;
+  float: left;
+  width: calc(33.33333333% - 7.2px);
+
+  background: -webkit-linear-gradient(top, rgba(104,104,104,1) 0%, rgba(81,81,81,1) 100%);
+  box-shadow: 0px 2px 0px 0px rgba(0,0,0,1);
+}
+
+#phone-block .controls .bottom.button {
+  margin-bottom: 0;
+}
+
+.dialer-pad-button .icon,
+.panel-hold .icon {
+  display: block;
+  background-repeat: no-repeat;
+  margin: auto;
+}
+
+.dialer-pad-button {
+  width: 87px;
+  height: 54px;
+  border-radius: 3px;
+  border: 1px solid #666666;
+
+  background: -webkit-linear-gradient(top, rgba(104, 104, 104, 1) 0%, rgba(81, 81, 81, 1) 100%);
+  box-shadow: 0px 2px 0px 0px rgba(0, 0, 0, 1);
+}
+
+.dialer-pad-button .icon {
+  background-image: url(../img/phoneControls/dialer.png);
+  height: 26px;
+  width: 26px;
+}
+
+.panel-hold {
+  width: 24px;
+}
+
+.panel-hold .icon {
+  background-image: url(../img/phoneControls/panel-hold.png);
+  margin-top: 10px;
+  height: 34px;
+  -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=50)";
+  filter: alpha(opacity=50);
+  -moz-opacity: 0.5;
+  -khtml-opacity: 0.5;
+  opacity: 0.5;
+}
+
+#phone-block .controls .button:first-child {
+  margin-left: 0px;
+}
+
+#phone-block .voice-mail {
+  position: relative;
+}
+
+#phone-block .voice-mail-messages-count {
+  position: absolute;
+  top: 8px;
+  left: 35px;
+  height: 18px;
+}
+
+#phone-block .controls .button .text {
+  background: transparent none 20px center no-repeat;
+  height: 100%;
+  padding: 15px 0 0 55px;
+}
+
+#phone-block .disabled {
+  opacity: 0.4;
+  cursor: default;
+}
+
+#phone-block .controls .button.add-person .text {
+  padding: 15px 0 0 45px;
+  background-image: url('/img/phoneControls/addPerson.png');
+}
+
+#phone-block .controls .button.transfer .text {
+  background-image: url('/img/phoneControls/transfer.png');
+}
+
+#phone-block .controls .button.merge .text {
+  background-image: url('/img/phoneControls/merge.png');
+}
+
+#phone-block .controls .button.hold .text {
+  background-image: url('/img/phoneControls/hold.png');
+}
+
+#phone-block .controls .button.group-call .text {
+  background-image: url('/img/phoneControls/groupCall.png');
+}
+
+#phone-block .controls .button.contact-list .text {
+  background-image: url('/img/phoneControls/contactList.png');
+}
+
+#phone-block .controls .button.voice-mail .text {
+  background-image: url('/img/dtmfpad/icon_voicemail.png');
+  background-size: 25px;
+}

@@ -1,0 +1,6 @@
+{
+    "url": "https://web.whatsapp.com/",
+    "file": "monitor/data/whatsapp-db.json",
+    "exclude": ["^https://a.analytics.yahoo.com/fpc.pl"],
+    "debug": false
+}

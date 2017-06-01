@@ -1,0 +1,50 @@
+<div class="modal-window external-contacts-panel">
+    <div class="modal-window-header external-contacts-panel-header">
+        <h1 class="modal-window-title external-contacts-panel-title">Contacts</h1>
+        <span class="modal-window-close-button external-contacts-panel-close-button"
+              uib-tooltip="Close window"
+              tooltip-placement="left"
+              ng-click="closeExternalContactsPanel()"
+        ></span>
+    </div>
+    <div class="modal-window-content external-contacts-panel-body">
+        <external-contact-edit-form contact="editingContact" ng-if="editingContact"></external-contact-edit-form>
+
+        <div class="external-contacts-filter-wrapper">
+            <input type="text" class="external-contacts-filter" placeholder="Search for Contacts" ng-model="contactsFilter" />
+        </div>
+        <span class="external-contacts-panel-close-button modal-window-close-button"
+              uib-tooltip="Close window"
+              tooltip-placement="left"
+              ng-click="closeExternalContactsPanel()"
+        ></span>
+        <div class="external-contacts-list-wrapper">
+            <div class="external-contacts-list-header">
+                <div class="row">
+                    <div class="col-xs-4 external-contact-name">Name</div>
+                    <div class="col-xs-3 external-contact-company">Company</div>
+                </div>
+            </div>
+            <div class="external-contacts-list scrollable">
+                <external-contact
+                    ng-repeat="contact in contacts"
+                    ng-show="isContactVisible(contact)"
+                    contact="contact"
+                ></external-contact>
+            </div>
+        </div>
+        <div class="modal-window-footer external-contacts-panel-footer">
+            <div class="external-contacts-import">
+                <input type="file" accept=".csv" id="external-contacts-file-for-import" class="external-contacts-file-for-import">
+                <button class="control-button import-button" ng-click="openImportDialog()">Import</button>
+            </div>
+            <div class="external-contacts-export">
+                <button class="control-button export-button"
+                        ng-class="{'disabled': isExportInProgress || !hasRealContacts}"
+                        title="{{hasRealContacts ? 'Export contacts to CSV file' : 'You have no external contacts to export'}}"
+                        ng-click="openExportDialog()"
+                        ng-disabled="isExportInProgress || !hasRealContacts">Export</button>
+            </div>
+        </div>
+    </div>
+</div>

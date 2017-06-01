@@ -1,0 +1,14 @@
+<div class="quick-blast-panel-item" ng-class="{online: isOnline, selected: isSelected()}">
+    <div class="row">
+        <div class="col-xs-5 blast-item-name">
+            <span class="hoot-status-indicator"></span>
+            <span class="hoot-name">{{ hoot.contact.display_name }}</span>
+        </div>
+        <div class="col-xs-4 blast-item-company">{{ hoot.contact.company }}</div>
+        <div class="col-xs-3 blast-item-toggle-button-wrapper">
+            <button ng-click="toggleContact()" class="blast-item-toggle-button">
+                <span class="toggle-icon"></span>
+            </button>
+        </div>
+    </div>
+</div>

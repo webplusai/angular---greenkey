@@ -1,0 +1,74 @@
+
+<div class="modal-window invite-panel">
+    <!-- modal-header -->
+    <div class="modal-window-header">
+        <h1 class="modal-window-title">{{'INVITE_LABEL' | translate}}</h1>
+        <span class="modal-window-close-button"
+              uib-tooltip="Close window"
+              tooltip-placement="left"
+              ng-click="closeThisDialog()"
+        ></span>
+    </div><!-- / modal-header -->
+
+    <!-- modal-body -->
+    <form role="form" id="invite-modal-dlg" class="default-modal-dialog" ng-submit="sendInvite(emails, customGreeting)" ng-hide="inviteStatus">
+        <div class="modal-window-content">
+              <div ng-show="referralLink" class="form-group row">
+                <div class="col-md-12">
+                  <label>{{'INVITE.HEADER' | translate}}</label>
+                  <br>
+                  <br>
+                </div>
+                <div class="col-md-9">
+                  <input id="referralLink" type="text" class="form-control" readonly="readonly"
+                  value="{{referralLink}}"/>
+
+                </div>
+                <div class="col-md-3">
+                  <button type="button" class="btn btn-default" ng-click="copyToClipboard()">
+                    <i class="fa fa-copy"></i> {{'INVITE.COPY' | translate}}
+                  </button>
+                </div>
+
+              </div>
+              <div class="form-group row">
+                <div class="col-md-12">
+                  <label>
+                    {{'INVITE.ALT_TEXT' | translate}}
+                  </label>
+                  <br>
+                  <br>
+                </div>
+                <div class="col-md-12">
+                  <label for="greeting">{{'INVITE.GREETING_LABEL' | translate}}</label>
+                </div>
+                <div class="col-md-12">
+                  <textarea id="greeting" class="greeting" ng-model="customGreeting" placeholder="{{ defaultGreeting }}"></textarea>
+                </div>
+              </div>
+              <div class="form-group row email" ng-class="{'has-error': emailIsWrong || noEmails}">
+                <div class="col-md-12">
+                  <label for="emails">{{'INVITE.EMAILS' | translate}}</label>
+                </div>
+                <div class="col-md-12">
+                  <textarea rows="5" id="emails" ng-model="emails" class="form-control" placeholder="Enter e-mails" ng-change="resetErrors()" ></textarea>
+                  <div ng-show="emailIsWrong" class="error-text bg-danger pull-right">Some of email addresses are invalid.</div>
+                  <div ng-show="noEmails" class="error-text bg-danger pull-right">Please provide at least one E-mail address.</div>
+                </div>
+              </div>
+               <!-- modal-footer -->
+                <div class="modal-window-footer">
+                    <div class="pull-right submit">
+                      <input type="submit" class="control-button" value="Submit"/>
+                    </div>
+                </div><!-- / modal-footer -->
+        </div><!-- modal-body -->
+    </form>
+
+        <!-- Result of sending an invite -->
+      <div class="invite-result-wrapper" ng-show="inviteStatus">
+        <div class="invite-result-text {{ inviteStatus }}">
+          {{ inviteResult }}
+        </div>
+      </div>
+</div>

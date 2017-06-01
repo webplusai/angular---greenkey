@@ -1,0 +1,101 @@
+
+<div class="modal-window user-list-panel">
+    <!-- modal-header -->
+    <div class="modal-window-header">
+        <h1 class="modal-window-title">Green Key</h1>
+        <span class="modal-window-close-button"
+              uib-tooltip="Close window"
+              tooltip-placement="left"
+              ng-click="closeThisDialog()"
+        ></span>
+    </div><!-- / modal-header -->
+
+    <!-- modal-body -->
+    <div class="modal-window-content">
+      <form role="form" id="myUsersListDlg" class="default-modal-dialog search-connection-list">
+          <table class="table table-condensed">
+            <thead>
+              <tr>
+                <th>Type</th>
+                <th>Company</th>
+                <th>Full Name</th>
+                <th></th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr ng-repeat="($index, user) in usersLists track by $index">
+                <td>User</td>
+                <td>{{ user.company }}</td>
+                <td>
+                  <a ng-show="user.type !== 'external'" href
+                      class="text-center"
+                      ng-click="openProfile(user)" >
+                    {{ user.full_name || user.display_name }}
+                  </a>
+                  <span ng-show="user.type === 'external'" >
+                    {{ user.full_name || user.display_name }}
+                  </span>
+                </td>
+
+                <td ng-show="user.status && user.status !== 'Connect'" class="text-center" >
+                  {{ user.status }}
+                  <span ng-show="user.status === 'Rejected'"
+                      class="btn btn-danger btn-sm pull-right"
+                      ng-click="removeConnection(user)"
+                      title="Remove request and be able to reconnect"
+                      ng-disabled="isRemoving" >
+                    Remove
+                  </span>
+                </td>
+
+                <td ng-show="user.status === 'Connect'" class="text-center" >
+                  <a href ng-click="addConnection(user)">
+                    Connect
+                  </a>
+                </td>
+
+                <td ng-show="user.type === 'external'" class="text-center" >
+                  <a href ng-click="callToExternal(user)">
+                    Call
+                  </a>
+                </td>
+              </tr>
+
+              <tr ng-repeat="($index, company) in companyList track by $index">
+                <td>Company</td>
+                <td colspan="2">{{ company.name }}</td>
+                <td ng-show="company.status === 'Connect' " class="text-center" >
+                  Accepted
+                </td>
+                <td ng-show="company.status !== 'Connect'" class="text-center" >
+                  <a href ng-click="showCompanyConnectionModal(company)">
+                    Connect
+                  </a>
+                </td>
+              </tr>
+
+              <tr ng-repeat="($index, teamHoot) in teamHootsList track by $index">
+                <td>{{ teamHoot.isCompany ? 'Company' : '' }}</td>
+                <td ng-show="teamHoot.isCompany" colspan="2">{{ teamHoot.name }}</td>
+                <td ng-show="!teamHoot.isCompany">Team Hoot</td>
+                <td ng-show="!teamHoot.isCompany">{{ teamHoot.name }}</td>
+                <td ng-show="teamHoot.status === 'Connect'" class="text-center" >
+                  Accepted
+                </td>
+                <td ng-show="teamHoot.status !== 'Connect'" class="text-center" >
+                  <a href ng-click="teamHoot.isCompany ? showCompanyConnectionModal(teamHoot) : showTeamHootConnectionModal(teamHoot)">
+                    Connect
+                  </a>
+                </td>
+              </tr>
+
+              <tr ng-show="!usersLists.length && !companyList.length && !teamHootsList.length">
+                <td colspan="3" align="center">No data to display</td>
+              </tr>
+
+            </tbody>
+          </table>
+        </form>
+
+    </div><!-- modal-body -->
+</div>

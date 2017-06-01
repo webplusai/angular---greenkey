@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<svg width="50px" height="46px" viewBox="0 0 50 46" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:sketch="http://www.bohemiancoding.com/sketch/ns">
+    <!-- Generator: sketchtool 3.4 (381) - http://www.bohemiancoding.com/sketch -->
+    <title>ic_log</title>
+    <desc>Created with sketchtool.</desc>
+    <defs>
+        <filter x="-50%" y="-50%" width="200%" height="200%" filterUnits="objectBoundingBox" id="filter-1">
+            <feMorphology radius="3" in="SourceAlpha" operator="dilate" result="shadowSpreadOuter1"></feMorphology>
+            <feOffset dx="0" dy="0" in="shadowSpreadOuter1" result="shadowOffsetOuter1"></feOffset>
+            <feGaussianBlur stdDeviation="3.5" in="shadowOffsetOuter1" result="shadowBlurOuter1"></feGaussianBlur>
+            <feColorMatrix values="0 0 0 0 0.383637313   0 0 0 0 0.965215774   0 0 0 0 0.180178181  0 0 0 0.7 0" in="shadowBlurOuter1" type="matrix" result="shadowMatrixOuter1"></feColorMatrix>
+            <feOffset dx="0" dy="1" in="SourceAlpha" result="shadowOffsetInner1"></feOffset>
+            <feGaussianBlur stdDeviation="0" in="shadowOffsetInner1" result="shadowBlurInner1"></feGaussianBlur>
+            <feComposite in="shadowBlurInner1" in2="SourceAlpha" operator="arithmetic" k2="-1" k3="1" result="shadowInnerInner1"></feComposite>
+            <feColorMatrix values="0 0 0 0 0.14290391   0 0 0 0 0.373883929   0 0 0 0 0.120858747  0 0 0 0.7 0" in="shadowInnerInner1" type="matrix" result="shadowMatrixInner1"></feColorMatrix>
+            <feMerge>
+                <feMergeNode in="shadowMatrixOuter1"></feMergeNode>
+                <feMergeNode in="SourceGraphic"></feMergeNode>
+                <feMergeNode in="shadowMatrixInner1"></feMergeNode>
+            </feMerge>
+        </filter>
+    </defs>
+    <g id="Iteration-5" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd" sketch:type="MSPage">
+        <g id="TVBWEB--1156-mainWindow" sketch:type="MSArtboardGroup" transform="translate(-1444.000000, -1.000000)" filter="url(#filter-1)" fill="#FFFFFF">
+            <g id="Top-Bar" sketch:type="MSLayerGroup">
+                <path d="M1472.70923,28.77863 C1472.70923,26.9755436 1474.17628,25.5084997 1475.97936,25.5084997 C1477.7826,25.5084997 1479.24949,26.9755436 1479.24949,28.77863 C1479.24949,30.5818715 1477.7826,32.0489154 1475.97936,32.0489154 C1474.17628,32.0489154 1472.70923,30.5818715 1472.70923,28.77863 M1483.116,34.9978971 L1480.77285,32.2253144 C1481.47286,31.2544217 1481.88694,30.0643103 1481.88694,28.77863 C1481.88694,25.5212215 1479.23693,22.8710476 1475.97936,22.8710476 C1472.72195,22.8710476 1470.07178,25.5212215 1470.07178,28.77863 C1470.07178,32.0361936 1472.72195,34.6863674 1475.97936,34.6863674 C1476.99819,34.6863674 1477.95761,34.4271214 1478.79507,33.9711525 L1481.10145,36.7002948 C1481.36225,37.0088767 1481.73459,37.1677444 1482.10942,37.1677444 C1482.41009,37.1677444 1482.71231,37.0655044 1482.95992,36.8562148 C1483.51627,36.3861277 1483.58608,35.5540892 1483.116,34.9978971 M1467.39888,29.5291868 L1464.5993,29.5291868 L1464.5993,13.6374521 L1476.51484,13.6374521 L1476.51484,20.4172553 C1476.51484,21.1455024 1477.10532,21.7359813 1477.83357,21.7359813 C1478.56197,21.7359813 1479.15229,21.1455024 1479.15229,20.4172553 L1479.15229,13.0978604 C1479.15229,11.941105 1478.21134,11 1477.05474,11 L1456.09755,11 C1454.94095,11 1454,11.941105 1454,13.0978604 L1454,30.0690887 C1454,31.2258442 1454.94095,32.1666388 1456.09755,32.1666388 L1467.39888,32.1666388 C1468.12712,32.1666388 1468.7176,31.5761599 1468.7176,30.8479128 C1468.7176,30.1196657 1468.12712,29.5291868 1467.39888,29.5291868 M1467.14554,19.1458948 C1466.41729,19.1458948 1465.82682,19.7363738 1465.82682,20.4646209 C1465.82682,21.1928679 1466.41729,21.7833469 1467.14554,21.7833469 L1471.81182,21.7833469 C1472.54006,21.7833469 1473.13054,21.1928679 1473.13054,20.4646209 C1473.13054,19.7363738 1472.54006,19.1458948 1471.81182,19.1458948 L1467.14554,19.1458948 Z M1475.07594,16.6687378 C1475.07594,15.9404907 1474.48546,15.3500117 1473.75722,15.3500117 L1467.14559,15.3500117 C1466.41719,15.3500117 1465.82686,15.9404907 1465.82686,16.6687378 C1465.82686,17.3969848 1466.41719,17.9874638 1467.14559,17.9874638 L1473.75722,17.9874638 C1474.48546,17.9874638 1475.07594,17.3969848 1475.07594,16.6687378" id="ic_log" sketch:type="MSShapeGroup"></path>
+            </g>
+        </g>
+    </g>
+</svg>

@@ -1,0 +1,50 @@
+<div id="events-log-panel">
+  <div class="records-container scrollable bottom-panel-body">
+    <div id="events-log-sorting" class="combo-box row">
+      <div class="title">
+        <label>{{'SORT_BY_LABEL' | translate}}</label>
+      </div>
+      <div class="value">
+        <select ng-options="sorting.title for sorting in sortings"
+            ng-model="selectedSorting"
+            ng-init="selectedSorting = sortings[0]">
+        </select>
+      </div>
+    </div>
+    <div class="row header-row">
+      <div class="col-xs-12">
+        <div class="sortable date column-header" ng-click="sortBy('time')">
+          {{'EVENT_LOG_TIME' | translate}} <i ng-show="selectedSorting.column === 'time'" class="fa"
+                  ng-class="{'fa-angle-down': !selectedSorting.desc, 'fa-angle-up': selectedSorting.desc}"></i>
+        </div>
+        <div class="sortable type column-header" ng-click="sortBy('typeOrder')">
+          {{'EVENT_LOG_TYPE' | translate}} <i ng-show="selectedSorting.column === 'typeOrder'" class="fa"
+                  ng-class="{'fa-angle-down': !selectedSorting.desc, 'fa-angle-up': selectedSorting.desc}"></i>
+        </div>
+        <div class="contact column-header" ng-click="sortBy('contact')">
+          {{'EVENT_LOG_CONTACT' | translate}} <i ng-show="selectedSorting.column === 'contact'" class="fa"
+                  ng-class="{'fa-angle-down': !selectedSorting.desc, 'fa-angle-up': selectedSorting.desc}"></i>
+        </div>
+      </div>
+    </div>
+    <div call-history-record
+     ng-repeat="record in records | orderBy:selectedSorting.column:selectedSorting.desc"
+     record="record"
+         class="event-log-record" >
+    </div>
+
+    <a class="btn btn-link center-block"
+        ng-show="hasMorePages()"
+        ng-click="loadMore()">
+      Show more...
+    </a>
+
+    <span ng-show="isLoading"
+        us-spinner="{radius:30, width:8, length: 16, color: 'gray'}"
+        spinner-start-active="true"
+        spinner-key="spinner-company-list" >
+    </span>
+
+
+  </div>
+</div>

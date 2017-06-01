@@ -1,0 +1,19 @@
+.midi-panel .header button {
+    padding: 17px 30px;
+    text-transform: uppercase;
+}
+
+.midi-panel .contact-list .contact-item {
+    cursor: pointer;
+}
+
+.midi-panel .remove-icon {
+    color: maroon;
+    cursor: pointer;
+    vertical-align: text-bottom;
+}
+
+.midi-panel .contact-list .blast.contact-item.offline,
+.midi-panel .contact-list .blast.contact-item.online {
+    background-image: none;
+}

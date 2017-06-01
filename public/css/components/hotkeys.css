@@ -1,0 +1,19 @@
+#hotkey-select-panel {
+  height: 250px;
+  width: 600px;
+  margin-top: 50px;
+}
+
+#hotkey-select-panel .body {
+  display: flex;
+}
+
+#hotkey-select-panel .hotkeys-buttons-wraper {
+  display: flex;
+  align-items: center;
+  margin: 45px auto 0;
+}
+
+#hotkey-select-panel .hotkeys-buttons-wraper button:first-child {
+  margin-right: 30px;
+}

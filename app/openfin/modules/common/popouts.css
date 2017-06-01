@@ -1,0 +1,91 @@
+.main-view {
+    height: 100%;
+}
+
+/* Common */
+.popout.window-wrapper .hoots-tabbar-wrapper {
+    padding-right: 100px;
+}
+
+.popout.window-wrapper .tabs-panel-wrapper .nav-tabs.tabs-panel .tab {
+    padding: 14px 6px;
+}
+
+.popout .close-button {
+    position: absolute;
+    bottom: 23px;
+    right: 7px;
+    border: 1px solid #575757;
+    z-index: 3;
+    width: 25px;
+    height: 25px;
+    border-radius: 25px;
+    background-color: #575757
+}
+
+.popout .close-button .fa {
+    color: #fff;
+}
+
+
+.popout .dragging-plate {
+    position: absolute;
+    right: 34px;
+    top: 22px;
+    width: 18px;
+    line-height: 0;
+    word-spacing: -3px;
+    height: 22px;
+    z-index: 3;
+    -webkit-app-region: drag;
+    font-size: 22px;
+    color: #666;
+}
+
+/* Whole panels */
+.popout .window-header .close-button {
+    top: 11px;
+    right: 11px;
+}
+
+.popout .window-header .dragging-plate {
+    font-size: 35px;
+    right: 60px;
+    height: 28px;
+    width: 22px;
+    top: 19px;
+    color: #f8f8f8;
+}
+
+.popout.window-wrapper {
+    padding: 5px 5px 0px;
+    border: 5px solid black;
+}
+
+
+/* Separated connections */
+.pop-out-wrapper {
+    background-color: lightgrey;
+    height: 100%;
+    width: 100%;
+    box-shadow: none;
+    max-height: none;
+    margin: 0;
+    -webkit-user-select: none;
+}
+
+.pop-out-inner {
+    background-color: #131313;
+    height: 100%;
+    width: 100%
+}
+
+.pop-out-wrapper .offline.connection .dragging-plate {
+    color: #ccc;
+}
+
+.pop-out-wrapper .ringdown.on-call .dragging-plate,
+.pop-out-wrapper .shouting.hoot .dragging-plate
+{
+    color: #0e6319;
+}

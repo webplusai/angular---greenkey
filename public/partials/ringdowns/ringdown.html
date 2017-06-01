@@ -1,0 +1,36 @@
+<div class="flex-height-layer">
+    <div class="ringdown connection"
+         ng-show="!ringdown.emptySlot"
+         ng-class="{
+           'online' : online,
+           'offline' : !online,
+           'away': ringdown.contact.last_idle_status,
+           'on-call': onCall,
+           'speed-dial': isExternalContact
+         }"
+         ng-click="call()"
+         click-sound audio-context="getOutputDeviceContext">
+
+        <div class="ringdown-panel" ng-class="{'settings-visible': uiState.settingsVisible, 'openfin-mode': isOpenFin}">
+            <div class="contact-name text-ellipsis-multiple"
+                 uib-tooltip="{{ ringdown.contact.display_name }}"
+                 tooltip-placement="bottom">
+                {{ ringdown.contact.display_name }}
+            </div>
+
+            <div class="controls-wrapper" ng-show="uiState.settingsVisible">
+                <button class=" ringdown-settings-delete"
+                        ng-click="deleteRingdown()">
+                    <i class="fa fa-close"></i>
+                </button>
+                <switch-audio-button connection="ringdown" button-style="flat" tool-tip-placement="bottom"></switch-audio-button>
+                <a ng-show="isOpenFin" class="settings-button tearout settings-button-tooltip" uib-tooltip="Pop-out"
+                   tooltip-placement="bottom" ng-click="tearOut()"></a>
+            </div>
+        </div>
+    </div>
+
+
+    <div ng-show="ringdown.emptySlot" class="empty ringdown connection"></div>
+
+</div>

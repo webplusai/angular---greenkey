@@ -1,0 +1,187 @@
+.compact .external-contacts-panel-wrapper {
+    padding-top: 100px;
+}
+
+.compact .external-contacts-panel-wrapper .ngdialog-content {
+    /* to make visible only phone controls and active call area */
+    height: calc(100% - 300px);
+    overflow: hidden;
+}
+
+.compact .modal-window.external-contacts-panel {
+    width: 100%;
+    height: 100%;
+}
+
+.compact .external-contacts-panel-header {
+    display: none;
+}
+
+.compact .external-contacts-panel-body {
+    height: 100%;
+    padding: 5px;
+}
+
+.compact .external-contacts-filter-wrapper {
+    width: calc(100% - 40px);
+    display: inline-block;
+}
+
+.compact .external-contacts-filter {
+    padding: 17px 7px;
+    border-radius: 3px;
+    font-size: 12px;
+    background: #ffffff;
+    box-shadow: inset 0 1px 3px 0 rgba(0, 0, 0, 0.5)
+}
+
+.compact .external-contacts-panel-body .external-contacts-panel-close-button {
+    display: inline-block;
+    margin: 13px 5px 0 0;
+    background-color: #292929;
+}
+
+.compact .external-contacts-list-wrapper {
+    /* dialog's height - height of search box */
+    height: calc(100% - 50px);
+}
+
+.compact .external-contacts-list {
+    /* list's height - height of list header */
+    height: calc(100% - 45px);
+}
+.compact .external-contacts-list::-webkit-scrollbar {
+    width: 5px;
+    background: #424242;
+}
+.compact .external-contacts-list::-webkit-scrollbar-thumb {
+    border-radius: 5px;
+    background-color: #000000;
+}
+
+.compact .external-contact-wrapper {
+    height: 30px;
+    padding: 0 5px;
+}
+
+.compact .external-contacts-list-header .external-contact-name,
+.compact .external-contacts-list-header .external-contact-company {
+    padding: 7px 0;
+    line-height: 20px;
+    font-size: 12px;
+    color: #b3b3b3;
+}
+
+/* TODO: make it DRY with compact\dialog.css */
+.compact .external-contact-name,
+.compact .external-contact-company {
+    height: 30px;
+    font-size: 13px;
+    line-height: 30px;
+}
+
+.compact .external-contact-buttons {
+    padding: 0;
+
+}
+
+.compact .external-contact-wrapper .external-contact-control-button,
+.compact .external-contact-wrapper:hover .external-contact-control-button {
+    display: none;
+}
+
+.compact .external-contact-actions-list {
+    display: inline-block;
+}
+
+.compact .external-contact-call-button {
+    width: 40px;
+    height: 23px;
+}
+
+.compact .external-contact-call-button .call-icon {
+    width: 16px;
+    height: 18px;
+    background-size: 16px;
+}
+
+.compact .external-contact-edit-form .external-contacts-panel-header {
+    display: block;
+    padding: 10px;
+    border: none;
+    background: #424242;
+}
+
+.compact .external-contact-edit-form .external-contacts-edit-cancel {
+    display: inline-block;
+    padding: 10px 18px;
+    margin-right: 10px;
+    border: solid 1px #1d1d1d;
+    border-radius: 3px;
+    font: bold 12px Arial;
+    background: linear-gradient(to bottom, #5b5b5b, #414141);
+    box-shadow: 0 1px 0 0 rgba(0, 0, 0, 0.5);
+}
+.compact .external-contact-edit-form .external-contacts-edit-cancel:active {
+    background-image: linear-gradient(to top, #505050, #363535);
+    box-shadow: inset 0 1px 3px 0 rgba(0, 0, 0, 0.5);
+}
+
+.compact .external-contact-edit-form .external-contacts-panel-header .external-contacts-panel-title {
+    color: #ffffff;
+    font-size: 15px;
+}
+
+.compact .external-contact-edit-form .external-contacts-panel-header .external-contacts-panel-close-button {
+    display: none;
+}
+
+.compact .external-contact-edit-form .modal-window-content.edit-form-body {
+    height: calc(100% - 75px);
+    margin: 15px 0px 0;
+}
+.compact .external-contact-edit-form .modal-window-content.edit-form-body::-webkit-scrollbar {
+    width: 5px;
+    background: #424242;
+}
+.compact .external-contact-edit-form .modal-window-content.edit-form-body::-webkit-scrollbar-thumb {
+    border-radius: 5px;
+    background-color: #000000;
+}
+
+.compact .external-contact-edit-form .modal-window-content.edit-form-body .form-group {
+    padding-bottom: 0;
+    margin-bottom: 5px;
+}
+
+.compact .external-contact-edit-form .external-contact-property-label {
+    font-size: 12px;
+    line-height: 20px;
+}
+.compact .external-contact-edit-form .form-group.has-error .external-contact-property-label {
+    color: #ff4500;
+}
+
+.compact .external-contact-edit-form .external-contact-property {
+    padding: 10px;
+    font-size: 13px;
+    border-radius: 3px;
+}
+
+.compact .form-group.has-error .error-text {
+    display: none;
+}
+
+.compact .edit-form-footer {
+    margin-top: 20px;
+}
+
+.compact .edit-form-footer .speed-dial-option-wrapper,
+.compact .edit-form-footer .edit-form-discard {
+    display: none;
+}
+
+.compact .edit-form-footer .edit-form-control-buttons,
+.compact .edit-form-footer .edit-form-save {
+    width: 100%;
+}

@@ -1,0 +1,54 @@
+<div class="login-page">
+  <div class="widget-wrapper">
+    <div class="voice login-widget">
+      <span us-spinner="{radius:30, width:8, length: 16}"
+            spinner-key="spinner-1"></span>
+      <div class="login-widget-header">
+        <h4>Voice Authentication</h4>
+      </div>
+      <div class="login-widget-body">
+        <div class="text-center">
+          Voice biometric login is enabled -
+          you need to provide a voice sample to login.
+
+          <div class="controls">
+            <div class="btn btn-success" ng-click="record()"
+                 ng-class="{'disabled': stage != 'initial'}">
+              <i class="fa fa-microphone"></i> Record
+            </div>
+
+            <div class="btn btn-success" ng-click="stop()"
+                 ng-class="{'disabled': stage != 'recording'}">
+              <i class="fa fa-stop"></i> Stop
+            </div>
+
+            <div class="btn btn-success" ng-click="login()"
+                 ng-class="{'disabled': stage != 'recorded'}">
+              <i class="fa fa-sign-in"></i> Login
+            </div>
+
+            <div class="btn btn-success" ng-click="reset()"
+                 ng-class="{'disabled': stage != 'recorded' && stage != 'processed'}">
+              <i class="fa fa-refresh"></i> Reset
+            </div>
+
+            <div class="btn btn-danger" ng-click="logout()">
+              <i class="fa fa-sign-out"></i> Logout
+            </div>
+          </div>
+
+          <div class="alert alert-danger" ng-show="failed">
+            {{error}}
+          </div>
+          <div class="alert alert-success" ng-show="stage == 'recording'">
+            Please talk.
+          </div>
+        </div>
+
+      </div>
+
+    </div>
+  </div>
+
+  <gkt-footer></gkt-footer>
+</div>

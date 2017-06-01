@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<svg width="21px" height="31px" viewBox="0 0 21 31" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:sketch="http://www.bohemiancoding.com/sketch/ns">
+    <!-- Generator: sketchtool 3.4 (381) - http://www.bohemiancoding.com/sketch -->
+    <title>ic_hoots</title>
+    <desc>Created with sketchtool.</desc>
+    <defs></defs>
+    <g id="Page-1" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd" sketch:type="MSPage">
+        <g id="Sidebar" sketch:type="MSArtboardGroup" transform="translate(-228.000000, -101.000000)" fill="#ffffff">
+            <path d="M247.123402,101 L238.310497,101 C237.110464,101 235.639344,101.847793 235.028104,102.892426 L228.566919,113.932731 C227.955679,114.977364 228.433966,115.825157 229.633999,115.825157 L236.136624,115.825157 L229.221326,120.887742 C228.247486,121.600856 228.433966,122.177562 229.633999,122.177562 L233.443025,122.177562 L229.098732,130.230734 C228.523752,131.297814 228.822466,131.55336 229.766952,130.800534 L240.910856,121.923742 C241.853616,121.172642 241.67059,120.540683 240.498183,120.513056 C239.32923,120.487156 238.379564,120.464709 238.379564,120.464709 L245.702355,113.682364 C246.588135,112.860471 246.332589,112.218151 245.130829,112.245778 L238.379564,112.395998 L247.784715,102.5799 C248.622148,101.707933 248.325162,101 247.123402,101" id="ic_hoots" sketch:type="MSShapeGroup"></path>
+        </g>
+    </g>
+</svg>

@@ -1,0 +1,33 @@
+
+<div class="modal-window my-info-panel">
+    <!-- modal-header -->
+    <div class="modal-window-header">
+        <h1 class="modal-window-title">My Profile</h1>
+        <span class="modal-window-close-button"
+              uib-tooltip="Close window"
+              tooltip-placement="left"
+              ng-click="closeThisDialog()"
+        ></span>
+    </div><!-- / modal-header -->
+
+    <!-- modal-body -->
+    <div class="modal-window-content my-info-panel-body">
+        <form role="form" id="myInfoDlg">
+        <div class="form-group name">
+            <label for="name">{{'MYINFO.NAME' | translate}}</label>
+            <h4 id="name">{{username}}</h4>
+          </div>
+          <div class="form-group">
+            <label for="phone">{{'MYINFO.PHONE' | translate}}</label>
+            <h4 id="phone">{{userphone}}</h4>
+          </div>
+          <div class="form-group">
+            <label for="status">{{'MYINFO.CALL_RECORDING_STATUS' | translate}}</label>
+            <h4 id="status">{{call_recording_status}}</h4>
+          </div>
+          <div class="keyImg">
+            <img src="./img/key.png" alt="key" />
+          </div>
+        </form>
+    </div><!-- modal-body -->
+</div>

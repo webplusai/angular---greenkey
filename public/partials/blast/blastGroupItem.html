@@ -1,0 +1,13 @@
+<div class="contact-item row" ng-show="isShown()"
+		ng-class="{
+			'active': isSelected(),
+			'online': isOnline,
+			'offline': !isOnline
+		}">
+	<div class="contact-name col-xs-10">
+		{{ hoot.contact.display_name }}<br />
+	</div>
+	<div class="cb-contact-state col-xs-2">
+		<button ng-click="toggleContact()"><span>&nbsp;</span></button>
+	</div>
+</div>

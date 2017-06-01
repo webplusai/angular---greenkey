@@ -1,0 +1,419 @@
+.hoots-wrapper {
+    height: 100%;
+    overflow: hidden;
+    display: flex;
+    flex-flow: row wrap;
+    align-content: stretch;
+    justify-content: space-between;
+    padding: 0;
+    margin: 0;
+    background-color: transparent;
+}
+
+.hoot {
+    width: 100%;
+    height: 100%;
+    border: 8px solid #131313;
+    border-radius: 17px;
+    background: #636363;
+    color: #282828;
+    overflow: hidden;
+}
+
+.hoot .settings-wrapper i{
+    color: #d0d0d0;
+}
+
+.online.hoot {
+    background: #ababab;
+}
+
+.hoot .connection-footer {
+    position: relative;
+    top: 8%;
+}
+
+.hoot .connection-footer .micro-progress {
+    position: relative;
+}
+
+.hoot .connection-footer .hotkey {
+    display: none;
+}
+.hoot .connection-footer.with-hotkey .hotkey {
+    display: block;
+    float: right;
+    width: 60px;
+    line-height: 20px;
+    font-size: .8em;
+}
+
+.hoot .connection-footer.with-hotkey .main-footer-content {
+    float: left;
+    width: calc(100% - 60px);
+}
+
+.hoot .settings-wrapper,
+.hoot .shout-panel {
+    border-radius: 8px;
+    position: absolute;
+    width: calc(100% - 16px);
+    height: calc(100% - 16px);
+    background: -webkit-linear-gradient(top, rgba(121, 121, 121, 1) 0%, rgba(121, 121, 121, 1) 49%, rgba(0, 0, 0, 0) 50%, rgba(0, 0, 0, 0) 100%);
+}
+
+.hoot .settings-wrapper {
+    background: #131313;
+}
+
+.online.hoot .shout-panel {
+    background: -webkit-linear-gradient(top, rgba(222, 222, 222, 1) 0%, rgba(219, 219, 219, 1) 49%, rgba(206, 206, 206, 1) 50%, rgba(236, 236, 236, 1) 100%);
+    height: calc(100% - 26px);
+    cursor: pointer;
+}
+
+.shouting.hoot .shout-panel {
+    height: calc(100% - 16px);
+    background: -webkit-linear-gradient(top, rgba(23, 153, 40, 1) 0%, rgba(48, 186, 66, 1) 49%, rgba(23, 153, 40, 1) 50%, rgba(23, 153, 40, 1) 100%);
+}
+
+.ransquawk.hoot .shout-panel {
+    cursor: default;
+}
+
+.ransquawk.hoot .micro-progress,
+.ransquawk.hoot .settings-delete {
+    display: none;
+}
+
+.hoot .contact-name {
+    position: relative;
+    height: 50%;
+    top:7%;
+    padding-left: 37px;
+    font-size: 18px;
+    font-weight: bold;
+    background: url(/img/red-led.png) no-repeat 10px 4px;
+    background-size: 16px;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+}
+
+.online.hoot .contact-name {
+    background-image: url(/img/green-led.png);
+}
+
+.away.online.hoot .contact-name {
+    background-image: url(/img/orange-led.png);
+}
+
+.offline.hoot {
+    color: #d0d0d0;
+}
+
+.shouting.hoot {
+    color: #ffffff;
+}
+
+.shouting.hoot .contact-name {
+    background-image: url(/img/svg/shouted-green-led.svg);
+}
+
+.silenced.online.hoot{
+    border-color: #be2900;
+}
+
+
+.silenced.online.shout-incoming-call{
+    box-shadow: none;
+    animation: flickerSilenceAnimation 2.5s infinite linear;
+}
+@keyframes flickerSilenceAnimation {
+    0%, 50%, 100% {
+        border-color: #be0005;
+    }
+    25%, 75% {
+        border-color: #be3c1c;
+    }
+}
+
+.hoot.shout-incoming-call {
+    box-shadow: inset 0 0 3px 2px rgba(232, 152, 0, 0.92);
+    animation: flickerAnimation 2.5s infinite linear;
+}
+@keyframes flickerAnimation {
+    0%, 50%, 100% {
+        border-color: #fcc016;
+    }
+    25%, 75% {
+        border-color: #fff400;
+    }
+}
+
+.connecting-hoot-overlay {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    z-index: 99;
+    border-radius: 16px;
+    overflow: hidden;
+    background: rgba(0, 0, 0, .5);
+    padding-top: 25px;
+    font-size: 20px;
+    text-align: center;
+    color: #fff;
+}
+
+/* settings mode */
+.hoot .settings-title-wrapper {
+    margin: 0 0 0 3px;
+    overflow: hidden;
+}
+
+.hoot .settings-title-status {
+    display: inline-block;
+    vertical-align: middle;
+    width: 15px;
+    height: 15px;
+    margin-right: 3px;
+    background: #666666;
+    background: linear-gradient(to bottom, #666666 0%, #616161 100%);
+    border-radius: 20%;
+    float: left;
+}
+
+.online.hoot .settings-title-status {
+    background: #00b917;
+    background: linear-gradient(to bottom, #057112 0%, #00b917 100%);
+    border: 1px solid #057112;
+}
+
+.away.online.hoot .settings-title-status {
+    background: linear-gradient(to bottom, rgba(204, 130, 6, 0.87) 0%, rgba(188, 129, 7, 1) 100%);
+    border-color: rgba(204, 130, 6, 0.10);
+}
+
+.hoot .settings-title {
+    vertical-align: middle;
+    color: #9c9c9c;
+    font-weight: bold;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    float: left;
+    display: inline-block;
+    width: 65%;
+}
+
+.shouting.hoot .settings-title {
+    color: #ffffff;
+}
+
+.col-1-3 .hoot .settings-title {
+    display: inline-block;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+.hoot .settings-delete {
+    display: inline-block;
+    width: 24px;
+    padding: 1px 0 0 6px;
+    font-size: 16px;
+    border-radius: 19px;
+    background: #636363;
+    float: right;
+    cursor: pointer;
+}
+
+.hoot .settings-wrapper .settings-buttons {
+    margin-top: 20px;
+}
+
+.hoot .settings-wrapper .settings-button {
+    position: relative;
+    display: block;
+    width: 100%;
+    height: 37px;
+    line-height: 37px;
+    text-overflow: ellipsis;
+    text-align: center;
+    padding: 0;
+    border-radius: 0 3px 3px 0;
+    border: 1px solid #1d1d1d;
+    border-left: 0;
+    font: 15px Arial;
+    color: #ffffff;
+    background: linear-gradient(to bottom, #5b5b5b 0%, #414141 100%);
+    box-shadow: 0 2px 0 0 rgba(0, 0, 0, .5);
+}
+.hoot .settings-wrapper .settings-button.pressed,
+.hoot .settings-wrapper .settings-button:active {
+    background-image: linear-gradient(to top, #606060, #363535);
+    box-shadow: inset 0 1px 3px 0 rgba(0, 0, 0, 0.5);
+}
+.hoot .settings-wrapper.wide .settings-button {
+    padding-left: 3px;
+    text-align: left;
+}
+
+.hoot .settings-wrapper .settings-button-caption {
+    display: none;
+}
+.hoot .settings-wrapper.wide .settings-button-caption {
+    display: inline-block;
+    vertical-align: middle;
+}
+
+.hoot .settings-wrapper .settings-button-tooltip {
+    position: absolute;
+    left: 0;
+    top: 0;
+    display: block;
+    width: 100%;
+    height: 100%;
+}
+.hoot .settings-wrapper.wide .settings-button-tooltip {
+    display: none;
+}
+
+.hoot .settings-wrapper .settings-button-icon {
+    display: inline-block;
+    vertical-align: middle;
+    width: 30px;
+    height: 30px;
+}
+
+.hoot .settings-wrapper .ptt-button .settings-button-icon {
+    background: url(/img/svg/new/ic-ptt-disabled.svg) 5px 4px no-repeat;
+    background-size: 21px;
+}
+.hoot .settings-wrapper .ptt-button.pressed .settings-button-icon {
+    /*background: url(/img/svg/new/ic-ptt-enabled.svg) -2px -8px no-repeat;*/
+    background: url(/img/ic-pttmode.png) -2px -5px no-repeat;
+    background-size: 33px;
+}
+
+.hoot .settings-wrapper .silence-button .settings-button-icon {
+    width: 38px;
+    background: url(/img/svg/new/ic-muted.svg) 6px 6px no-repeat;
+    background-size: 24px;
+}
+.hoot .settings-wrapper .silence-button.pressed .settings-button-icon {
+    background: url(/img/ic-unmuted.png) -3px -4px no-repeat;
+    background-size: 43px;
+}
+
+.hoot .contact-photo {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    text-align: center;
+    opacity: 0.4;
+    z-index: 1;
+}
+
+.hoot .contact-photo .contact-photo-img {
+    width: auto;
+    height: 90%;
+    margin: 1% 0;
+}
+
+.hoot.offline .audio-change {
+    display: none;
+}
+
+.hoot .dragging-spot {
+    position: absolute;
+    top: 8px;
+    right: 12px;
+    font-size: 16px;
+    color: #797979;
+    z-index: 999;
+    display: none;
+    cursor: pointer;
+}
+.hoot.settings-visible:hover .dragging-spot {
+    display: none;
+}
+.hoot:hover .dragging-spot {
+    display: block;
+}
+
+.hoot-box-wrapper.ui-draggable-dragging {
+    width: 287px;
+    height: 110px;
+}
+
+.hoot-box-wrapper.dragging-hover .empty {
+    box-shadow: inset 0 0 12px 1px rgba(255, 255, 255, 0.75);
+}
+
+
+.connection-wrapper .active-call-box {
+    width: 98%;
+}
+
+.connection-wrapper .active-call-box .controls .button {
+    height: 100%;
+}
+.connection-wrapper .active-call-box .controls {
+    height: 32%;
+}
+.connection-wrapper .active-call-box .box-body {
+    height: 100%;
+}
+
+/* Hoot on ringdown panel */
+.ringdown-box-wrapper .hoot {
+    border: 3px solid #131313;
+    border-radius: 8px;
+}
+
+.ringdown-box-wrapper .shouting.hoot .shout-panel {
+    height: calc(100% - 6px);
+}
+
+.ringdown-box-wrapper .online.hoot .shout-panel {
+    height: calc(100% - 14px);
+
+}
+
+.ringdown-box-wrapper .hoot .settings-wrapper, .ringdown-box-wrapper .hoot .shout-panel {
+    border-radius: 6px;
+    width: calc(100% - 6px);
+    height: calc(100% - 6px);
+}
+
+.ringdown-box-wrapper .hoot .settings-wrapper {
+    padding: 0 5px;
+    border-radius: 0px;
+}
+
+.ringdown-box-wrapper .shouting.hoot .shout-panel {
+    height: calc(100% - 6px);
+}
+
+.ringdown-box-wrapper .hoot .settings-wrapper .settings-button {
+    height: 32px;
+    line-height: 32px;
+}
+
+.ringdown-box-wrapper .hoot .settings-wrapper .settings-buttons {
+    margin-top: 6px;
+}
+
+.ringdown-box-wrapper .shouting.hoot .contact-name {
+    height: 48%;
+}
+
+.ringdown-box-wrapper .hoot .dragging-spot {
+    top: 3px;
+}
+
+

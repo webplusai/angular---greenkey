@@ -1,0 +1,166 @@
+/*
+Prefix styles for compact mode with `.compact` class selector. E.g.:
+
+.compact .bottom-panel {
+    padding-top: 0;
+}
+*/
+
+/* Class for tags, that should be hidden in normal mode and shown in compact mode only */
+.compact-only {
+    display: none;
+}
+
+.compact #top-panel{
+    height: calc(100% - 292px);
+}
+
+.compact #top-panel.phone-panel-hidden{
+    height: calc(100% - 130px);
+}
+
+.compact .window-header .window-header-title, .compact #navbar
+{
+    display: none !important;
+}
+
+.compact #left-panel,
+.compact #hoots-panel,
+.compact #right-panel {
+    width: 100% !important;
+}
+
+.compact #phone-main-container {
+    position: fixed;
+    bottom: 137px;
+    width: calc(100% - 24px);
+}
+
+.compact #right-panel.without-ringdowns {
+    height: auto;
+}
+
+.compact .ringdowns-tabbar-wrapper.pull-right,
+.compact .hoots-tabbar-wrapper.pull-right {
+    float: none !important;
+}
+
+.compact .tabs-panel-wrapper .nav-tabs.tabs-panel {
+    display: flex;
+}
+
+.compact #hoots-panel .tabs-panel-wrapper .nav-tabs.tabs-panel{
+    border-radius: 0;
+    margin: 0;
+}
+
+.compact .tabs-panel-wrapper .nav-tabs.tabs-panel .tab,
+.compact .columns-switcher .nav-tabs.tabs-panel .tab {
+    margin: 0;
+}
+.compact .tabs-panel-wrapper .nav-tabs.tabs-panel .tab:nth-child(n+2),
+.compact .columns-switcher .nav-tabs.tabs-panel .tab:nth-child(n+2) {
+    margin-left: 3px;
+}
+
+.compact .columns-switcher .nav-tabs.tabs-panel .tab {
+    height: 35px;
+    padding-top: 6px;
+}
+
+.compact .tabs-panel-wrapper .nav-tabs.tabs-panel .tab {
+    padding: 5px 0;
+    flex: 1;
+}
+
+.compact .window-header {
+    height: 35px;
+}
+
+.compact .window-content {
+    height: calc(100% - 40px);
+}
+
+.compact .settings-mode .window-content {
+    height: calc(100% - 80px);
+}
+
+.compact .compact-settings-button {
+    display: block;
+    color: #747474;
+    border: 1px solid #000;
+    font-size: 18px;
+    text-align: center;
+    border-radius: 5px;
+    width: 34px;
+    height: 34px;
+    background: -webkit-linear-gradient(top, #5b5b5b 0%,#414141 100%);
+    padding-top: 8px;
+    text-shadow: 0 -1px 0 #000;
+    cursor: pointer;
+}
+
+.compact .active.compact-settings-button {
+    color: #e1e1e1;
+}
+
+.compact #phone-main-container .hide-phone-panel, .compact .show-phone-panel{
+    position: absolute;
+    top: -28px;
+    margin: auto;
+    width: 54px;
+    height: 54px;
+    background: linear-gradient(to top, #515151, #686868);
+    left: 0;
+    right: 0;
+    z-index: -10;
+    border-radius: 100%;
+    border: 1px solid #515151;
+}
+.compact #phone-main-container .hide-phone-panel span{
+    position: absolute;
+    width: 16px;
+    height: 18px;
+    top: 6px;
+    margin: auto;
+    left: 0;
+    right: 0;
+    float: left;
+    background-image: url('../img/phoneControls/hidePhonePanel.svg');
+}
+
+.compact .show-phone-panel{
+    position: absolute;
+    margin: 0;
+    padding: 5px;
+    z-index: 10000;
+    right: -5px;
+    bottom: 125px;
+    left: initial;
+    top: initial;
+}
+
+.compact .show-phone-panel span{
+    width: 25px;
+    height: 25px;
+    float: left;
+    margin-left: 8px;
+    background-image: url('../img/phoneControls/dialer.png');
+}
+
+.compact .buttons.hoots-buttons {
+    width: 100%;
+    max-width: 100%;
+}
+
+.compact .ringdowns-tabbar-wrapper {
+    width: calc(100% - 40px);
+}
+
+.compact #hoots-main-container .window-header {
+    flex-wrap: wrap-reverse;
+}
+
+.compact #hoots-main-container .window-header .columns-switcher {
+    margin-top: 3px;
+}

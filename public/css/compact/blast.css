@@ -1,0 +1,32 @@
+.compact .blast-button .blast-badge {
+	padding: 2px;
+	font-size: 10px;
+}
+
+.compact .connection-wrapper .hoot.blast-button .contact-name,
+.compact .connection-wrapper.col-1-2 .hoot.blast-button .contact-name {
+	padding-right: 27px;
+}
+
+.compact .blast-button .blast-badge {
+	margin-top: 2px;
+}
+
+.compact .blast-button .quick-blast-wrapper {
+	right: 2px;
+	top: 9px;
+}
+
+.compact .blast-button .quick-blast-button {
+	padding: 2px 5px;
+	font-size: 18px;
+}
+
+
+.compact .hoot.blast-button .settings-wrapper .settings-title {
+	width: 50%;
+}
+
+.compact .blast-button .settings-wrapper .blast-badge {
+	margin-top: 5px;
+}

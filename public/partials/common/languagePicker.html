@@ -1,0 +1,5 @@
+<select class="form-control select-dark"
+    ng-options="lang as (lang.name | translate) for lang in supportedLangs track by lang.key"
+    ng-change="onChangeLang(langSelected)"
+    ng-model="langSelected" >
+</select>

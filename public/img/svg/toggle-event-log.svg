@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<svg width="28px" height="29px" viewBox="0 0 28 29" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:sketch="http://www.bohemiancoding.com/sketch/ns">
+    <!-- Generator: sketchtool 3.4 (381) - http://www.bohemiancoding.com/sketch -->
+    <title>ic_log</title>
+    <desc>Created with sketchtool.</desc>
+    <defs>
+        <filter x="-50%" y="-50%" width="200%" height="200%" filterUnits="objectBoundingBox" id="filter-1">
+            <feOffset dx="0" dy="-1" in="SourceAlpha" result="shadowOffsetOuter1"></feOffset>
+            <feGaussianBlur stdDeviation="0" in="shadowOffsetOuter1" result="shadowBlurOuter1"></feGaussianBlur>
+            <feColorMatrix values="0 0 0 0 0.101960784   0 0 0 0 0.42745098   0 0 0 0 0.117647059  0 0 0 0.7 0" in="shadowBlurOuter1" type="matrix" result="shadowMatrixOuter1"></feColorMatrix>
+            <feMerge>
+                <feMergeNode in="shadowMatrixOuter1"></feMergeNode>
+                <feMergeNode in="SourceGraphic"></feMergeNode>
+            </feMerge>
+        </filter>
+    </defs>
+    <g id="Iteration-2" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd" sketch:type="MSPage">
+        <g id="Chat-HB-3-Green-No-Active-Call" sketch:type="MSArtboardGroup" transform="translate(-339.000000, -20.000000)" filter="url(#filter-1)" fill="#FFFFFF">
+            <g id="Top-Bar" sketch:type="MSLayerGroup">
+                <path d="M354.742797,42.7765367 C354.32006,43.1991115 353.739182,43.4102369 353,43.4102369 C352.260332,43.4102369 351.679616,43.1991115 351.257365,42.7765367 C350.834466,42.354286 350.623503,41.8259055 350.623503,41.1922053 C350.623503,40.5585051 350.834466,40.0276941 351.257365,39.5999344 C351.679616,39.1721746 352.249962,38.9582947 352.968404,38.9582947 C353.728812,38.9582947 354.32006,39.1721746 354.742797,39.5999344 C355.165048,40.0276941 355.376497,40.5585051 355.376497,41.1922053 C355.376497,41.8259055 355.165048,42.354286 354.742797,42.7765367 M351.531034,26.5249062 C351.813777,26.1773514 352.345074,26.003655 353.12606,26.003655 C353.916605,26.003655 354.451143,26.1773514 354.728376,26.5249062 C355.005772,26.872299 355.14447,27.4630612 355.14447,28.2970307 L354.427486,37.2365617 L351.572514,37.2365617 L351.107649,28.2970307 C351.107649,27.4630612 351.248453,26.872299 351.531034,26.5249062 M353,21 C345.400459,21 339.239746,27.1607128 339.239746,34.7602539 C339.239746,42.359795 345.400459,48.5205078 353,48.5205078 C360.599541,48.5205078 366.760254,42.359795 366.760254,34.7602539 C366.760254,27.1607128 360.599541,21 353,21" id="ic_log" sketch:type="MSShapeGroup"></path>
+            </g>
+        </g>
+    </g>
+</svg>

@@ -1,0 +1,36 @@
+<div class="phone-controls" id="phone-block">
+  <div class="dialer-panel row">
+    <div class="number-input col-md-12">
+      <div class="panel-hold pull-left">
+        <span class="icon">&nbsp;</span>
+      </div>
+      <div class="pull-left search-contact">
+        <button class="call-button pull-right" ng-click="dial()">CALL</button>
+        <input type="text" ng-model="inputNumber"
+            placeholder="{{'ENTER_PHONE_NUMBER_TEXT' | translate}}"
+            uib-tooltip="Enter Phone Number" tooltip-placement="bottom"
+            ng-keypress="onInputKeyPress($event)" />
+      </div>
+      <button class="pull-right dialer-pad-button" ng-click="toggleNumpad()">
+        <span class="icon">&nbsp;</span>
+      </button>
+    </div>
+    <dialer-numpad ng-show="isNumpadShown"></dialer-numpad>
+  </div>
+
+  <div class="controls-panel">
+    <div class="controls">
+      <div class="buttons-row">
+        <voice-mail-button></voice-mail-button>
+        <div class="top button merge disabled"><div class="text"><span>{{'MERGE_LABEL' | translate}}</span></div></div>
+        <div class="right top button hold disabled"><div class="text"><span>{{'HOLD_LABEL' | translate}}</span></div></div>
+      </div>
+      <div class="buttons-row">
+        <div class="left bottom button add-person disabled"><div class="text"><span>{{'ADD_A_PERSON_LABEL' | translate}}</span></div></div>
+        <transfer-button></transfer-button>
+        <div class="right bottom button group-call disabled"><div class="text"><span>{{'GROUP_CALL_LABEL' | translate}}</span></div></div>
+      </div>
+    </div>
+    <div class="clearfix"></div>
+  </div>
+</div>

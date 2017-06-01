@@ -1,0 +1,32 @@
+<div class="modal-window quick-blast-panel">
+    <div class="modal-window-header">
+        <button class="modal-window-header-button quick-blast-panel-shout-button"
+                ng-class="{shouting: blastGroup.shouting}"
+                ng-mousedown="handleShoutPressed()"
+                ng-mouseup="handleShoutDepressed()"
+                ng-mouseleave="handleShoutDepressed()"
+        >Shout</button>
+        <h1 class="modal-window-title">Quick {{ blastGroup.name }} blast</h1>
+        <span class="modal-window-close-button"
+              uib-tooltip="Close window"
+              tooltip-placement="left"
+              ng-click="closeQuickBlastPanel()"
+        ></span>
+    </div>
+    <div class="modal-window-content">
+        <div class="blast-items-list-wrapper">
+            <div class="blast-items-list-header">
+                <div class="row">
+                    <div class="col-xs-5 blast-item-name">Name</div>
+                    <div class="col-xs-4 blast-item-company">Company</div>
+                </div>
+            </div>
+            <div class="blast-items-list scrollable">
+                <quick-blast-panel-item ng-repeat="member in members" hoot="member"></quick-blast-panel-item>
+            </div>
+        </div>
+    </div>
+    <div class="modal-window-footer quick-blast-panel-footer">
+        <div class="explaining-message-wrapper">Press Esc to Save Changes</div>
+    </div>
+</div>

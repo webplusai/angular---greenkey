@@ -1,0 +1,55 @@
+
+.add-company-connection .ui-select-container {
+    width: 100%;
+}
+
+.add-company-connection .modal-body .form-group {
+    margin-right: 0px;
+    margin-left: 0px;
+    padding: 10px;
+}
+
+.add-company-connection .form-group .control-label {
+    text-align: left;
+}
+
+.add-company-connection .form-group .color-green {
+    color: #4d792a;
+}
+.add-company-connection .modal-body {
+    padding: 0;
+}
+
+.add-company-connection .control-label {
+    display: block;
+}
+
+.add-company-connection .modal-body .selection-types {
+    padding: 0 10px;
+}
+.add-company-connection .selection-types select {
+    width: 100%;
+}
+.add-company-connection .with-error {
+    box-shadow: 0px 0px 10px 1px red;
+}
+
+.ngdialog.ngdialog-theme-default {
+    padding-bottom: 0;
+    padding-top: 100px;
+}
+
+.ngdialog.ngdialog-theme-default.add-company-connection-dialog .ngdialog-content {
+    width: 670px;
+}
+
+.add-company-connection .select2-search-choice-close {
+    background: url('img/select2.png') right top no-repeat;
+}
+
+
+
+/* Team hoot connection */
+.modal-window.add-teamhoot-connection-panel {
+  height: 385px;
+}

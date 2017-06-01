@@ -1,0 +1,78 @@
+<div class="active-call-box col-md-3 col-sm-6"
+     id="{{ ec.contact.phone_numbers.international }}">
+
+  <div class="connecting-overlay"
+       ng-if="call.GKT_isInboundCall && accepted && callStatus !== 'active'">
+    <div class="spinner">
+        <span us-spinner="{radius:16, width: 6, length: 8, color: '#fff'}"
+              spinner-start-active="true"></span>
+    </div>
+  </div>
+
+  <div ng-show = "!uiState.settingsVisible">
+    <div class="box-header">
+      <span class="pull-left call-title">
+        {{ ::call.contact.display_name | tel }}
+      </span>
+      <span class="pull-right call-status" ng-show="callStatus !== 'active'">
+        {{ callStatus }}
+      </span>
+      <span class="pull-right call-timer">
+        {{ call.elapsedTime.elapsed | date:'HH:mm:ss' }}
+      </span>
+    </div>
+
+    <div class="box-body"
+         ng-mousedown="$event.stopPropagation()"> <!-- Prevent drag & drop from the body -->
+      <div class="micro-progress">
+        <div class="pull-left micro-phone">
+          <i class="fa fa-microphone"></i>
+        </div>
+        <div data-volume-meter></div>
+      </div>
+
+      <div class="controls">
+        <div class="button" ng-show="accepted" ng-class="{'selected': muted}"
+             ng-click="toggleMute()">
+          {{muted ? 'Muted' : 'Mute'}}
+        </div>
+        <div class="button" ng-show="accepted" ng-class="{'selected': silenced}"
+             ng-click="toggleSilence()">
+          {{silenced ? 'Silenced' : 'Silence'}}
+        </div>
+        <div class="button" ng-show="accepted" ng-class="{'selected': selected}"
+             ng-click="selectCall()">
+          {{selected ? 'Selected' : 'Select'}}
+        </div>
+        <div class="accept button" ng-show="!accepted" ng-click="acceptCall()">
+          Accept
+        </div>
+        <div class="reject button" ng-show="!accepted" ng-click="rejectCall()">
+          Reject
+        </div>
+      </div><!-- .controls -->
+    </div><!-- .box-body -->
+  </div>
+
+  <div class="settings-wrapper"
+       ng-show="uiState.settingsVisible">
+    <div class="settings-title-wrapper">
+      <span class="settings-title" title="{{ call.contact.display_name }}">{{ call.contact.display_name }}</span>
+    </div>
+    <div class="row settings-buttons">
+
+      <div class="settings-button-wrapper col-xs-6" ng-show="isOpenFin">
+        <button class="btn btn-default settings-button pop-out-button"
+                ng-click="tearOut()">
+          <span class="settings-button-icon"></span>
+            <span class="settings-button-tooltip" uib-tooltip="Pop-out"
+                  tooltip-placement="top"></span>
+          <span class="settings-button-caption">Pop-out</span>
+        </button>
+      </div>
+
+      <switch-audio-button connection="call" button-style="volume" tool-tip-placement="top" class="col-xs-6">
+    </div>
+  </div>
+
+</div>

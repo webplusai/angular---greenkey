@@ -1,0 +1,80 @@
+<div class="flex-height-layer">
+  <div class="blast-button hoot connection"
+       ng-class="{
+      	'shouting': blast.shouting,
+      	'offline': !isOnline,
+      	'online': isOnline
+      }">
+    <div class="shout-panel" ng-mousedown="handleShoutPressed()" ng-mouseup="handleShoutDepressed()"
+         click-sound audio-context="getOutputDeviceContext">
+
+      <div class="contact-name"
+           uib-tooltip="{{ blast.name }}"
+           tooltip-placement="bottom"
+      >
+        <span class="blast-badge">blast</span>
+        {{ blast.name }}
+      </div>
+
+      <div class="connection-footer" ng-class="{'with-hotkey': hotKey}">
+        <div class="main-footer-content blast-group-members">
+          {{ blast.getPausedMembersQty() > 0 ? blast.getUnpausedMembersQty() + ' /' : '' }}
+          {{ blast.getMembersQty() }} shout{{ blast.getMembersQty() !== 1 ? 's' : '' }}
+        </div>
+
+        <span class="hotkey">{{ hotKey }}</span>
+      </div>
+
+      <div class="quick-blast-wrapper">
+        <span class="quick-blast-button" ng-mousedown="openQuickBlastPanel($event)">
+          <i class="fa fa-gear"></i>
+        </span>
+      </div>
+    </div>
+
+    <div class="settings-wrapper"
+         ng-show="uiState.settingsVisible"
+         ng-class="{'wide': uiState.wideScreenMode && columns == 2}">
+      <div class="settings-title-wrapper">
+        <span class="blast-badge">blast</span>
+        <span class="settings-title" title="{{ blast.name }}">{{ blast.name }}</span>
+        <span class="settings-delete" ng-click="deleteBlastGroup()">
+          <i class="fa fa-close"></i>
+        </span>
+      </div>
+      <div class="row settings-buttons">
+        <!-- configure -->
+        <div class="settings-button-wrapper" ng-class="isOpenFin ? 'col-xs-4' : 'col-xs-6'">
+          <button class="btn btn-default settings-button config-button"
+                  ng-click="showConfigDialog()">
+            <span class="settings-button-icon"></span>
+            <span class="settings-button-tooltip" uib-tooltip="Configure" tooltip-placement="bottom"></span>
+            <span class="settings-button-caption">Configure</span>
+          </button>
+        </div>
+
+        <!-- tear out -->
+        <div class="settings-button-wrapper" ng-class="isOpenFin ? 'col-xs-4' : 'hidden'">
+          <button class="btn btn-default settings-button pop-out-button"
+                  ng-click="tearOut()">
+            <span class="settings-button-icon pop-out-button-icon"></span>
+            <span class="settings-button-tooltip" uib-tooltip="Pop-out" tooltip-placement="bottom"></span>
+            <span class="settings-button-caption">Pop-out</span>
+          </button>
+        </div>
+
+        <!-- ptt -->
+        <div class="settings-button-wrapper" ng-class="isOpenFin ? 'col-xs-4' : 'col-xs-6'">
+          <button class="btn btn-default settings-button ptt-button"
+                  ng-class="{'pressed': blast.isInPttMode, 'depressed': !blast.isInPttMode}"
+                  ng-click="switchPttMode()">
+            <span class="settings-button-icon ptt-button-icon"></span>
+            <span class="settings-button-tooltip" uib-tooltip="{{ pttLabel }}" tooltip-placement="bottom"></span>
+            <span class="settings-button-caption">{{ pttLabel }}</span>
+          </button>
+        </div>
+      </div>
+    </div>
+
+  </div>
+</div>

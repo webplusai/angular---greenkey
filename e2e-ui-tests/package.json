@@ -1,0 +1,31 @@
+{
+  "name": "autotest",
+  "version": "0.1.0",
+  "description": "GreenKeyTech UI end to end automation tests",
+  "main": "index.js",
+  "scripts": {
+    "lint": "node_modules/.bin/gulp lint",
+    "fix-styles": "node_modules/.bin/gulp fix-style",
+    "test": "node_modules/.bin/gulp test"
+  },
+  "author": "MaheshG",
+  "license": "ISC",
+  "dependencies": {
+    "protractor": "^2.5.1",
+    "gulp-protractor": "^1.0.0",
+    "glob": "^5.0.14",
+    "gulp-connect": "^2.2.0"
+  },
+  "devDependencies": {
+    "gulp": "^3.9.0",
+    "gulp-jshint": "^2.0.0",
+    "jasmine": "^2.4.1",
+    "js-beautify": "^1.5.10",
+    "jshint": "^2.8.0",
+    "jshint-stylish": "^2.1.0",
+    "protractor": "^2.5.1",
+    "protractor-jasmine2-html-reporter": "0.0.5",
+    "jasmine-spec-reporter": "^2.4.0",
+    "jasmine2-custom-message": "0.8.0"
+  }
+}

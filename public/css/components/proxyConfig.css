@@ -1,0 +1,23 @@
+#proxy_config_host {
+    width: 40%;
+    margin-left: 8px;
+    margin-right: 8px;
+}
+
+#proxy_config_port {
+    width: 30%;
+    margin-left: 8px;
+    margin-right: 8px;
+}
+
+#proxyConfigDlg .body-wrapper {
+    margin: 30px 30px 30px 30px;
+}
+
+#proxyConfigDlg input[type="checkbox"] {
+    margin-right: 30px;
+}
+
+#proxyConfigDlg .row {
+    margin-bottom: 15px;
+}

@@ -1,0 +1,252 @@
+#events-log-panel {
+    padding: 0;
+}
+
+#events-log-panel .records-container {
+    height: 100%;
+    background-color: #faf7ec;
+    color: #404040;
+    font-size: 13px;
+    padding: 0 10px;
+    border-radius: 10px;
+}
+
+#events-log-panel .header-row {
+    font-weight: bold;
+    padding: 15px 0 5px 0;
+}
+
+#events-log-panel .column-header {
+    float: left;
+    text-align: left;
+    font-size: 15px;
+    color: #282828;
+    cursor: pointer;
+}
+
+#events-log-panel .sortable.column-header {
+    cursor: pointer;
+}
+
+#events-log-panel .column-header .fa {
+    padding-left: 5px;
+    font-size: 21px;
+    line-height: 18px;
+    vertical-align: sub;
+}
+
+#events-log-panel .header-row .type {
+    height: auto;
+}
+
+#events-log-panel .header-row .date {
+    width: 95px;
+}
+
+#events-log-panel .header-row .contact {
+    margin-left: 8px;
+}
+
+.event-log-record {
+    border-bottom: 1px solid #dbdbdb;
+}
+
+.event-log-record:last-child {
+    border: 0;
+}
+
+.event-log-record .text-column {
+    float: left;
+    padding: 10px 0 10px 10px;
+    min-height: 44px;
+    width: calc(100% - 55px);
+}
+
+.event-log-record .icon-column {
+    float: left;
+    padding: 0;
+    height: auto;
+    min-height: 44px;
+    width: 55px;
+}
+
+.event-log-record .icon-column audio-record {
+    position: relative;
+    top: 12px;
+    left: 10px;
+    width: 25px;
+    height: 25px;
+}
+
+#events-log-panel .contact {
+    overflow: hidden;
+    white-space: nowrap;
+    vertical-align: middle;
+    text-overflow: ellipsis;
+    text-align: left;
+    height: auto;
+    color: #282828;
+    padding-top: 2px;
+}
+
+#events-log-panel .header-row .contact {
+    padding: 0;
+    min-width: 40px;
+}
+
+#events-log-panel .contact:not(.column-header.contact) {
+    padding: 3px 0;
+}
+
+.event-log-record .date {
+    float: left;
+    padding: 3px 0px;
+    border-radius: 15px;
+    color: #a3a3a3;
+    font-size: 12px;
+    height: auto;
+    text-align: left;
+    vertical-align: middle;
+    width: 53px;
+    margin-right: 5px;
+}
+
+.event-log-record .contact .event-date {
+    color: #a3a3a3;
+    font-size: 12px;
+    display: none;
+}
+
+.event-log-record .note-text {
+    background-color: transparent;
+    border: 0;
+    min-height: 25px;
+    height: 25px;
+    cursor: pointer;
+    margin-left: 10px;
+    float: left;
+    width: 100%;
+    overflow: hidden;
+    resize: none;
+}
+
+.event-log-record .note-text-view,
+.event-log-record .note-text-edit {
+    float: left;
+    position: relative;
+    width: 100%;
+    padding-top: 8px;
+}
+
+#events-log-panel .event-log-record .record-idle .contact {
+    color: #A76A00;
+}
+#events-log-panel .event-log-record .record-idle .date {
+    color: #CC8200;
+}
+
+.event-log-record .note-text-view p {
+    word-wrap: break-word;
+    padding-left: 10px;
+    margin: 0;
+    color: #747474;
+}
+
+.event-log-record .type-icon {
+    float: left;
+    width: 20px;
+    height: 23px;
+    padding: 10px 18px;
+    border: 0;
+    background: transparent none no-repeat center;
+    cursor: pointer;
+    background-position-x: 25%;
+}
+
+.event-log-record .external-call-event.inbound {
+    background-image: url("../img/eventsLog/phone-inbound.png");
+}
+
+.event-log-record:hover .external-call-event.inbound {
+    background-image: url("../img/eventsLog/phone-inbound-hover.png");
+}
+
+.event-log-record .external-call-event.outbound {
+    background-image: url("../img/eventsLog/phone-outbound.png");
+}
+
+.event-log-record:hover .external-call-event.outbound {
+    background-image: url("../img/eventsLog/phone-outbound-hover.png");
+}
+
+.event-log-record .ringdown-call-event.inbound {
+    background-image: url("../img/eventsLog/ringdown-inbound.png");
+}
+
+.event-log-record:hover .ringdown-call-event.inbound{
+    background-image: url("../img/eventsLog/ringdown-inbound-hover.png");
+}
+
+.event-log-record .ringdown-call-event.outbound {
+    background-image: url("../img/eventsLog/ringdown-outbound.png");
+}
+
+.event-log-record:hover .ringdown-call-event.outbound {
+    background-image: url("../img/eventsLog/ringdown-outbound-hover.png");
+}
+
+.event-log-record .hoot-call-event {
+    background-image: url("../img/eventsLog/shouted.png");
+}
+
+.event-log-record:hover .hoot-call-event {
+    background-image: url("../img/eventsLog/shouted-hover.png");
+}
+
+#events-log-panel .record-icon {
+    float: right;
+    width: 23px;
+    height: 32px;
+    background-position: 100% 100% !important;
+    margin-right: 2px;
+}
+
+#events-log-panel .edit {
+    background: url("../img/eventsLog/ic-edit.png") no-repeat;
+    cursor: pointer;
+}
+
+#events-log-sorting {
+    display: none;
+    padding: 10px 0;
+}
+
+#events-log-sorting .title {
+    height: auto;
+    padding: 10px;
+}
+
+#events-log-sorting select {
+    width: 100%;
+    height: 40px;
+    padding: 0 10px;
+    border-radius: 8px;
+    border: 1px solid #d5d5d5;
+}
+
+/* Responsive properties */
+
+@media screen and (max-width: 1280px) {
+    #events-log-panel .header-row,
+    #events-log-panel .event-log-record .date {
+        display: none;
+    }
+
+    .event-log-record .contact .event-date {
+        display: block;
+    }
+
+    #events-log-sorting {
+        display: block;
+    }
+}

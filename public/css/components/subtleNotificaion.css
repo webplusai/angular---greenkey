@@ -1,0 +1,11 @@
+
+.page-dark-theme .cg-notify-message.cg-notify-message-right {
+  height: auto;
+  background-color: #686868;
+  border-color: #424242;
+  color: #ffffff;
+}
+
+.cg-notify-message:hover {
+  cursor: pointer;
+}

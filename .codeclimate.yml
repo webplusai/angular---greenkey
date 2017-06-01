@@ -1,0 +1,11 @@
+engines:
+  eslint:
+    enabled: true
+  csslint:
+    enabled: false
+ratings:
+   paths:
+   - app/**
+   - lib/**
+   - "**.js"
+exclude_paths:

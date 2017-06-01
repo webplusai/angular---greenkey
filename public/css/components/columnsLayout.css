@@ -1,0 +1,37 @@
+.col-1-4 {
+  width: 24%;
+}
+.col-1-3 {
+  width: 32%;
+}
+.col-1-2 {
+  width: 49%;
+}
+.col-1-1 {
+  width: 100%;
+}
+.column{
+  position: relative;
+  padding: 0 5px;
+}
+
+.columns-switcher {
+  min-width: 198px;
+  overflow: hidden;
+  z-index: 1020;
+}
+
+.columns-switcher .nav-tabs {
+  border-bottom: none;
+}
+
+.columns-switcher .nav-tabs.tabs-panel .tab {
+  cursor: pointer;
+  height: 49px;
+  width: 90px;
+  padding: 15px 0px 0px 0px;
+}
+
+.columns-switcher .nav-tabs.tabs-panel .tab .tab-title {
+  text-align: center;
+}

@@ -1,0 +1,12 @@
+.compact .login-page .login-widget {
+    min-width: 330px;
+    width: 90%;
+    margin-left: -45%;
+    padding-bottom: 20px;
+}
+
+.compact .login-widget .btn-login.has-error {
+    white-space: normal;
+    padding: 14px 5px 16px;
+    font-size: 13px;
+}

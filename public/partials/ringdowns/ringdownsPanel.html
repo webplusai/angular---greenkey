@@ -1,0 +1,51 @@
+<div class="ringdowns-wrapper window-content"
+  data-drop="true"
+  data-jqyoui-options="{
+    scope: 'callBox'
+  }"
+  jqyoui-droppable="{
+    beforeDrop: 'dragDropOptions.beforeDropOnRingdownPanel'
+  }" >
+
+  <ringdown-connection
+    ng-repeat="(key, ringdown) in contacts track by key"
+    connection="ringdown"
+    ng-show="ringdown.pageRIndex == activePageIndex"
+    data-drop="true"
+    data-drag="true"
+    ng-model="contacts"
+    data-dragdrop-index="{{key}}"
+    data-dragdrop-uid="{{ringdown.uid}}"
+    jqyoui-droppable="{
+      index: {{key}},
+      onDrop: 'dragDropOptions.onDrop',
+      beforeDrop: 'dragDropOptions.beforeDrop',
+      deepCopy: true
+    }"
+    jqyoui-draggable="{
+      index: {{key}},
+      insertInline: true,
+      direction: 'jqyouiDirection',
+      animate: true,
+      onStop: 'dragDropOptions.onStop',
+      onStart: 'dragDropOptions.onStart'
+    }"
+    data-jqyoui-options="{
+      revert: 'invalid',
+      scope: 'callBox',
+      appendTo: 'body',
+      helper: 'clone'
+    }"
+    data-direction="{{ item.jqyouiDirection }}"
+    dragging-data="draggingData">
+  </ringdown-connection>
+
+
+  <!-- Empty slots per page: -->
+  <ringdown-connection ng-repeat="(key, slot) in emptySlots track by key"
+    ringdown="slot"
+    dragging-data="{}" >
+  </ringdown-connection>
+</div>
+
+

@@ -1,0 +1,88 @@
+.compact .bottom-panel{
+    position: fixed;
+    bottom: 0;
+    display: block;
+    height: auto;
+    padding-top: 0;
+}
+
+.compact .release-calls-wrapper{
+    display: none;
+}
+
+.compact .release-calls-wrapper.compact-only{
+    display: block;
+    float: left;
+}
+
+.compact .active-calls-panel .calls-wrapper .no-calls,
+.compact .compact-scroll-wrapper {
+    height: 90px;
+}
+
+.compact .active-calls-panel .calls-wrapper .no-calls {
+    line-height: 90px;
+}
+
+.compact .compact-scroll-wrapper {
+    overflow: auto;
+    position: relative;
+}
+
+.compact .active-call-box{
+    margin: 5px 0;
+}
+
+.compact .active-call-box .box-header {
+    height: 25px;
+    font-size: 12px;
+    margin-bottom: 0;
+}
+
+.compact .active-call-box .call-title {
+    font-size: 12px;
+}
+
+.compact .active-call-box .box-body {
+    padding: 2px;
+}
+
+.compact .active-call-box .micro-phone {
+    font-size: 13px;
+}
+
+.compact .active-call-box .controls {
+    margin-top: 2px;
+}
+
+.compact .active-call-box .controls .button {
+    height: 30px;
+}
+
+.compact .bottom-panel, .compact .active-calls-panel, .compact .active-calls-panel .calls-wrapper{
+    width: 100%;
+}
+
+.compact .has-active-calls #top-panel{
+    padding: 0;
+}
+
+.compact .release-calls-wrapper, .compact .release-calls-btn{
+    width: 100%;
+    height: 40px;
+}
+
+.compact .active-call-box .settings-wrapper .settings-buttons {
+    margin-top: 10px;
+    height: 30px;
+}
+
+.compact .connection-wrapper .active-call-box .settings-wrapper .settings-buttons {
+    margin-top: 16px;
+    height: 30px;
+}
+
+.compact .connection-wrapper .active-call-box {
+    height: 98%;
+    margin: 0px;
+}

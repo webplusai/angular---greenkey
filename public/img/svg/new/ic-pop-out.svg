@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<svg width="19px" height="17px" viewBox="0 0 19 17" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: sketchtool 3.6 (26304) - http://www.bohemiancoding.com/sketch -->
+    <title>Fill 1 Copy 6</title>
+    <desc>Created with sketchtool.</desc>
+    <defs>
+        <filter x="-50%" y="-50%" width="200%" height="200%" filterUnits="objectBoundingBox" id="filter-1">
+            <feOffset dx="0" dy="-1" in="SourceAlpha" result="shadowOffsetOuter1"></feOffset>
+            <feGaussianBlur stdDeviation="0" in="shadowOffsetOuter1" result="shadowBlurOuter1"></feGaussianBlur>
+            <feColorMatrix values="0 0 0 0 0   0 0 0 0 0   0 0 0 0 0  0 0 0 0.7 0" in="shadowBlurOuter1" type="matrix" result="shadowMatrixOuter1"></feColorMatrix>
+            <feMerge>
+                <feMergeNode in="shadowMatrixOuter1"></feMergeNode>
+                <feMergeNode in="SourceGraphic"></feMergeNode>
+            </feMerge>
+        </filter>
+    </defs>
+    <g id="Page-1" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd" filter="url(#filter-1)">
+        <g id="TVBWEB-1857-mainWindow-Settings" transform="translate(-1610.000000, -317.000000)" fill="#BFBFBF">
+            <g id="Pop-out-Copy-5" transform="translate(1600.462891, 308.500000)">
+                <path d="M19.8287885,16.3717402 L23.2248752,12.9756536 L21.7506844,12.2624198 C21.4699017,12.1463804 21.2719265,11.8657067 21.268113,11.5756626 C21.2638636,11.2856186 21.4519237,11.0522323 21.7305273,11.0015672 L26.6303322,10.1110601 C26.8437793,10.0720534 27.0769477,10.1474518 27.2495359,10.3111055 C27.422342,10.4747592 27.5115779,10.7047678 27.4865178,10.9222463 L26.9103521,15.883612 C26.8774471,16.1678813 26.6577894,16.372394 26.3693797,16.3854689 C26.0811879,16.3982168 25.7948484,16.2185464 25.6638819,15.9417952 L24.8759035,14.468585 L21.4007139,17.9436656 C21.2114552,18.1330332 20.9045228,18.1331422 20.7152642,17.9437746 L19.8286795,17.0571899 C19.6394209,16.8679313 19.6394209,16.5611078 19.8287885,16.3717402 Z M25.0564673,25.1165027 L12.6103964,25.1165027 C11.1709629,25.1165027 10,23.9455398 10,22.5061064 L10,12.6103964 C10,11.1709629 11.1709629,10 12.6103964,10 L19.4161894,10 C19.867599,10 20.2333683,10.3657693 20.2333683,10.8171789 C20.2333683,11.2684796 19.867599,11.6343579 19.4161894,11.6343579 L12.6103964,11.6343579 C12.0721479,11.6343579 11.6342489,12.0721479 11.6342489,12.6103964 L11.6342489,22.5061064 C11.6342489,23.0442459 12.0721479,23.4821449 12.6103964,23.4821449 L25.0564673,23.4821449 C25.5947158,23.4821449 26.0326148,23.0442459 26.0326148,22.5061064 L26.0326148,18.2353114 C26.0326148,17.7839017 26.3983841,17.4181324 26.8497937,17.4181324 C27.3012034,17.4181324 27.6669727,17.7839017 27.6669727,18.2353114 L27.6669727,22.5061064 C27.6669727,23.9455398 26.4959008,25.1165027 25.0564673,25.1165027 Z" id="Fill-1-Copy-6"></path>
+            </g>
+        </g>
+    </g>
+</svg>

@@ -1,0 +1,43 @@
+<div class="modal-window user-list-panel" id="active-call-transfer-panel">
+
+    <div class="modal-window-header">
+        <h1 class="modal-window-title">Call Transfer</h1>
+        <span class="modal-window-close-button"
+              uib-tooltip="Close window"
+              tooltip-placement="left"
+              ng-click="closeThisDialog()"></span>
+    </div>
+
+    <div class="modal-window-content">
+        <form role="form" id="active-call-transfer-form" class="default-modal-dialog search-connection-list">
+            <table class="table table-condensed">
+                <thead>
+                    <tr>
+                        <th>Company</th>
+                        <th>Full Name</th>
+                        <th></th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr ng-repeat="contact in contacts">
+                        <td>{{contact.company}}</td>
+                        <td><span>{{ contact.name}}</span></td>
+                        <td class="text-center" >
+                            <a href ng-click="submitForm(contact)">Transfer</a>
+                        </td>
+                    </tr>
+
+                    <tr ng-show="!contacts.length">
+                        <td colspan="3" align="center">No data to display</td>
+                    </tr>
+
+                </tbody>
+            </table>
+        </form>
+
+    </div>
+
+    <div class="modal-window-footer">
+        <button class="control-button btn-danger" ng-click="closeThisDialog()">Cancel</button>
+    </div>
+</div>

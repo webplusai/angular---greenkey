@@ -1,0 +1,29 @@
+.modal-window.support-chat-warning {
+    margin-top: 100px;
+    width: 550px;
+    height: 272px;
+}
+
+.support-chat-warning .warning-message {
+    margin-top: 10px;
+    text-align: center;
+}
+
+.support-chat-warning .green-key-support-contacts {
+    margin-top: 20px;
+    padding-left: 25%;
+    text-align: left;
+}
+
+.support-chat-warning .green-key-support-contacts p {
+    margin: 0 0 3px 0;
+}
+
+.support-chat-warning .support-contact-option {
+    font-weight: bold;
+    padding-left: 3px;
+}
+
+#contact-support-by-email {
+    display: none;
+}

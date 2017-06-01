@@ -1,0 +1,44 @@
+/* CSS checkmark */
+.checkmark {
+    display: inline-block;
+}
+
+.checkmark:after {
+    content: '';
+    display: block;
+    width: 5px;
+    height: 10px;
+    border: solid #000;
+    border-width: 0 2px 2px 0;
+    transform: rotate(45deg);
+}
+
+/* to align items in yahoo's menu */
+.iris-app .header .top-menu .user-settings {
+    flex: 1 1 55%;
+}
+
+.iris-app .header .top-menu .user-settings .user-name {
+    width: auto;
+}
+
+.gkt-overlay {
+    position: fixed;
+    width: 100%;
+    height: 100%;
+    z-index: 9999;
+    top: 0;
+    background: #fff;
+    left: 0;
+    justify-content: center;
+    display: flex;
+}
+
+.gkt-overlay-content {
+    margin: auto;
+    width: 100%;
+    text-align: center;
+}
+.gkt-overlay-content.with-spinner {
+    height: 180px;
+}

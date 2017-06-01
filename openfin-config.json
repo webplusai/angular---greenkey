@@ -1,0 +1,40 @@
+{
+    "devtools_port": 9090,
+    "startup_app": {
+        "name": "$OPENFIN_CONFIG_APP_NAME",
+        "description": "$OPENFIN_CONFIG_APP_DESCRIPTION",
+        "url": "$TVB_WEB_URL",
+        "applicationIcon": "$TVB_WEB_URL/img/favicon-gk.ico",
+        "icon": "$TVB_WEB_URL/img/favicon-gk.ico",
+        "uuid": "$OPENFIN_CONFIG_UUID",
+        "autoShow": true,
+        "cornerRounding": {
+            "width": 5,
+            "height": 5
+        },
+        "defaultWidth": $OPENFIN_CONFIG_DEFAULT_WIDTH,
+        "defaultHeight": $OPENFIN_CONFIG_DEFAULT_HEIGHT,
+        "permissions": [
+            "audioCapture",
+            "videoCapture",
+            "midi"
+        ],
+        "delay_connection": true
+    },
+    "runtime": {
+        "arguments": "$OPENFIN_CONFIG_RUNTIME_ARGUMENTS",
+        "version": "6.49.11.70"
+    },
+    "shortcut": {
+        "company": "Green Key Technologies",
+        "description": "$OPENFIN_CONFIG_SHORTCUT_DESCRIPTION",
+        "name": "$OPENFIN_CONFIG_SHORTCUT_NAME",
+        "icon": "$TVB_WEB_URL/img/$TVB_WEB_ICON",
+        "target": [
+            "desktop",
+            "start-menu",
+            "automatic-start-up"
+        ],
+        "force": true
+    }
+}

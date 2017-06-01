@@ -1,0 +1,8 @@
+<div class="menu-item-switcher-wrap">
+  <input id="is-user-idle" class="is-user-idle" type="checkbox" ng-model="uiState.idle">
+  <label for="is-user-idle" class="user-status-switcher" ng-click="toggleIdle($event)">
+    <span class="user-status-indicator"></span>
+    <span class="user-status-text active">{{'ONLINE_TOGGLE_LABEL' | translate}}</span>
+    <span class="user-status-text away">{{'AWAY_TOGGLE_LABEL' | translate}}</span>
+  </label>
+</div>

@@ -1,0 +1,31 @@
+audio-record audio {
+  display: none;
+}
+
+.audio-record {
+  color: #FFFFFF;
+  height: 100%;
+}
+
+.audio-record .btn-play,
+.audio-record .btn-pause {
+  cursor: pointer;
+}
+
+.audio-record .btn-play {
+  background: url(/img/play-recording.png) left center no-repeat;
+  display: inline-block;
+  width: 25px;
+  height: 25px;
+}
+
+.audio-record .btn-pause {
+  left: 2px;
+  position: relative;
+  top: 3px;
+}
+
+.audio-record .btn-pause .fa-pause {
+  color: #adadad;
+  font-size: 16px;
+}

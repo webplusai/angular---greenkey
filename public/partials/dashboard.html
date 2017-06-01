@@ -1,0 +1,247 @@
+<connecting-overlay></connecting-overlay>
+<div class="app app-header-fixed app-aside-fixed app-aside-folded"
+    ng-class="{ openfin: isOpenFin }">
+
+  <div header></div>
+
+  <!-- content -->
+  <div id="content" class="app-content" role="main">
+      <div class="app-content-body app-content-full clearfix">
+          <!-- hbox layout -->
+          <div class="hbox hbox-auto-xs" ng-class="{'has-active-calls': getActiveCallsQty() > 0}">
+              <!-- Top Panel -->
+              <div id="top-panel" class="row clearfix"
+                      ng-class="{
+                        'phone-panel-hidden': !uiState.phonePanelVisible,
+                        'no-right-panel': !uiState.rightPanelVisible
+                      }">
+
+                  <!-- LEFT PANEL -->
+                  <div id="left-panel" ng-class="{
+                         'no-right-panel': !uiState.rightPanelVisible
+                       }"
+                       ng-show="uiState.leftPanelVisible">
+                      <!-- Event Log Panel -->
+                      <div class="window-wrapper" events-log-panel></div>
+                      <!-- / Event Log Panel -->
+                  </div>
+                  <!-- / LEFT PANEL -->
+
+                  <!-- CENTER PANEL -->
+                  <div id="hoots-panel"
+                       ng-show="uiState.hootsPanelVisible"
+                       ng-class="{
+                        'settings-mode': uiState.settingsVisible,
+                         'no-right-panel': !uiState.rightPanelVisible,
+                         'no-left-panel': !uiState.leftPanelVisible
+                       }">
+                      <!-- Hoots Panel -->
+                      <div id="hoots-main-container" class="window-wrapper clearfix">
+                          <div class="window-header clearfix">
+                              <div class="window-header-title">
+                                  SHOUTS
+                                  <a ng-show="isOpenFin" title="Tear Panel Out"
+                                     class="tearout" ng-click="tearHootsOut()"></a>
+                              </div>
+
+                              <div ng-show="uiState.settingsVisible" class="columns-switcher">
+                                  <ul class="pull-left nav nav-tabs tabs-panel">
+                                      <li ng-show="uiState.compactMode" class="tab"
+                                             ng-model="columns.val"
+                                             uib-btn-radio="'1'"
+                                             ng-class="{'active': columns.val == 1}" >
+                                          <a class="tab-title" href>1 Column</a>
+                                      </li>
+                                      <li class="tab"
+                                             ng-model="columns.val"
+                                             uib-btn-radio="'2'"
+                                             ng-class="{'active': columns.val == 2}" >
+                                          <a class="tab-title" href>2 Columns</a>
+                                      </li>
+                                      <li ng-show="!uiState.compactMode" class="tab"
+                                             ng-model="columns.val"
+                                             uib-btn-radio="'3'"
+                                             ng-class="{'active': columns.val == 3}" >
+                                          <a class="tab-title" href>3 Columns</a>
+                                      </li>
+                                  </ul>
+                              </div>
+
+                              <div class="buttons hoots-buttons">
+                                  <!-- hoots tabs -->
+                                  <div class="pull-right compact-only compact-settings-button fa fa-cog"
+                                       ng-click="toggleSettings();"
+                                       ng-class="{'active': uiState.settingsVisible}">
+                                  </div>
+                                  <div class="pull-right hoots-tabbar-wrapper">
+                                      <tabs-panel
+                                              class="tab-panel-compact"
+                                              init-event-name="hoots_fetched"
+                                              change-event-name="hoots_page_changed"
+                                              tab-name="hoots"
+                                              drag-and-drop-scope="callBox"
+                                              fixed-count="{{::uiConstants.hootPagesQty}}">
+                                      </tabs-panel>
+                                  </div>
+                              </div>
+
+                          </div>
+                          <div class="window-content" id="hoots" >
+                              <hoots-panel></hoots-panel>
+                          </div>
+
+                      </div>
+                  </div>
+                  <!-- / CENTER PANEL -->
+
+                  <!-- RIGHT PANEL -->
+                  <div id="right-panel"
+                       ng-show="uiState.rightPanelVisible"
+                       ng-class="{
+                        'without-ringdowns': !uiState.ringdownsPanelVisible,
+                        'no-left-panel': !uiState.leftPanelVisible
+                       }">
+                      <!-- Ringdonws Panel -->
+                      <div id="ringdowns-main-container" class="window-wrapper"
+                           ng-show="uiState.ringdownsPanelVisible">
+                          <div class="flex-height-wrapper">
+                            <div class="window-header clearfix">
+                                <div class="window-header-title">
+                                    RINGDOWNS
+                                    <a ng-show="isOpenFin" title="Tear Panel Out"
+                                       class="tearout" ng-click="tearRingdownsOut()"></a>
+                                </div>
+                                <div class="ringdowns-tabbar-wrapper">
+                                    <tabs-panel
+                                            init-event-name="ringdowns_fetched"
+                                            change-event-name="ringdowns_page_changed"
+                                            tab-name="ringdowns"
+                                            drag-and-drop-scope="callBox"
+                                            fixed-count="{{::uiConstants.ringdownsPagesQty}}">
+                                    </tabs-panel>
+                                </div>
+                                <div class="compact-only compact-settings-button fa fa-cog"
+                                     ng-click="toggleSettings();"
+                                     ng-class="{'active': uiState.settingsVisible}">
+                                </div>
+                            </div>
+                            <div class="window-content">
+
+                                <div ng-class="{ ringdowns50: quoteCaptureEnabled, ringdowns100: !quoteCaptureEnabled}">
+                                    <ringdowns-panel></ringdowns-panel>
+                                </div>
+
+                                <!-- TODO move it to template -->
+                                <div id="dictate-panel" ng-show="quoteCaptureEnabled">
+
+                                    <div id="quoteModal" class="modal fade" role="dialog">
+                                        <div class="modal-dialog">
+
+                                            <!-- Modal content-->
+                                            <div class="modal-content">
+                                                <div class="modal-header">
+                                                    <button type="button" class="close" data-dismiss="modal">&times;</button>
+                                                    <h4 class="modal-title">Quote Submit</h4>
+                                                </div>
+                                                <div class="modal-body">
+                                                    <p class="quoteCapture">
+                                                        "Quantity 200"
+                                                        "Contract June 2016 WTI"
+                                                        "Price 1.39"
+                                                    </p>
+                                                </div>
+                                                <div class="modal-footer quoteCapture">
+                                                    <button type="button" class="btn btn-default" data-dismiss="modal">Submit</button>
+                                                    <button type="button" class="btn btn-default" data-dismiss="modal">Edit</button>
+
+                                                </div>
+                                            </div>
+
+                                        </div>
+                                    </div>
+
+                                    <div id="tradeModal" class="modal fade" role="dialog">
+                                        <div class="modal-dialog">
+
+                                            <!-- Modal content-->
+                                            <div class="modal-content">
+                                                <div class="modal-header">
+                                                    <button type="button" class="close" data-dismiss="modal">&times;</button>
+                                                    <h4 class="modal-title">Quote Submit</h4>
+                                                </div>
+                                                <div class="modal-body">
+                                                    <p class="quoteCapture">
+                                                        Counterparty 1, Buyer, Goldman Sachs
+                                                        Counterparty 2, Seller, JPM Morgan
+                                                        Quantity 200
+                                                        Contract June 2016 WTI
+                                                        Price 1.39
+                                                        Clearing CME
+                                                    </p>
+                                                </div>
+                                                <div class="modal-footer quoteCapture">
+                                                    <button type="button" class="btn btn-default" data-dismiss="modal">Submit</button>
+                                                    <button type="button" class="btn btn-default" data-dismiss="modal">Edit</button>
+
+                                                </div>
+                                            </div>
+
+                                        </div>
+                                    </div>
+
+                                        <div class="window-header-flex">Quote Capture / Trade Confirm</div>
+                                        <textarea class="transcriptionContainer" id="trans" rows="6"></textarea>
+                                    <div class="buttonsContainer">
+                                    <span class="buttons">
+                                      <button id="buttonToggleListening" class="btn btn-green" onclick="toggleListening();" title="Toggle">Toggle</button>
+                                      <button id="buttonCancel" class="btn btn-green invisible" disabled="disabled" onclick="cancel();" title="Cancels the speech recognition.">Stop</button>
+                                       <button id="quoteCapture" class="btn btn-green" data-target="#quoteModal" data-toggle="modal" title="Quote Capture">Quote Capture</button>
+                                       <button id="tradeConfirm" class="btn btn-green" data-target="#tradeModal" data-toggle="modal" title="Trade Capture">Trade Confirm</button>
+                                      <button class="btn btn-green" onclick="clearTranscription();" title="Clears the transcription">Clear</button>
+
+                                    </span>
+                                        <div class="quoteCapture">
+                                            <label class="quoteLabel" for="contractSelect">Contract</label>
+                                            <select id="contractSelect" name="Contract">
+                                                <option>June 2016 WTI</option>
+                                            </select>
+                                            <label class="quoteLabel" for="clearingSelect">Clearing</label>
+                                            <select id="clearingSelect" name="Clearing">
+                                                <option>CME</option>
+                                            </select>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                          </div>
+                      </div>
+
+                      <div id="phone-main-container" ng-hide="uiState.compactMode && !uiState.phonePanelVisible">
+                          <button type="button" class="hide-phone-panel btn"
+                                  ng-show="uiState.compactMode"
+                                  ng-click="togglePhonePanel()"><span></span>
+                          </button>
+                          <phone-controls class="window-wrapper clearfix"></phone-controls>
+                      </div>
+                      <!-- / Phone Panel -->
+
+                  </div>
+                  <!-- / RING DOWNS PANEL -->
+              </div>
+              <!-- / Top Panel -->
+              <button type="button" class="show-phone-panel btn"
+                      ng-show="uiState.compactMode && !uiState.phonePanelVisible"
+                      ng-click="togglePhonePanel()"><span></span>
+              </button>
+              <div ng-hide="getActiveCallsQty() === 0 &&
+                            !uiState.compactMode && !uiState.rightPanelVisible"
+                   class="window-wrapper bottom-panel">
+                  <div active-calls-panel></div>
+              </div>
+          </div>
+          <!-- /hbox layout -->
+      </div>
+  </div>
+
+  <!-- / content -->
+</div>

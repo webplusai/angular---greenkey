@@ -1,0 +1,57 @@
+
+<div class="modal-window company-directory-panel">
+    <!-- modal-header -->
+    <div class="modal-window-header">
+        <h1 class="modal-window-title">Company Directory</h1>
+        <span class="modal-window-close-button"
+              uib-tooltip="Close window"
+              tooltip-placement="left"
+              ng-click="closeThisDialog()"
+        ></span>
+    </div><!-- / modal-header -->
+
+    <!-- modal-body -->
+    <div class="modal-window-content">
+
+        <div id="myUsersListDlg" class="default-modal-dialog company-directory-list">
+
+            <table class="table table-head-only">
+              <thead>
+                <tr>
+                  <th>Company Name</th>
+                  <th>Direct Connection</th>
+                </tr>
+              </thead>
+            </table>
+
+            <div class="table-condensed">
+              <table class="table">
+                <tbody>
+                  <tr ng-repeat="(key, company) in companies | orderBy:'name' track by key">
+                    <td>{{ company.name }}</td>
+                    <td ng-show="company.status === 'Connect' " class="text-center" >
+                      Accepted
+                    </td>
+                    <td ng-show="company.status !== 'Connect'" class="text-center" >
+                      <a href ng-click="showCompanyConnectionModal(company)">
+                        Connect
+                      </a>
+                    </td>
+                  </tr>
+
+                  <tr ng-show="!companies.length">
+                    <td ng-show="!loading" colspan="2" align="center">There are no companies to list.</td>
+                  </tr>
+
+                </tbody>
+              </table>
+            </div>
+
+            <span us-spinner="{radius:30, width:8, length: 16, color: '#fff'}"
+                spinner-start-active="true"
+                spinner-key="spinner-company-list" >
+            </span>
+
+          </div>
+    </div><!-- modal-body -->
+</div>

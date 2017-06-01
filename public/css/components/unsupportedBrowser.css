@@ -1,0 +1,40 @@
+/* Css rules for landing page for unsupported browsers */
+.error-page .warning-widget.unsupported-browser-warning {
+    top: 50%;
+}
+
+.unsupported-browser-warning-text {
+    margin-bottom: 30px;
+}
+
+.unsupported-browser-warning .desktop-app-link {
+    font-size: 1.3em;
+    font-weight: bold;
+    color: #fff;
+    transition: color 0.4s;
+    text-decoration: none;
+}
+.unsupported-browser-warning .desktop-app-link:hover {
+    color: #5e9732;
+}
+
+
+.unsupported-browser-page .gkt-links-wrapper {
+    padding: 12px 17px;
+    text-align: center;
+}
+
+.unsupported-browser-page .gkt-links-wrapper .gkt-link {
+    padding-right: 20px;
+}
+
+.unsupported-browser-page .gkt-links-wrapper a {
+    font-size: 15px;
+    color: #868686;
+    transition: color 0.4s;
+    text-decoration: none;
+}
+
+.unsupported-browser-page .gkt-links-wrapper a:hover {
+    color: #5e9732;
+}

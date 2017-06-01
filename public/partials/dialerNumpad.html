@@ -1,0 +1,100 @@
+<div class="dialer-numpad-panel">
+
+  <div class="dial-pad" ng-class="{'in-tone-mode' : toneMode}">
+
+    <div class="header">
+      <div class="btn btn-default close-button pull-right btn-sm" ng-click="close()">
+        <i class="fa fa-close"></i></div>
+
+      <div class="mode-switcher btn-group">
+        <button type="button" class="btn btn-default"
+                ng-class="{'active btn-success': toneMode, 'disabled': !isToneModeAllowed()}" ng-click="setToneMode(true)">Tone</button>
+        <button type="button" class="btn btn-default"
+                ng-class="{'active btn-success': !toneMode}" ng-click="setToneMode(false)">Input</button>
+      </div>
+      <div class="clearfix"></div>
+    </div>
+
+    <div class="button" ng-click="numpadButtonClick('1')">
+      <span class="number one">1</span>
+    </div>
+
+    <div class="button" ng-click="numpadButtonClick('2')">
+      <span class="number two">2</span>
+      <span class="letters">ABC</span>
+    </div>
+
+    <div class="last button" ng-click="numpadButtonClick('3')">
+      <span class="number three">3</span>
+      <span class="letters">DEF</span>
+    </div>
+
+    <div class="clearfix"></div>
+
+
+    <div class="button" ng-click="numpadButtonClick('4')">
+      <span class="number four">4</span>
+      <span class="letters">GHI</span>
+    </div>
+
+    <div class="button" ng-click="numpadButtonClick('5')">
+      <span class="number five">5</span>
+      <span class="letters">JKL</span>
+    </div>
+
+    <div class="last button" ng-click="numpadButtonClick('6')">
+      <span class="number six">6</span>
+      <span class="letters">MNO</span>
+    </div>
+
+    <div class="clearfix"></div>
+
+
+    <div class="button" ng-click="numpadButtonClick('7')">
+      <span class="number seven">7</span>
+      <span class="letters">PQRS</span>
+    </div>
+
+    <div class="button" ng-click="numpadButtonClick('8')">
+      <span class="number eight">8</span>
+      <span class="letters">TUV</span>
+    </div>
+
+    <div class="last button" ng-click="numpadButtonClick('9')">
+      <span class="number nine">9</span>
+      <span class="letters">WXYZ</span>
+    </div>
+
+    <div class="clearfix"></div>
+
+    <div class="left half-sized button" ng-click="numpadButtonClick('*')">
+			<span class="symbol">
+			<i class="fa fa-asterisk"></i>
+      </span>
+    </div>
+
+    <div class="right half-sized plus button" ng-click="numpadButtonClick('+')">
+			<span class="symbol">
+			<i class="fa fa-plus"></i>
+				</span>
+    </div>
+
+    <div class="button" ng-click="numpadButtonClick('0')">
+      <span class="number">0</span>
+    </div>
+
+    <div class="left half-sized button" ng-click="numpadButtonClick('#')">
+      <span class="number">#</span>
+    </div>
+
+    <div class="right half-sized last backspace button" ng-click="backspaceClicked()">
+			<span class="symbol">
+			  <i class="fa fa-arrow-left"></i>
+			</span>
+    </div>
+
+    <div class="clearfix"></div>
+
+  </div>
+
+</div>

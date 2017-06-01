@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<svg width="15px" height="15px" viewBox="0 0 15 15" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:sketch="http://www.bohemiancoding.com/sketch/ns">
+    <!-- Generator: sketchtool 3.4 (381) - http://www.bohemiancoding.com/sketch -->
+    <title>ic_close</title>
+    <desc>Created with sketchtool.</desc>
+    <defs></defs>
+    <g id="Iteration-5" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd" sketch:type="MSPage">
+        <g id="TVBWEB--1161-manageBlasts" sketch:type="MSArtboardGroup" transform="translate(-1403.000000, -145.000000)" fill="#FFFFFF">
+            <path d="M1412.29425,152.270828 L1417.08087,147.484209 C1417.63956,146.925516 1417.63968,146.019634 1417.08087,145.460822 C1416.52218,144.902129 1415.61618,144.902129 1415.05748,145.460822 L1410.27086,150.247441 L1405.48424,145.460822 C1404.92555,144.902129 1404.01955,144.902129 1403.46086,145.460822 C1402.90216,146.019515 1402.90216,146.925516 1403.46086,147.484209 L1408.24748,152.270828 L1403.46074,157.057567 C1402.90204,157.61626 1402.90204,158.522261 1403.46074,159.080954 C1404.01955,159.639766 1404.92543,159.639647 1405.48412,159.080954 L1410.27086,154.294215 L1415.05748,159.080835 C1415.61618,159.639528 1416.52218,159.639528 1417.08087,159.080835 C1417.63956,158.522142 1417.63956,157.616141 1417.08087,157.057448 L1412.29425,152.270828 Z" id="ic_close" sketch:type="MSShapeGroup"></path>
+        </g>
+    </g>
+</svg>

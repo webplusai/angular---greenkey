@@ -1,0 +1,14 @@
+/* Column selector and pages in one row */
+@media screen and (min-width: 750px) {
+    .columns-switcher {
+        float: left;
+        clear: none;
+        margin-left: 20px;
+    }
+}
+@media screen and (max-width: 749px) {
+    .columns-switcher {
+        float: right;
+        clear: both;
+    }
+}
